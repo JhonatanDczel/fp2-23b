@@ -1,0 +1,2 @@
+#ignorar los archivos .class y .jar
+*.class *.jar
