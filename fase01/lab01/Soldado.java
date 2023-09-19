@@ -1,9 +1,10 @@
 public class Soldado{
   public String name;
 
-  public void setName(String str){
+  public Soldado(String str){
     this.name = str;
   }
+
   public String getName(){
     return this.name;
   }
