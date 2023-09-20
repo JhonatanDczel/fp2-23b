@@ -7,11 +7,8 @@ import java.util.*;
 public class VideoJuego{
 
   public static void main(String[] args){
-    String[] army1 = new String[5];
-    String[] army2 = new String[5];
-
-    initializeArmy(army1);
-    initializeArmy(army2);
+    String[] army1 = initializeArmy(); 
+    String[] army2 = initializeArmy();
 
     System.out.println("╔════════════════════════════╗");
     System.out.println("║    Welcome to the Battle   ║");
@@ -35,13 +32,15 @@ public class VideoJuego{
     }
   }
 
-  public static void initializeArmy(String[] army){
+  public static String[] initializeArmy(){
     Random rand = new Random();
     int randNum = rand.nextInt(5) + 1;
+    String[] army = new String[randNum];
 
     for(int i = 0; i < randNum; i++){
       army[i] = "Soldado " + (i + 1);
     }
+    return army;
   }
 
   public static String whoWins(String[] army1, String[] army2){
