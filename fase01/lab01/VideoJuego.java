@@ -8,32 +8,19 @@ public class VideoJuego{
 
   public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
+    String[] names = new String[5];
+
+    for(int i = 0; i < 5; i++){
+      System.out.println("\nIngrese el nombre del soldado numero " + (i + 1) + ":");
+      names[i] = sc.next();
+    }
     
-    System.out.println("Ingrese el nombre del nuevo soldado:");
-    Soldado s1 = new Soldado(sc.next());
-    System.out.println("Ingrese el nivel de vida del nuevo soldado:");
-    s1.setLife(sc.nextInt());
+    Soldado s1 = new Soldado(names[0]);
+    Soldado s2 = new Soldado(names[1]);
+    Soldado s3 = new Soldado(names[2]);
+    Soldado s4 = new Soldado(names[3]);
+    Soldado s5 = new Soldado(names[4]);
 
-
-    System.out.println("Ingrese el nombre del nuevo soldado:");
-    Soldado s2 = new Soldado(sc.next());
-    System.out.println("Ingrese el nivel de vida del nuevo soldado:");
-    s2.setLife(sc.nextInt());
-
-    System.out.println("Ingrese el nombre del nuevo soldado:");
-    Soldado s3 = new Soldado(sc.next());
-    System.out.println("Ingrese el nivel de vida del nuevo soldado:");
-    s3.setLife(sc.nextInt());
-
-    System.out.println("Ingrese el nombre del nuevo soldado:");
-    Soldado s4 = new Soldado(sc.next());
-    System.out.println("Ingrese el nivel de vida del nuevo soldado:");
-    s4.setLife(sc.nextInt());
-
-    System.out.println("Ingrese el nombre del nuevo soldado:");
-    Soldado s5 = new Soldado(sc.next());
-    System.out.println("Ingrese el nivel de vida del nuevo soldado:");
-    s5.setLife(sc.nextInt());
 
     System.out.println("=====DATOS DE SOLDADOS=====");
     System.out.println("Soldado: " + s1.getName() + " \nNivel de vida: " + s1.getLife() + "\n");
