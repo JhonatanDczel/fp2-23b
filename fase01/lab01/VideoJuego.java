@@ -13,8 +13,17 @@ public class VideoJuego{
     initializeArmy(army1);
     initializeArmy(army2);
 
+    System.out.println("╔════════════════════════════╗");
+    System.out.println("║    Welcome to the Battle   ║");
+    System.out.println("║       Simulator Game!      ║");
+    System.out.println("╚════════════════════════════╝");
+    
+    System.out.println("\n***** Prepare for battle! *****");
+
     displayArmy(army1);
     displayArmy(army2);
+
+    System.out.println(whoWins(army1, army2));
 
   }
 
