@@ -35,4 +35,14 @@ public class VideoJuego{
     }
   }
 
+  public static String whoWins(String[] army1, String[] army2){
+    if (army1.length > army2.length)
+      return "\n***** Army 1 is the winner! *****";
+
+    if (army2.length > army1.length)
+      return "\n***** Army 2 is the winner! *****";
+
+    return "\n***** It's a tie. No clear winner. *****";
+  }
+
 }
