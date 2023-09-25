@@ -7,24 +7,50 @@ import java.util.*;
 public class VideoJuego{
 
   public static void main(String[] args){
-    Scanner sc = new Scanner(System.in);
-    Soldado[] ejercito = new Soldado[5];
+    Soldado[] army1 = initializeArmy(); 
+    Soldado[] army2 = initializeArmy();
 
-    for(int i = 0; i < 5; i++){
-      System.out.println("\nIngrese el nombre del soldado numero " + (i + 1) + ":");
-      ejercito[i] = new Soldado(sc.next());
+    System.out.println("╔════════════════════════════╗");
+    System.out.println("║    Welcome to the Battle   ║");
+    System.out.println("║       Simulator Game!      ║");
+    System.out.println("╚════════════════════════════╝");
+    
+    System.out.println("\n***** Prepare for battle! *****");
 
-      System.out.println("Ingrese el nivel de vida del soldado numero " + (i + 1) + ":");
-      ejercito[i].setLife(sc.nextInt());
+    displayArmy(army1);
+    displayArmy(army2);
+
+    System.out.println(whoWins(army1, army2));
+
+  }
+
+
+  public static void displayArmy(Soldado[] army){
+    System.out.println("\n===== Army Soldiers =====");
+    for(Soldado soldier : army){
+      System.out.println(" " + soldier.getName());
     }
+  }
 
-    System.out.println("\n=====DATOS DE SOLDADOS=====");
-    System.out.println("Soldado: " + ejercito[0].getName() + " \nNivel de vida: " + ejercito[0].getLife() + "\n");
-    System.out.println("Soldado: " + ejercito[1].getName() + " \nNivel de vida: " + ejercito[1].getLife() + "\n");
-    System.out.println("Soldado: " + ejercito[2].getName() + " \nNivel de vida: " + ejercito[2].getLife() + "\n");
-    System.out.println("Soldado: " + ejercito[3].getName() + " \nNivel de vida: " + ejercito[3].getLife() + "\n");
-    System.out.println("Soldado: " + ejercito[4].getName() + " \nNivel de vida: " + ejercito[4].getLife() + "\n");
+  public static Soldado[] initializeArmy(){
+    Random rand = new Random();
+    int randNum = rand.nextInt(5) + 1;
+    Soldado[] army = new Soldado[randNum];
 
+    for(int i = 0; i < randNum; i++){
+      army[i] = new Soldado("Soldado " + (i + 1));
+    }
+    return army;
+  }
+
+  public static String whoWins(Soldado[] army1, Soldado[] army2){
+    if (army1.length > army2.length)
+      return "\n***** Army 1 is the winner! *****";
+
+    if (army2.length > army1.length)
+      return "\n***** Army 2 is the winner! *****";
+
+    return "\n***** It's a tie. No clear winner. *****";
   }
 
 }
