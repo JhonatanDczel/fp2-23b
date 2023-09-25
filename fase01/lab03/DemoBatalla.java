@@ -46,10 +46,11 @@ public class DemoBatalla {
   }
 //Método para mostrar todas las naves de un nombre que se pide por teclado
   public static void mostrarPorNombre(Nave [] flota, String nombre){
+    nombre = nombre.toLowerCase();
     System.out.println();
     int i = 1;
     for(Nave n : flota){
-      if(n.getNombre().equals(nombre)){
+      if(n.getNombre().toLowerCase().equals(nombre)){
         System.out.println("Nave " + i + ":");
         mostrarNave(n);
         i++;
