@@ -1,0 +1,713 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{jariasq@unsa.edu.pe}
+\newcommand{\itemStudent}{Jhonatan David Arias Quispe}
+\newcommand{\itemCourse}{Fundamentos de Programacion 2}
+\newcommand{\itemCourseCode}{1701213}
+\newcommand{\itemSemester}{II}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - B}
+\newcommand{\itemInput}{Del 20 Setiembre 2023}
+\newcommand{\itemOutput}{Al 28 Setiembre 2023}
+\newcommand{\itemPracticeNumber}{03}
+\newcommand{\itemTheme}{Arreglos de Objetos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Jhonatan David Arias Quispe}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+\usepackage{color}
+    \definecolor{bat-bg}{rgb}{.16,.19,.2}
+    \definecolor{bat-norm}{rgb}{.9,.9,.9}
+    \definecolor{bat-comm}{rgb}{.4,.45,.48}
+    \definecolor{bat-kw}{rgb}{.57,.78,.39}
+    \definecolor{bat-str}{rgb}{.2,.38,.62}
+    \definecolor{arch-celeste}{rgb}{0.263, 0.765, 0.961}
+    \definecolor{arch-lime}{rgb}{0.588, 0.773, 0.506}
+
+
+
+\usepackage{listings}
+
+\lstset{
+    language={[WinXP]command.com},
+    basicstyle=\color{bat-norm}\footnotesize\ttfamily,
+    numbers=left,
+    numberstyle=\normalsize,
+    numbersep=7pt,
+    backgroundcolor=\color{bat-bg},  
+    commentstyle=\color{bat-comm},
+    keywordstyle=\color{arch-celeste},
+    numberstyle=\tiny\color{bat-bg},
+    stringstyle=\color{arch-lime},
+    tabsize=2
+}
+
+\begin{document}
+	
+	\vspace*{10pt}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Tarea}
+	\begin{itemize}		
+		\item Analice, complete y pruebe el Código de la clase DemoBatalla
+            \item Solucionar la Actividad 4 de la Práctica 1 pero usando arreglo de objetos
+            \item Solucionar la Actividad 5 de la Práctica 1 pero usando arreglo de objetos
+
+	\end{itemize}
+		
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Sistema Operativo ArchCraft GNU Linux 64 bits Kernell
+		\item NeoVim
+		\item OpenJDK 64-Bit 20.0.1 
+		\item Git 2.42.0
+		\item Cuenta en GitHub con el correo institucional.
+		\item Programación Orientada a Objetos.
+		\item Creacion de programas con CLI	
+	\end{itemize}
+	
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+		\item URL del Repositorio GitHub para clonar o recuperar.
+		\item \url{https://github.com/JhonatanDczel/fp2-23b.git}
+		\item URL para el laboratorio 02 en el Repositorio GitHub.
+		\item \url{https://github.com/JhonatanDczel/fp2-23b/tree/main/fase01/lab03}
+	\end{itemize}
+
+
+	\section{Actividad 1: Completar el codigo de DemoBatalla}
+	
+	\subsection{Implementacion del metodo Mostrar Naves}
+	\begin{itemize}	
+		\item Necesitamos un metodo que muestre los datos de una flota
+		\item Para eso debera recibir un arreglo de naves
+	\end{itemize}	
+		
+	\begin{lstlisting}[language=java,caption={Metodo mostrarNaves}][H]
+  public static void mostrarNaves(Nave [] flota){
+    for(int i = 0; i < flota.length; i++){
+      System.out.println("Nave numero " + i + ":");
+      System.out.println(flota[i].getNombre());
+    }
+  }
+	\end{lstlisting}
+\begin{itemize}
+    \item Como vemos, el metodo recorre el arreglo y va imprimiendo el nombre de cada nave que encuentra en la posicion i
+    \item para evitar un error de desbordamiento de limites se usa flota.length
+    \item Ahora haremos una optimizacion usando el ciclo for each
+\end{itemize}
+\begin{lstlisting}[languaje=java, caption={Optimizacion del metodo mostrarNaves}]
+  public static void mostrarNaves(Nave [] flota){
+    System.out.println("Mostrando las naves creadas: ");
+    for(Nave n : flota){
+      System.out.println(n.getNombre());
+    } 
+  }    
+\end{lstlisting}
+\begin{itemize}
+    \item Esta version es mas eficiente ya que no es necesario conocer la ubicacion del indice
+\end{itemize}
+
+    \subsection{Ejecucion}
+    \begin{lstlisting}[language=bash, caption={Ejecucion del codigo}]
+    Naves creadas:
+    Nave numero 1:
+    Ninha
+    Nave numero 2:
+    Pinta
+    Nave numero 3:
+    SantaMaria
+
+    \end{lstlisting}
+
+    \begin{itemize}
+        \item Asi es como se ve la ejecucion en consola, con un ejemplo generico
+    \end{itemize}
+
+    
+        \subsection{Metodo mostrar naves por nombre}
+        \begin{lstlisting}[language=java, caption={Metodo mostrarPorNombre}]
+    public static void mostrarPorNombre(Nave [] flota, String nombre){
+        System.out.println();
+        int i = 1;
+        for(Nave n : flota){
+          if(n.getNombre().equals(nombre)){
+            System.out.println("Nave " + i + ":");
+            mostrarNave(n);
+            i++;
+          }
+        }
+        if(i == 1)
+          System.out.println("No se han encontrado naves con ese nombre");
+      }
+        \end{lstlisting}
+        \begin{itemize}
+            \item Como podemos ver, el metodo recorre el arreglo que se le da en busca de naves con el mismo nombre
+            \item Para trabajar sin distinciones entre mayusculas y minusculas implementaremos el metodo toLowerCase, para trabajar estandarizadamente y evitar conflictos:
+        \end{itemize}
+        \begin{lstlisting}[language=java, caption={Metodo mostrarPorNombre}]
+  public static void mostrarPorNombre(Nave [] flota, String nombre){
+    nombre = nombre.toLowerCase();
+    System.out.println();
+    int i = 1;
+    for(Nave n : flota){
+      if(n.getNombre().toLowerCase().equals(nombre)){
+        System.out.println("Nave " + i + ":");
+        mostrarNave(n);
+        i++;
+      }
+    }
+    if(i == 1)
+      System.out.println("No se han encontrado naves con ese nombre");
+
+  }
+        \end{lstlisting}
+
+        \subsection{Metodo Mostrar por puntos}
+        \begin{itemize}
+            \item Ahora necesitamos un metodo que muestre las naves con cantidad de puntos igual o menor al que el usuario entre por teclado
+        \end{itemize}
+        \begin{lstlisting}[language=java, caption={Implementacion del metodo mostrar por puntos}]
+  public static void mostrarPorPuntos(Nave [] flota, int pts){
+    System.out.println();
+    int i = 1;
+    for(Nave n : flota){
+      if(n.getPuntos() <= pts){
+        System.out.println("Nave " + i + ":");
+        mostrarNave(n);
+        System.out.println();
+        i++;
+      }
+    }  
+  }
+        \end{lstlisting}
+        \begin{itemize}
+            \item Recorremos el arreglo comprobando si los puntos son iguales o menores al que se ingreso, en caso serlo se imprimen los datos de la nave
+            \item Ahora necesitamos un caso "default" por si no se encuentran naves
+        \end{itemize}
+        \begin{lstlisting}[caption={Condicion de default}]
+    if(i == 1){
+      System.out.println("No se han encontrado naves");
+    } 
+        \end{lstlisting}
+
+        \subsection{Metodo contarLetrasRestantes}
+        \begin{itemize}
+            \item Ahora necesitamos un metodo para mostrar la nave con mas puntos
+            \item Para eso vamos a recorrer el ciclo y hacer una simple comprobacion con un dato pivote
+        \end{itemize}
+            \begin{lstlisting}[language=java, caption={Metodo Mostrar Mayor Puntos}]
+  public static Nave mostrarMayorPuntos(Nave [] flota){
+    Nave mayor = flota[0];
+    for(int i = 0; i < flota.length; i++){
+      if(flota[i].getPuntos() > mayor.getPuntos())
+        mayor = flota[i];
+    }
+    return mayor;
+  }
+            \end{lstlisting}
+        \begin{itemize}
+            \item Recorremos el arreglo en busca del mayor puntaje
+            \item Al final, el metodo devuelve la nave con el mayor puntaje, usando el indice que nos sirvio como indicador del mayor puntaje en cada vuelta
+            
+        \end{itemize}
+        
+        \subsection{Metodo para desordenar un array de Naves}
+        \begin{itemize}
+            \item Ahora necesitamos desordenar los elementos de un array de naves dado
+            \item Para eso usaremos la clase Random para generar numeros aleatorios
+            \item La estructura constara de un ciclo for que itere sobre cada uno de los elementos y un ciclo while dentro que se asegure de encontrar lugar para cada uno:
+        \end{itemize}
+        \begin{lstlisting}[language=java, caption={Ciclo while}]
+      boolean ubicado = false;
+      while(!ubicado){
+        int numRandom = random.nextInt(flota.length);
+        if(nuevaFlota[numRandom] == null){
+          nuevaFlota[numRandom] = flota[i];
+          ubicado = true;
+          System.out.println("Nave " + i + " ahora ubicada en: " + numRandom);
+        }
+      }
+        \end{lstlisting}
+        \begin{itemize}
+            \item El ciclo while solo terminara cuando se haya encontrado un lugar vacio para el elemento actual
+            \item El numero random se calcula en funcion a los indices del arreglo, este numca podra ser igual a la longitud para evitar errores de desbordamiento de limite
+        \end{itemize}
+        \begin{lstlisting}[language=java, caption={Metodo completo}]
+  public static Nave[] desordenar(Nave[] flota){
+    Random random = new Random();
+    Nave[] nuevaFlota = new Nave[flota.length];
+    
+    for(int i = 0; i < flota.length; i++){
+      boolean ubicado = false;
+      while(!ubicado){
+        int numRandom = random.nextInt(flota.length);
+        if(nuevaFlota[numRandom] == null){
+          nuevaFlota[numRandom] = flota[i];
+          ubicado = true;
+          System.out.println("Nave " + i + " ahora ubicada en: " + numRandom);
+        }
+      }
+    }
+    return nuevaFlota;
+
+  }
+        \end{lstlisting}
+        \begin{itemize}
+            \item Ahora agregamos la estructura for para asegurarnos de recorrer todos los elementos, y finalmente retornamos el arreglo de Naves
+        \end{itemize}
+        
+        \subsection{Commits importantes}
+        \begin{itemize}
+            \item Este es un registro de los commits mas importantes
+            \item Estan extraidos del registro de commits al hacer git log
+        \end{itemize}
+        \begin{lstlisting}[language=bash, caption={Commits}]
+    commit 689ce4e09e886234c9a67bf2205bf00e943f6e16
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Sun Sep 24 20:40:02 2023 -0500
+    
+        Actividad 1: Implementacion del metodo Mostrar Naves
+    
+    commit 4a2c4c69527f7d5ce9194f4a28ae5eb8d874424d
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Sun Sep 24 23:25:02 2023 -0500
+    
+        Actividad 1: Implementacion del metodo Mostrar Naves Por Nombre
+    
+    commit 42a4a4e1302014164874c6b1f84c058192d0870a
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Sun Sep 24 23:40:26 2023 -0500
+    
+        Actividad 1: Implementacion del metodo Mostrar por Puntos
+    
+    commit 314a4ec7803f41d98d669fa97931009c74d6f6cb
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Sep 25 00:39:00 2023 -0500
+    
+        Actividad 1: Implementacion del metodo para mostrar nave con mayor puntaje
+    
+    commit bc49db90fdedaade7c05d8c526608e093f0de518
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Sep 25 10:38:18 2023 -0500
+    
+        Actividad 1: Terminando el metodo para desordenar un array de objetos aleatoriamente
+    
+
+        \end{lstlisting}
+        \begin{itemize}
+            \item Cada commit representa un metodo implementado
+            \item Adicionalmente cada metodo esta acompanhado de su optimizacion
+        \end{itemize}
+    \subsection{Ejecucion}
+    \begin{itemize}
+        \item Tendremos ahora una demostracion sobre el DemoBatalla:
+    \end{itemize}
+
+        \begin{lstlisting}[language=bash, caption={Ejecucion en la linea de comandos}]
+    Naves creadas:
+    Nave 1:
+    Nombre: Independencia
+    Estado: true
+    Puntos: 65
+    
+    Nave 2:
+    Nombre: Huascaran
+    Estado: false
+    Puntos: 65
+    
+    Nave 3:
+    Nombre: Union
+    Estado: false
+    Puntos: 100
+    
+    Desordenando las naves:
+    Nave 0 ahora ubicada en: 1
+    Nave 1 ahora ubicada en: 2
+    Nave 2 ahora ubicada en: 0
+    
+    Mostrar naves por nombre, ingrese un nombre:
+    Union
+    
+    Nave 1:
+    Nombre: Union
+    Estado: false
+    Puntos: 100
+    
+    Mostrar naves por puntos, ingrese una cantidad:
+    35
+    
+    No se han encontrado naves
+    
+    Nave con mayor número de puntos: Nave@5e2de80c
+        \end{lstlisting}
+        \begin{itemize}
+            \item Como hemos podido ver, todos los metodos funcionan correctamente
+        \end{itemize}
+\section{Actividad 2: Rehacer la actividad 4 del laboratorio 01, pero con array de Objetos}
+    \begin{itemize}
+        \item En aquel codigo, todo se maneja en variables simples
+        \item Unicamente necesitamos crer un array tal que asi Soldado[], y reemplazar las variables por metodos de Soldado
+    \end{itemize}
+        \begin{lstlisting}[language=java, caption={Array de Objetos}]
+    Soldado[] ejercito = new Soldado[5];
+
+    for(int i = 0; i < 5; i++){
+      System.out.println("\nIngrese el nombre del soldado numero " + (i + 1) + ":");
+      ejercito[i] = new Soldado(sc.next());
+
+      System.out.println("Ingrese el nivel de vida del soldado numero " + (i + 1) + ":");
+      ejercito[i].setLife(sc.nextInt());
+    }
+        \end{lstlisting}
+\begin{itemize}
+    \item Ahora, para mostrar los datos, mas de lo mismo, solo tenemos que cambiar variables por metodos
+\end{itemize}
+        \begin{lstlisting}[language=java, caption={Array de Objetos}]
+    System.out.println("\n=====DATOS DE SOLDADOS=====");
+    System.out.println("Soldado: " + ejercito[0].getName() + " \nNivel de vida: " + ejercito[0].getLife() + "\n");
+    System.out.println("Soldado: " + ejercito[1].getName() + " \nNivel de vida: " + ejercito[1].getLife() + "\n");
+    System.out.println("Soldado: " + ejercito[2].getName() + " \nNivel de vida: " + ejercito[2].getLife() + "\n");
+    System.out.println("Soldado: " + ejercito[3].getName() + " \nNivel de vida: " + ejercito[3].getLife() + "\n");
+    System.out.println("Soldado: " + ejercito[4].getName() + " \nNivel de vida: " + ejercito[4].getLife() + "\n");
+        \end{lstlisting}
+\subsection{Ejecucion}
+\begin{itemize}
+    \item A continuacion veremos un ejemplo de ejecucion:
+\end{itemize}
+\begin{lstlisting}
+    Ingrese el nombre del soldado numero 1:
+    Punchinelo
+    Ingrese el nivel de vida del soldado numero 1:
+    12
+    
+    Ingrese el nombre del soldado numero 2:
+    Roger
+    Ingrese el nivel de vida del soldado numero 2:
+    54
+    
+    Ingrese el nombre del soldado numero 3:
+    Klibre
+    Ingrese el nivel de vida del soldado numero 3:
+    65
+    
+    =====DATOS DE SOLDADOS=====
+    Soldado: Punchinelo
+    Nivel de vida: 12
+    
+    Soldado: Roger
+    Nivel de vida: 54
+    
+    Soldado: Klibre
+    Nivel de vida: 65
+
+\end{lstlisting}
+\section{Actividad 3: Rehacer la actividad 05 del laboratorio 01, pero con array de Objetos}
+\begin{itemize}
+    \item Ahora es mas simple aun, dado que en ese laboratorio trabajamos con Arreglo de Strings:
+\end{itemize}
+\begin{lstlisting}
+    String[] army1 = initializeArmy(); 
+    String[] army2 = initializeArmy();
+
+    System.out.println("╔════════════════════════════╗");
+    System.out.println("║    Welcome to the Battle   ║");
+    System.out.println("║       Simulator Game!      ║");
+    System.out.println("╚════════════════════════════╝");
+    
+    System.out.println("\n***** Prepare for battle! *****");
+
+    displayArmy(army1);
+    displayArmy(army2);
+
+    System.out.println(whoWins(army1, army2));
+\end{lstlisting}
+\begin{itemize}
+    \item Deberemos sustiruir los String[] por Soldado[]
+    \item Es un trabajo trivial que no cambia en nada la estructura del codigo.. pero aqui esta
+\end{itemize}
+\begin{lstlisting}
+  public static void main(String[] args){
+    Soldado[] army1 = initializeArmy(); 
+    Soldado[] army2 = initializeArmy();
+
+    System.out.println("╔════════════════════════════╗");
+    System.out.println("║    Welcome to the Battle   ║");
+    System.out.println("║       Simulator Game!      ║");
+    System.out.println("╚════════════════════════════╝");
+    
+    System.out.println("\n***** Prepare for battle! *****");
+
+    displayArmy(army1);
+    displayArmy(army2);
+
+    System.out.println(whoWins(army1, army2));
+
+  }
+\end{lstlisting}
+\begin{itemize}
+    \item Adicionalmente tambien tenemos que modificar los metodos que usa este codigo
+\end{itemize}
+\subsection{Ejecucion}
+\begin{itemize}
+    \item La ejecucion es exactamente la misma:
+\end{itemize}
+\begin{lstlisting}
+    Ingrese el nombre del soldado numero 1: Ricardo
+    Ingrese el nivel de vida del soldado numero 1: 54
+    
+    Ingrese el nombre del soldado numero 2: Potter
+    Ingrese el nivel de vida del soldado numero 2: 65
+    
+    Ingrese el nombre del soldado numero 3: Hilario
+    Ingrese el nivel de vida del soldado numero 3: 65
+    
+    =====DATOS DE SOLDADOS=====
+    Soldado: Ricardo
+    Nivel de vida: 54
+    
+    Soldado: Potter
+    Nivel de vida: 65
+    
+    Soldado: Hilario
+    Nivel de vida: 65
+\end{lstlisting}
+\section{Commits importantes (Actividad 2 y 3)}
+\begin{itemize}
+    \item Dada la naturaleza trivial del trabajo, todo se hizo en 2 commits
+\end{itemize}
+\begin{lstlisting}
+    commit ac2abb32f6f077e13f0202653e456ccbeacfee2e (HEAD -> main, origin/main)
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Sep 25 10:58:13 2023 -0500
+    
+        Actividad 3: hacer la actividad 5 del laboratorio 1 pero con arreglo de objetos
+    
+    commit ccd2d7c9d210b83aa4903a69d0eb6879a173ce52
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Sep 25 10:52:43 2023 -0500
+    
+        Actividad 2: hacer La actividad 4 del laboratorio 1 con arreglo de objetos
+\end{lstlisting}
+        
+	\section{\textcolor{red}{Rúbricas}}
+	
+	\subsection{\textcolor{red}{Entregable Informe}}
+	\begin{table}[H]
+		\caption{Tipo de Informe}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		\begin{tabular}{|p{3cm}|p{12cm}|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}}  \\
+			\hline 
+			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}   \\ 
+			\hline 
+			
+			
+		\end{tabular}
+	}
+	\end{table}
+	
+	\clearpage
+	
+	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
+	\begin{itemize}			
+		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
+		\item El alumno debe autocalificarse en la columna \textbf{Estudiante} de acuerdo a la siguiente tabla:
+	
+		\begin{table}[ht]
+			\caption{Niveles de desempeño}
+			\begin{center}
+			\begin{tabular}{ccccc}
+    			\hline
+    			 & \multicolumn{4}{c}{Nivel}\\
+    			\cline{1-5}
+    			\textbf{Puntos} & Insatisfactorio 25\%& En Proceso 50\% & Satisfactorio 75\% & Sobresaliente 100\%\\
+    			\textbf{2.0}&0.5&1.0&1.5&2.0\\
+    			\textbf{4.0}&1.0&2.0&3.0&4.0\\
+    		\hline
+			\end{tabular}
+		\end{center}
+	\end{table}	
+	
+	\end{itemize}
+	
+	\begin{table}[H]
+		\caption{Rúbrica para contenido del Informe y demostración}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		%\begin{center}
+		\begin{tabular}{|p{2.7cm}|p{7cm}|x{1.3cm}|p{1.2cm}|p{1.5cm}|p{1.1cm}|}
+			\hline
+    		\multicolumn{2}{|c|}{Contenido y demostración} & Puntos & Checklist & Estudiante & Profesor\\
+			\hline
+			\textbf{1. GitHub} & Hay enlace URL activo del directorio para el  laboratorio hacia su repositorio GitHub con código fuente terminado y fácil de revisar. &2 &X &2 & \\ 
+			\hline
+			\textbf{2. Commits} &  Hay capturas de pantalla de los commits más importantes con sus explicaciones detalladas. (El profesor puede preguntar para refrendar calificación). &4 &X &4 & \\ 
+			\hline 
+			\textbf{3. Código fuente} &  Hay porciones de código fuente importantes con numeración y explicaciones detalladas de sus funciones. &2 &X &2 & \\ 
+			\hline 
+			\textbf{4. Ejecución} & Se incluyen ejecuciones/pruebas del código fuente  explicadas gradualmente. &2 &X &2 & \\ 
+			\hline			
+			\textbf{5. Pregunta} & Se responde con completitud a la pregunta formulada en la tarea.  (El profesor puede preguntar para refrendar calificación).  &2 &X &1 & \\ 
+			\hline	
+			\textbf{6. Fechas} & Las fechas de modificación del código fuente estan dentro de los plazos de fecha de entrega establecidos. &2 &X &2 & \\ 
+			\hline 
+			\textbf{7. Ortografía} & El documento no muestra errores ortográficos. &2 &X &1 & \\ 
+			\hline 
+			\textbf{8. Madurez} & El Informe muestra de manera general una evolución de la madurez del código fuente,  explicaciones puntuales pero precisas y un acabado impecable.   (El profesor puede preguntar para refrendar calificación).  &4 &X &3 & \\ 
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Total}} &20 & &17 & \\ 
+			\hline
+		\end{tabular}
+		%\end{center}
+		%\label{tab:multicol}
+		}
+	\end{table}
+	
+\clearpage
+	
+%\clearpage
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+			
+\end{document}
