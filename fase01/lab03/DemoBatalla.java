@@ -28,6 +28,8 @@ public class DemoBatalla {
     }
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
+    System.out.println("Desordenando las naves:");
+    desordenar(misNaves);
     System.out.println("Mostrar naves por nombre, ingrese un nombre:");
     mostrarPorNombre(misNaves, sc.next());
     System.out.println("Mostrar naves por puntos, ingrese una cantidad:");
@@ -98,4 +100,22 @@ public class DemoBatalla {
   }
 //Crear un método que devuelva un nuevo arreglo de objetos con todos los objetos previamente ingresados
 //pero aleatoriamente desordenados
+  public static Nave[] desordenar(Nave[] flota){
+    Random random = new Random();
+    Nave[] nuevaFlota = new Nave[flota.length];
+    
+    for(int i = 0; i < flota.length; i++){
+      boolean ubicado = false;
+      while(!ubicado){
+        int numRandom = random.nextInt(flota.length);
+        if(nuevaFlota[numRandom] == null){
+          nuevaFlota[numRandom] = flota[i];
+          ubicado = true;
+          System.out.println("Nave " + i + " ahora ubicada en: " + numRandom);
+        }
+      }
+    }
+    return nuevaFlota;
+
+  }
 }
