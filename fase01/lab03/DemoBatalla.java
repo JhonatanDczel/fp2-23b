@@ -30,7 +30,8 @@ public class DemoBatalla {
     mostrarNaves(misNaves);
     System.out.println("Mostrar naves por nombre, ingrese un nombre:");
     mostrarPorNombre(misNaves, sc.next());
-    mostrarPorPuntos(misNaves);
+    System.out.println("Mostrar naves por puntos, ingrese una cantidad:");
+    mostrarPorPuntos(misNaves, sc.nextInt());
     System.out.println("\nNave con mayor número de puntos: " + mostrarMayorPuntos(misNaves));
   }
 //Método para mostrar todas las naves
@@ -53,16 +54,33 @@ public class DemoBatalla {
       if(n.getNombre().toLowerCase().equals(nombre)){
         System.out.println("Nave " + i + ":");
         mostrarNave(n);
+        System.out.println();
         i++;
       }
     }
-    if(i == 1)
+    if(i == 1){
       System.out.println("No se han encontrado naves con ese nombre");
+      System.out.println();
+    }
 
   }
 //Método para mostrar todas las naves con un número de puntos inferior o igual
 //al número de puntos que se pide por teclado
-  public static void mostrarPorPuntos(Nave [] flota){
+  public static void mostrarPorPuntos(Nave [] flota, int pts){
+    System.out.println();
+    int i = 1;
+    for(Nave n : flota){
+      if(n.getPuntos() <= pts){
+        System.out.println("Nave " + i + ":");
+        mostrarNave(n);
+        System.out.println();
+        i++;
+      }
+    }
+    if(i == 1){
+      System.out.println("No se han encontrado naves");
+      System.out.println();
+    }   
   }
 //Método que devuelve la Nave con mayor número de Puntos
   public static Nave mostrarMayorPuntos(Nave [] flota){
