@@ -1,7 +1,7 @@
 import java.util.*;
 public class DemoBatalla {
   public static void main(String [] args){
-    Nave [] misNaves = new Nave[10];
+    Nave [] misNaves = new Nave[3];
     Scanner sc = new Scanner(System.in);
     String nomb, col;
     int fil, punt;
@@ -10,7 +10,7 @@ public class DemoBatalla {
       System.out.println("Nave " + (i+1));
       System.out.print("Nombre: ");
       nomb = sc.next();
-      System.out.println("Fila ");
+      System.out.print("Fila: ");
       fil = sc.nextInt();
       System.out.print("Columna: ");
       col = sc.next();
@@ -24,22 +24,40 @@ public class DemoBatalla {
       misNaves[i].setColumna(col);
       misNaves[i].setEstado(est);
       misNaves[i].setPuntos(punt);
+      System.out.println();
     }
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
-    mostrarPorNombre(misNaves);
+    System.out.println("Mostrar naves por nombre, ingrese un nombre:");
+    mostrarPorNombre(misNaves, sc.next());
     mostrarPorPuntos(misNaves);
     System.out.println("\nNave con mayor número de puntos: " + mostrarMayorPuntos(misNaves));
   }
 //Método para mostrar todas las naves
   public static void mostrarNaves(Nave [] flota){
-    System.out.println("Mostrando las naves creadas: ")
+    System.out.println();
+    int i = 1;
     for(Nave n : flota){
-      System.out.println(n.getNombre());
+      System.out.println("Nave " + i + ":");
+      mostrarNave(n);
+      System.out.println();
+      i++;
     } 
   }
 //Método para mostrar todas las naves de un nombre que se pide por teclado
-  public static void mostrarPorNombre(Nave [] flota){
+  public static void mostrarPorNombre(Nave [] flota, String nombre){
+    System.out.println();
+    int i = 1;
+    for(Nave n : flota){
+      if(n.getNombre().equals(nombre)){
+        System.out.println("Nave " + i + ":");
+        mostrarNave(n);
+        i++;
+      }
+    }
+    if(i == 1)
+      System.out.println("No se han encontrado naves con ese nombre");
+
   }
 //Método para mostrar todas las naves con un número de puntos inferior o igual
 //al número de puntos que se pide por teclado
@@ -47,6 +65,12 @@ public class DemoBatalla {
   }
 //Método que devuelve la Nave con mayor número de Puntos
   public static Nave mostrarMayorPuntos(Nave [] flota){
+    return new Nave();
+  }
+  public static void mostrarNave(Nave nave){
+    System.out.println("Nombre: " + nave.getNombre());
+    System.out.println("Estado: " + nave.getEstado());
+    System.out.println("Puntos: " + nave.getPuntos());
   }
 //Crear un método que devuelva un nuevo arreglo de objetos con todos los objetos previamente ingresados
 //pero aleatoriamente desordenados
