@@ -84,7 +84,12 @@ public class DemoBatalla {
   }
 //Método que devuelve la Nave con mayor número de Puntos
   public static Nave mostrarMayorPuntos(Nave [] flota){
-    return new Nave();
+    Nave mayor = flota[0];
+    for(int i = 0; i < flota.length; i++){
+      if(flota[i].getPuntos() > mayor.getPuntos())
+        mayor = flota[i];
+    }
+    return mayor;
   }
   public static void mostrarNave(Nave nave){
     System.out.println("Nombre: " + nave.getNombre());
