@@ -33,10 +33,10 @@ public class DemoBatalla {
   }
 //Método para mostrar todas las naves
   public static void mostrarNaves(Nave [] flota){
-    for(int i = 0; i < flota.length; i++){
-      System.out.println("Nave numero " + i + ":");
-      System.out.println(flota[i].getNombre());
-    }
+    System.out.println("Mostrando las naves creadas: ")
+    for(Nave n : flota){
+      System.out.println(n.getNombre());
+    } 
   }
 //Método para mostrar todas las naves de un nombre que se pide por teclado
   public static void mostrarPorNombre(Nave [] flota){
