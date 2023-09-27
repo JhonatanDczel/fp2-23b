@@ -28,10 +28,9 @@ public class DemoBatalla {
     }
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
-    desordenar(misNaves);
-    mostrarPorNombre(misNaves);
-    mostrarPorPuntos(misNaves);
-    System.out.println("\nNave con mayor número de puntos: " + mostrarMayorPuntos(misNaves));
+    System.out.println("Ahora usaremos el algoritmo de ordenamiento burbuja.\nNaves ordenadas:\n");
+    ordenarPorPuntosBurbuja(misNaves);
+    mostrarNaves(misNaves);
   }
 //Método para mostrar todas las naves
   public static void mostrarNaves(Nave [] flota){
@@ -122,5 +121,18 @@ public class DemoBatalla {
         return i;
     }
     return -1;
+  }
+  public static void ordenarPorPuntosBurbuja(Nave[] flota){
+    for(int i = 0; i < flota.length - i; i++){
+      for(int j = 0; j < flota.length - 1 - i; j++){
+        if(flota[j].getPuntos() > flota[j + 1].getPuntos())
+          intercambiar(flota, j, j + 1);
+      }
+    }
+  }
+  public static void intercambiar(Nave[] flota, int i, int j){
+    Nave aux = flota[i];
+    flota[i] = flota [j];
+    flota[j] = aux;
   }
 }
