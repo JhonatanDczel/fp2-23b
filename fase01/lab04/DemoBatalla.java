@@ -28,8 +28,11 @@ public class DemoBatalla {
     }
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
-    System.out.println("Ahora usaremos el algoritmo de ordenamiento burbuja.\nNaves ordenadas:\n");
+    System.out.println("Ahora usaremos el algoritmo de ordenamiento burbuja, con respecto a Puntos.\nNaves ordenadas:\n");
     ordenarPorPuntosBurbuja(misNaves);
+    mostrarNaves(misNaves);
+    System.out.println("\nAhora usaremos el algoritmo de ordenamiento burbuja, con respecto a Nombres.\nNaves ordenadas:\n");
+    ordenarPorNombreSeleccion(misNaves);
     mostrarNaves(misNaves);
   }
 //Método para mostrar todas las naves
@@ -122,6 +125,7 @@ public class DemoBatalla {
     }
     return -1;
   }
+
   public static void ordenarPorPuntosBurbuja(Nave[] flota){
     for(int i = 0; i < flota.length - i; i++){
       for(int j = 0; j < flota.length - 1 - i; j++){
@@ -130,9 +134,22 @@ public class DemoBatalla {
       }
     }
   }
+
   public static void intercambiar(Nave[] flota, int i, int j){
     Nave aux = flota[i];
     flota[i] = flota [j];
     flota[j] = aux;
+  }
+
+  public static void ordenarPorNombreSeleccion(Nave[] flota){
+    for(int i = 0; i < flota.length - 1; i++){
+      for(int j = 0; j < flota.length - i - 1; j++){
+        if(esMayor(flota[j].getNombre(), flota[j + 1].getNombre()))
+            intercambiar(flota, j, j + 1);
+      }
+    }
+  }
+  public static boolean esMayor(String s1, String s2){
+    return s1.compareToIgnoreCase(s2) > 0;
   }
 }
