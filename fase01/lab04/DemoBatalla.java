@@ -29,6 +29,15 @@ public class DemoBatalla {
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
 
+
+    System.out.println("Busqueda lineal, inserte un nombre:");
+    int bL = busquedaLinealNombre(misNaves, sc.next());
+    mostrarNave(misNaves[bL]);
+
+    System.out.println("Busqueda binaria, inserte un nombre:");
+    int bB = busquedaBinariaNombre(misNaves, sc.next());
+    mostrarNave(misNaves[bB]);
+
     System.out.println("Ahora usaremos el algoritmo de ordenamiento burbuja, con respecto a Puntos.\nNaves ordenadas:\n");
     ordenarPorPuntosBurbuja(misNaves);
     mostrarNaves(misNaves);
@@ -171,6 +180,23 @@ public class DemoBatalla {
   }
   public static boolean esMayor(String s1, String s2){
     return s1.compareToIgnoreCase(s2) > 0;
+  }
+
+  public static int busquedaBinariaNombre(Nave[] flota, String s){
+    ordenarPorNombreSeleccion(flota);
+    int min = 0;
+    int max = flota.length - 1;
+    while(min <= max){
+      int medio = (max + min) / 2;
+      if(flota[medio].getNombre().equalsIgnoreCase(s))
+        return medio;
+      if(esMayor(s, flota[medio].getNombre()))
+        min = medio + 1;
+      else
+        max = medio - 1;
+
+    }
+    return - 1;
   }
   
 }
