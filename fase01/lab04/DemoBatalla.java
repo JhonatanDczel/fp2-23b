@@ -48,11 +48,18 @@ public class DemoBatalla {
     mostrarNaves(misNaves);
     desordenar(misNaves);
 
+    System.out.println("\nAhora usaremos el algoritmo de ordenamiento seleccion, con respecto a Puntos.\nNaves ordenadas:\n");
+    ordenarPorPuntosSeleccion(misNaves);
+    mostrarNaves(misNaves);
+    desordenar(misNaves);
+
     System.out.println("\nAhora usaremos el algoritmo de ordenamiento seleccion, con respecto a Nombres.\nNaves ordenadas:\n");
     ordenarPorNombreSeleccion(misNaves);
     mostrarNaves(misNaves);
     desordenar(misNaves);
+
   }
+
 //Método para mostrar todas las naves
   public static void mostrarNaves(Nave [] flota){
     System.out.println();
@@ -178,6 +185,18 @@ public class DemoBatalla {
       intercambiar(flota, i, min);
     }
   }
+
+  public static void ordenarPorPuntosSeleccion(Nave[] flota){
+    for(int i = 0; i < flota.length - 1; i++){
+      int min = i;
+      for(int j = i + 1; j < flota.length; j++){
+        if(flota[j].getPuntos() < flota[min].getPuntos())
+          min = j;
+      }
+      intercambiar(flota, i, min);
+    }
+  }
+
   public static boolean esMayor(String s1, String s2){
     return s1.compareToIgnoreCase(s2) > 0;
   }
