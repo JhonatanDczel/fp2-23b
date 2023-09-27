@@ -28,12 +28,21 @@ public class DemoBatalla {
     }
     System.out.println("\nNaves creadas:");
     mostrarNaves(misNaves);
+
     System.out.println("Ahora usaremos el algoritmo de ordenamiento burbuja, con respecto a Puntos.\nNaves ordenadas:\n");
     ordenarPorPuntosBurbuja(misNaves);
     mostrarNaves(misNaves);
+    desordenar(misNaves);
+
     System.out.println("\nAhora usaremos el algoritmo de ordenamiento burbuja, con respecto a Nombres.\nNaves ordenadas:\n");
+    ordenarPorNombreBurbuja(misNaves);
+    mostrarNaves(misNaves);
+    desordenar(misNaves);
+
+    System.out.println("\nAhora usaremos el algoritmo de ordenamiento seleccion, con respecto a Nombres.\nNaves ordenadas:\n");
     ordenarPorNombreSeleccion(misNaves);
     mostrarNaves(misNaves);
+    desordenar(misNaves);
   }
 //Método para mostrar todas las naves
   public static void mostrarNaves(Nave [] flota){
@@ -130,6 +139,15 @@ public class DemoBatalla {
     for(int i = 0; i < flota.length - i; i++){
       for(int j = 0; j < flota.length - 1 - i; j++){
         if(flota[j].getPuntos() > flota[j + 1].getPuntos())
+          intercambiar(flota, j, j + 1);
+      }
+    }
+  }
+
+  public static void ordenarPorNombreBurbuja(Nave[] flota){
+    for(int i = 0; i < flota.length - 1; i++){
+      for(int j = 0; j < flota.length - 1 - i; j++){
+        if(esMayor(flota[j].getNombre(), flota[j + 1].getNombre()))
           intercambiar(flota, j, j + 1);
       }
     }
