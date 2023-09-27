@@ -240,15 +240,15 @@ public class DemoBatalla {
     }
   }
   
-  /*public static void ordenarPorNombreInsercion(Nave[] flota){
+  public static void ordenarPorNombreInsercion(Nave[] flota){
     for(int i = 1; i < flota.length; i ++){
       Nave actual = flota[i];
       int j = i - 1;
-      while(j > 0 && esMayor(flota[j].getNombre(), actual.getNombre())){
+      while(j >= 0 && esMayor(flota[j].getNombre(), actual.getNombre())){
         flota[j + 1] = flota[j];
         j--;
       }
       flota[j + 1] = actual;
     }
-  }*/
+  }
 }
