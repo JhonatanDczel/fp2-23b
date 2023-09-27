@@ -143,13 +143,16 @@ public class DemoBatalla {
 
   public static void ordenarPorNombreSeleccion(Nave[] flota){
     for(int i = 0; i < flota.length - 1; i++){
-      for(int j = 0; j < flota.length - i - 1; j++){
-        if(esMayor(flota[j].getNombre(), flota[j + 1].getNombre()))
-            intercambiar(flota, j, j + 1);
+      int min = i;
+      for(int j = i + 1; j < flota.length; j++){
+        if(esMayor(flota[min].getNombre(), flota[j].getNombre()))
+          min = j;
       }
+      intercambiar(flota, i, min);
     }
   }
   public static boolean esMayor(String s1, String s2){
     return s1.compareToIgnoreCase(s2) > 0;
   }
+  
 }
