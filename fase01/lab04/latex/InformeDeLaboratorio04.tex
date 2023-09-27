@@ -1,0 +1,450 @@
+%USEPACKAGES
+\input{head/pkgs}
+
+%Lab data
+\input{head/labData}
+
+%Format Document
+\input{head/format}
+
+% Code Format
+\input{head/codeFormat}
+
+\begin{document}
+%Data table
+\input{head/dataTable}
+
+
+
+\section{Actividad 1}
+\subsection{Para las pruebas de ejecucion}
+\begin{itemize}
+    \item Para la prueba de ejecucion de cada uno de los metodos que desarrollaremos, vamos a usar las siguientes naves:
+\end{itemize}
+\begin{lstlisting}
+    Naves creadas:
+    
+    Nave 1:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+    Nave 2:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 3:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+\end{lstlisting}
+
+\section{Completando los metodos faltantes}
+\begin{itemize}
+    \item La acitivdad del laboratorio 04 nos pide crear los siguientes metodos:
+\end{itemize}
+\subsection{Busqueda Lineal}
+\begin{itemize}
+    \item La busqueda lineal es una busqueda simple, en la que se recorre todo el arreglo en busca de una informacion dada
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo de busqueda lineal}]
+      public static int busquedaLinealNombre(Nave[] flota, String s){
+        for(int i = 0; i < flota.length; i++){
+          if(flota[i].getNombre().equals(s))
+            return i;
+        }
+        return -1;
+      } 
+\end{lstlisting}
+
+\begin{itemize}
+    \item El metodo devuelve la posicion del elemento en caso encontrarlo
+    \item Y de lo contrario devuelve -1 lo que indica que el elemento no se encontro
+\end{itemize}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Busqueda lineal, inserte un nombre:
+    Bannia
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+    
+\end{lstlisting}
+
+\subsection{Ordenamiento por nombre: burbuja}
+\begin{itemize}
+    \item Ahora veremos como implementar el bubble sort para ordenar las naves con respecto a sus nombres
+\end{itemize}
+    \begin{lstlisting}[language=java, caption={Metodo de ordenamiento burbuja por nombre}]
+      public static void ordenarPorNombreBurbuja(Nave[] flota){
+        for(int i = 0; i < flota.length - 1; i++){
+          for(int j = 0; j < flota.length - 1 - i; j++){
+            if(esMayor(flota[j].getNombre(), flota[j + 1].getNombre()))
+              intercambiar(flota, j, j + 1);
+          }
+        }
+      }
+\end{lstlisting}
+\begin{itemize}
+    \item Como vemos, estamos utilizando un metodo que compara dos strings y devuelve cual es mayor lexicograficamente:
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Sub metodo para comparar dos strings}]
+  public static boolean esMayor(String s1, String s2){
+    return s1.compareToIgnoreCase(s2) > 0;
+  }
+\end{lstlisting}
+\begin{itemize}
+    \item Ahora tenemos una manera de saber el orden de precedencia entre strings
+    \item Adicionalmente a esto necesitamos otro metodo para intercambiar elementos de un arreglo de naves:
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Sub metodo para intercambiar dos elementos}]
+      public static void intercambiar(Nave[] flota, int i, int j){
+        Nave aux = flota[i];
+        flota[i] = flota [j];
+        flota[j] = aux;
+      }
+\end{lstlisting}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento burbuja, con respecto a Nombres.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+    
+    Nave 3:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+\end{lstlisting}
+\subsection{Ordenamiento por puntos: burbuja}
+\begin{itemize}
+    \item Ahora veremos como ordenar los elementos de un arreglo respecto a sus puntos usando el algoritmo burbuja
+    \item Hacer esto es muy similar al ordenamiento por nombre, unicamente cambiando getNombre por getPuntos:
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para ordenar por puntos}]
+      public static void ordenarPorPuntosBurbuja(Nave[] flota){
+        for(int i = 0; i < flota.length - i; i++){
+          for(int j = 0; j < flota.length - 1 - i; j++){
+            if(flota[j].getPuntos() > flota[j + 1].getPuntos())
+              intercambiar(flota, j, j + 1);
+          }
+        }
+      }
+\end{lstlisting}
+\begin{itemize}
+    \item Ahora en lugar de comparar dos strings, directamente se comparan los valores numericos de sus puntos
+\end{itemize}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento burbuja, con respecto a Puntos.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+    Nave 3:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+     
+\end{lstlisting}
+
+\subsection{Ordenamiento por nombre: seleccion}
+\begin{itemize}
+    \item Ahora veremos el otro algoritmo de ordenamiento, el de seleccion
+    \item La estructura basica del algoritmo, es ir seleccionando de izquierda a derecha los elementos mas chicos para ordenar el arreglo
+    \item Su implementacion para ordenar una serie de naves lexicograficamente es la siguiente:
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para ordenar por nombre}]
+      public static void ordenarPorNombreSeleccion(Nave[] flota){
+        for(int i = 0; i < flota.length - 1; i++){
+          int min = i;
+          for(int j = i + 1; j < flota.length; j++){
+            if(esMayor(flota[min].getNombre(), flota[j].getNombre()))
+              min = j;
+          }
+          intercambiar(flota, i, min);
+        }
+      }
+\end{lstlisting}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento seleccion, con respecto a Nombres.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+    
+    Nave 3:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+\end{lstlisting}
+
+
+\subsection{Ordenamiento por puntos: seleccion}
+\begin{itemize}
+    \item Ahora usaremos este mismo algoritmo para ordenar el array con respecto a los puntos
+    \item Es la misma estructura y el mismo sentido, en lugar de unsar getNombre, usamos getPuntos
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para ordenar por puntos}]
+      public static void ordenarPorPuntosSeleccion(Nave[] flota){
+    for(int i = 0; i < flota.length - 1; i++){
+      int min = i;
+      for(int j = i + 1; j < flota.length; j++){
+        if(flota[j].getPuntos() < flota[min].getPuntos())
+          min = j;
+      }
+      intercambiar(flota, i, min);
+    }
+  }
+\end{lstlisting}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento seleccion, con respecto a Puntos.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+    Nave 3:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+      
+\end{lstlisting}
+
+\subsection{Ordenamiento por nombre: insercion}
+\begin{itemize}
+    \item Ahora veremos el algoritmo de insercion
+    \item La idea cae en como ordenamos nuestras cartas cuando tenemos una baraja, agarramos la carta y la "insertamos" en su lugar
+    \item Vamos a hacer esto pero con codigo, empezamos:
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para ordenar por nombre}]
+      public static void ordenarPorNombreInsercion(Nave[] flota){
+    for(int i = 1; i < flota.length; i ++){
+      Nave actual = flota[i];
+      int j = i - 1;
+      while(j >= 0 && esMayor(flota[j].getNombre(), actual.getNombre())){
+        flota[j + 1] = flota[j];
+        j--;
+      }
+      flota[j + 1] = actual;
+    }
+  }
+\end{lstlisting}
+\begin{itemize}
+    \item Estamos usando una variable para almacenar nuestro elemento a ubicar
+    \item Luego recorremos tantos elementos a la derecha como elementos menores a nuestro pivote hayan
+    \item Y finalmente colocamos nuestro pivote en la posicion que queda libre
+\end{itemize}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento seleccion, con respecto a Nombres.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89
+    
+    Nave 3:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+      
+\end{lstlisting}
+
+
+
+
+
+\subsection{Ordenamiento por puntos: insercion}
+\begin{itemize}
+    \item Ahora usaremos este mismo algoritmo para ordenar el array con respecto a los puntos
+    \item Es la misma estructura y el mismo sentido, en lugar de unsar getNombre, usamos getPuntos
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para ordenar por puntos}]
+      public static void ordenarPorPuntosInsercion(Nave[] flota){
+    for(int i = 1; i < flota.length; i++){
+      Nave actual = flota[i];
+      int j = i - 1;
+      while(j >= 0 && flota[j].getPuntos() > actual.getPuntos()){
+        flota[j + 1] = flota[j];
+        j--;
+      }
+      flota[j + 1] = actual;
+    }
+  }
+\end{lstlisting}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Ahora usaremos el algoritmo de ordenamiento insercion, con respecto a Puntos.
+    Naves ordenadas:
+    
+    
+    Nave 1:
+    Nombre: Alvaro
+    Estado: true
+    Puntos: 6
+    
+    Nave 2:
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+    
+    Nave 3:
+    Nombre: Bannia
+    Estado: true
+    Puntos: 89      
+\end{lstlisting}
+
+
+
+\subsection{Busqueda binaria}
+\begin{itemize}
+    \item La busqueda binaria es una forma mas eficiente de buscar un elemento en una lista
+    \item Como pre requisito, es que nuestro arreglo tiene que estar ordenado alfabeticamente, para eso usamos cualquier algoritmo de ordenamiento por nombre visto anteriormente
+    \item El tiempo de complejidad es o(log n), lo que es muy bueno
+\end{itemize}
+\begin{lstlisting}[language=java, caption={Metodo para hacer una busqueda binaria}]
+      public static int busquedaBinariaNombre(Nave[] flota, String s){
+    ordenarPorNombreSeleccion(flota);
+    int min = 0;
+    int max = flota.length - 1;
+    while(min <= max){
+      int medio = (max + min) / 2;
+      if(flota[medio].getNombre().equalsIgnoreCase(s))
+        return medio;
+      if(esMayor(s, flota[medio].getNombre()))
+        min = medio + 1;
+      else
+        max = medio - 1;
+    }
+    return - 1;
+  }
+\end{lstlisting}
+\subsubsection{Ejecucion}
+\begin{itemize}
+    \item Ahora veremos la prueba del metodo:
+\end{itemize}
+    \begin{lstlisting}[language=bash, caption={Prueba del metodo}]
+    Busqueda binaria, inserte un nombre:
+    cesar
+    Nombre: cesar
+    Estado: true
+    Puntos: 23
+\end{lstlisting}
+
+
+
+\section{Commits importantes}
+\begin{itemize}
+    \item Ahora veremos el registro de los commits principales:
+\end{itemize}
+\begin{lstlisting}
+
+commit 9b1f5460554796ac356fd9dcae4fc20bb3d3a123
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:46:26 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento de Puntos por insercion
+
+commit a68dcb2c45cf068ed3fdf3733bfd3113f16abe6c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:18:23 2023 -0500
+
+    Actividad 1: Implementacion del algoritmo de ordenamiento de puntos por seleccion
+
+commit 18c3176724a4529cf0e77038215cdf5e180088ae
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:07:19 2023 -0500
+
+    Actividad 1: Implementacion del metodo de busqueda binaria por nombre
+
+commit 0db1011f08fff2f98effb4123c5d2136ea68879d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Tue Sep 26 23:54:17 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento por puntos usando el algoritmo burbuja
+
+\end{lstlisting}
+\begin{itemize}
+    \item Cada commit representa el uso de un algoritmo diferente
+    \item Esta el algoritmo burbuja, insercion y seleccion, asi como la busqueda binaria
+\end{itemize}
+%Rubricas de evaluacion
+\include{foot/rubricas}	
+
+\clearpage
+	
+%\clearpage
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+			
+\end{document}
