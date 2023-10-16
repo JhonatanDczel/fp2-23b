@@ -38,6 +38,7 @@ public class VideoJuego{
 
     for(int i = 0; i < randNum; i++){
       army[i] = new Soldado("Soldado " + (i + 1));
+      army[i].setLife(rand.nextInt(5) + 1);
     }
     return army;
   }
