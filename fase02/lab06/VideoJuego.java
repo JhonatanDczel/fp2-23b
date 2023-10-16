@@ -38,8 +38,13 @@ public class VideoJuego{
     System.out.println("Ranking de soldados por vida:");
     bubbleSortLife(totales);
     displayArmy(totales, "");
+    
+    whoWins(army1, army2);
+
     makeGBoard();
     displayBoard();
+
+
 
   }
 
@@ -118,16 +123,18 @@ public class VideoJuego{
   public static boolean isEmpty(int column, int row){
     return board.get(row).get(column) == null;
   }
-  public static String whoWins(Soldado[] army1, Soldado[] army2){
+  public static void whoWins(Soldado[] army1, Soldado[] army2){
+    System.out.println("La metrica tomada para el ganador es: cantidad");
     if (army1.length > army2.length)
-      return "\n***** Army 1 is the winner! *****";
-
-    if (army2.length > army1.length)
-      return "\n***** Army 2 is the winner! *****";
-
-    return "\n***** It's a tie. No clear winner. *****";
-  }
+      System.out.println("\n***** Army 1 is the winner! *****");
+    else{
+      if (army2.length > army1.length)
+        System.out.println("\n***** Army 2 is the winner! *****");
+      else
+        System.out.println("\n***** It's a tie. No clear winner. *****");
   
+    }
+  }
   public static void insertionSortLife(Soldado[] army){
     for(int i = 1; i < army.length; i++){
       Soldado actual = army[i];
