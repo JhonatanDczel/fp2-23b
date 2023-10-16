@@ -17,6 +17,8 @@ public class VideoJuego{
     displayArmy(army1);
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
+    bubbleSortLife(army1);
+    displayArmy(army1);
     makeGBoard();
     displayBoard();
 
@@ -106,9 +108,20 @@ public class VideoJuego{
 
     return "\n***** It's a tie. No clear winner. *****";
   }
+  
+  public static void insertionSortLife(Soldado[] army){
+    for(int i = 1; i < army.length; i++){
+      Soldado actual = army[i];
+      int j = i - 1;
+      while(j >= 0 && army[j].getLife() > actual.getLife()){
+        army[j + 1] = army[j];
+        j--;
+      }
+      army[j + 1] = actual;
+    }
+  }
 
-
-  public static void ordenarPorVida(Soldado[] army){
+  public static void bubbleSortLife(Soldado[] army){
     for(int i = 0; i < army.length - i; i++){
       for(int j = 0; j < army.length - 1 - i; j++){
         if(army[j].getLife() > army[j + 1].getLife())
