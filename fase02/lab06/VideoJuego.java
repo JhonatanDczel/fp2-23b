@@ -24,20 +24,28 @@ public class VideoJuego{
     Soldado[] army1 = initializeArmy(1); 
     Soldado[] army2 = initializeArmy(2); 
 
-    displayArmy(army1);
-    displayArmy(army2);
+    displayArmy(army1, "Ejercito 1");
+    displayArmy(army2, "Ejercito 2");
+
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
-    bubbleSortLife(army1);
-    displayArmy(army1);
+
+    Soldado[] totales = new Soldado[army1.length + army2.length];
+
+    System.arraycopy(army1, 0, totales, 0, army1.length);
+    System.arraycopy(army2, 0, totales, army1.length, army2.length);
+
+    System.out.println("Ranking de soldados por vida:");
+    bubbleSortLife(totales);
+    displayArmy(totales, "");
     makeGBoard();
     displayBoard();
 
   }
 
 
-  public static void displayArmy(Soldado[] army){
-    System.out.println("\n===== Army Soldiers =====");
+  public static void displayArmy(Soldado[] army, String str){
+    System.out.println("\n===== " + str + " =====");
     for(Soldado soldier : army){
       displaySoldier(soldier);
     }
