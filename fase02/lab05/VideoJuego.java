@@ -9,22 +9,12 @@ public class VideoJuego{
   
   public static Soldado[][] board = new Soldado[10][10];
   public static Picture gBoard;
+  public static Soldado[] maxLife;
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
-    Soldado[] army2 = initializeArmy();
-
-    System.out.println("╔════════════════════════════╗");
-    System.out.println("║    Welcome to the Battle   ║");
-    System.out.println("║       Simulator Game!      ║");
-    System.out.println("╚════════════════════════════╝");
-    
-    System.out.println("\n***** Prepare for battle! *****");
-
-    displayArmy(army1);
-    displayArmy(army2);
-
-    System.out.println(whoWins(army1, army2));
+    makeGBoard();
+    displayBoard();
 
   }
 
@@ -63,6 +53,7 @@ public class VideoJuego{
   }
 
   public static Soldado[] initializeArmy(){
+    int promLife;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
     Soldado[] army = new Soldado[randNum];
@@ -70,13 +61,11 @@ public class VideoJuego{
     for(int i = 0; i < randNum; i++){
       army[i] = new Soldado("Soldado " + (i + 1));
       army[i].setLife(rand.nextInt(5) + 1);
+      promLife += army[i].getLife();
       genColumnRow(army[i]);
     }
+    promLife = promLife / army.length;
     return army;
-  }
-
-  public static void printBoard(){
-
   }
 
   public static void genColumnRow(Soldado s){
