@@ -8,6 +8,7 @@ import graphics.*;
 public class VideoJuego{
   
   public static Soldado[][] board = new Soldado[10][10];
+  public static Picture gBoard;
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
@@ -33,6 +34,18 @@ public class VideoJuego{
     for(Soldado soldier : army){
       System.out.println(" " + soldier.getName());
     }
+  }
+  
+  public static void initializeGBoard(){
+    this.gBoard = Picture.casilleroBlanco();
+    for(int i = 0; i < 10; i++){
+      Picture fila;
+      for(int j = 0; j < 10; j++){
+        if(i == 0 && j == 0)
+          continue;
+        gBoard.alLado(Picture.casilleroBlanco());
+      }
+    } 
   }
 
   public static Soldado[] initializeArmy(){
