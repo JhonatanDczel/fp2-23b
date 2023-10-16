@@ -10,6 +10,7 @@ public class VideoJuego{
   public static Soldado[][] board = new Soldado[10][10];
   public static Picture gBoard;
   public static Soldado[] maxLife;
+  public static int promedio = 0;
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
@@ -53,7 +54,7 @@ public class VideoJuego{
   }
 
   public static Soldado[] initializeArmy(){
-    int promLife;
+    int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
     Soldado[] army = new Soldado[randNum];
@@ -65,6 +66,7 @@ public class VideoJuego{
       genColumnRow(army[i]);
     }
     promLife = promLife / army.length;
+    promedio = (promLife + promedio) / 2;
     return army;
   }
 
