@@ -15,6 +15,8 @@ public class VideoJuego{
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
     displayArmy(army1);
+    System.out.println("Soldado con maxima vida:");
+    displaySoldier(maxLife);
     makeGBoard();
     displayBoard();
 
