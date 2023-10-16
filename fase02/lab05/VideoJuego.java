@@ -36,15 +36,24 @@ public class VideoJuego{
     }
   }
   
-  public static void initializeGBoard(){
-    this.gBoard = Picture.casilleroBlanco();
+  public static void makeGBoard(){
     for(int i = 0; i < 10; i++){
-      Picture fila;
+      Picture fila = null;
       for(int j = 0; j < 10; j++){
-        if(i == 0 && j == 0)
+        Picture c = Picture.casilleroBlanco();
+        if(board[i][j] != null)
+          c = Picture.soldier().superponer(c);
+        if(j == 0){
+          fila = c;
           continue;
-        gBoard.alLado(Picture.casilleroBlanco());
+        }
+        fila = fila.alLado(c);
       }
+      if(i == 0){
+        gBoard = fila;
+        continue;
+      }
+      gBoard = gBoard.encima(fila);
     } 
   }
 
