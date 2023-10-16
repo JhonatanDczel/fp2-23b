@@ -107,4 +107,18 @@ public class VideoJuego{
     return "\n***** It's a tie. No clear winner. *****";
   }
 
+
+  public static void ordenarPorVida(Soldado[] army){
+    for(int i = 0; i < army.length - i; i++){
+      for(int j = 0; j < army.length - 1 - i; j++){
+        if(army[j].getLife() > army[j + 1].getLife())
+          intercambiar(army, j, j + 1);
+      }
+    }
+  }
+  public static void intercambiar(Soldado[] army, int i, int j){
+    Soldado aux = army[i];
+    army[i] = army[j];
+    army[j] = aux;
+  }
 }
