@@ -3,10 +3,11 @@
 // Tiempo: 30 minutos
 import java.util.*;
 
-public String[][] tablero = new String[10][10];
 
 public class VideoJuego{
-
+  
+  public static String[][] tablero = new String[10][10];
+  
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
     Soldado[] army2 = initializeArmy();
@@ -47,14 +48,15 @@ public class VideoJuego{
   }
 
   public static void genColumnRow(Soldado s){
+    Random rand = new Random();
     int column;
     int row;
     do {
       column = rand.nextInt(10) + 1;
       row = rand.nextInt(10) + 1;
-    } while(!isEmpty(column, row))
-    s.setColumn = column;
-    s.setRow = row;
+    } while(!isEmpty(column, row));
+    s.setColumn(column);
+    s.setRow(row);
   }
   public static boolean isEmpty(int column, int row){
     return tablero[row][column] == null;
