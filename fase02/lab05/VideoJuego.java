@@ -2,11 +2,12 @@
 // Colaboro: --------
 // Tiempo: 30 minutos
 import java.util.*;
+import graphics.*;
 
 
 public class VideoJuego{
   
-  public static String[][] tablero = new String[10][10];
+  public static String[][] board = new String[10][10];
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
@@ -47,6 +48,10 @@ public class VideoJuego{
     return army;
   }
 
+  public static void printBoard(){
+
+  }
+
   public static void genColumnRow(Soldado s){
     Random rand = new Random();
     int column;
@@ -57,9 +62,10 @@ public class VideoJuego{
     } while(!isEmpty(column, row));
     s.setColumn(column);
     s.setRow(row);
+    board[row][column] = s;
   }
   public static boolean isEmpty(int column, int row){
-    return tablero[row][column] == null;
+    return board[row][column] == null;
   }
   public static String whoWins(Soldado[] army1, Soldado[] army2){
     if (army1.length > army2.length)
