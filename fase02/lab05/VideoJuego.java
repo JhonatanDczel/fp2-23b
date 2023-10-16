@@ -14,6 +14,7 @@ public class VideoJuego{
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
+    displayArmy(army1);
     makeGBoard();
     displayBoard();
 
@@ -23,10 +24,17 @@ public class VideoJuego{
   public static void displayArmy(Soldado[] army){
     System.out.println("\n===== Army Soldiers =====");
     for(Soldado soldier : army){
-      System.out.println(" " + soldier.getName());
+      displaySoldier(soldier);
     }
   }
 
+  public static void displaySoldier(Soldado s){
+    System.out.println(" " + s.getName() + ":");
+    System.out.println("  Nivel de vida: " + s.getLife());
+    System.out.println("  Fila: " + (s.getRow() + 1));
+    System.out.println("  Columna: " + (s.getColumn() + 1));
+    System.out.print("\n");
+  }
   public static void displayBoard(){
     Graphics g = new Graphics(gBoard);
     g.print();
