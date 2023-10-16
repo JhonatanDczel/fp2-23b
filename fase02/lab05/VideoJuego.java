@@ -7,7 +7,7 @@ import graphics.*;
 
 public class VideoJuego{
   
-  public static String[][] board = new String[10][10];
+  public static Soldado[][] board = new Soldado[10][10];
   
   public static void main(String[] args){
     Soldado[] army1 = initializeArmy(); 
@@ -57,8 +57,8 @@ public class VideoJuego{
     int column;
     int row;
     do {
-      column = rand.nextInt(10) + 1;
-      row = rand.nextInt(10) + 1;
+      column = rand.nextInt(10);
+      row = rand.nextInt(10);
     } while(!isEmpty(column, row));
     s.setColumn(column);
     s.setRow(row);
