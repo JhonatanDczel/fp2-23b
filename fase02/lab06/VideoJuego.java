@@ -21,8 +21,11 @@ public class VideoJuego{
       board.add(fila);
     }
 
-    Soldado[] army1 = initializeArmy(); 
+    Soldado[] army1 = initializeArmy(1); 
+    Soldado[] army2 = initializeArmy(2); 
+
     displayArmy(army1);
+    displayArmy(army2);
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
     bubbleSortLife(army1);
@@ -73,14 +76,14 @@ public class VideoJuego{
     } 
   }
 
-  public static Soldado[] initializeArmy(){
+  public static Soldado[] initializeArmy(int n){
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
     Soldado[] army = new Soldado[randNum];
 
     for(int i = 0; i < randNum; i++){
-      army[i] = new Soldado("Soldado " + (i + 1));
+      army[i] = new Soldado("Soldado " + n + "x" + (i + 1));
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
