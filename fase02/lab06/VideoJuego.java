@@ -21,8 +21,8 @@ public class VideoJuego{
       board.add(fila);
     }
 
-    Soldado[] army1 = initializeArmy(1); 
-    Soldado[] army2 = initializeArmy(2); 
+    Soldado[] army1 = initializeArmy(1,true); 
+    Soldado[] army2 = initializeArmy(2, false); 
 
     displayArmy(army1, "Ejercito 1");
     displayArmy(army2, "Ejercito 2");
@@ -43,7 +43,6 @@ public class VideoJuego{
 
     makeGBoard();
     displayBoard();
-
 
 
   }
@@ -73,8 +72,12 @@ public class VideoJuego{
       Picture fila = null;
       for(int j = 0; j < 10; j++){
         Picture c = Picture.casilleroBlanco();
-        if(board.get(i).get(j) != null)
-          c = Picture.soldier().superponer(c);
+        if(board.get(i).get(j) != null){
+          Picture sold = Picture.soldier();
+          if(board.get(i).get(j).getNegro())
+            sold = sold.invertir();
+          c = sold.superponer(c);
+        }
         if(j == 0){
           fila = c;
           continue;
@@ -89,7 +92,7 @@ public class VideoJuego{
     } 
   }
 
-  public static Soldado[] initializeArmy(int n){
+  public static Soldado[] initializeArmy(int n, boolean negro){
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
@@ -97,6 +100,8 @@ public class VideoJuego{
 
     for(int i = 0; i < randNum; i++){
       army[i] = new Soldado("Soldado " + n + "x" + (i + 1));
+      if(negro)
+        army[i].setNegro(true);
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
