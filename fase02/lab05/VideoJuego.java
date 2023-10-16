@@ -35,6 +35,11 @@ public class VideoJuego{
       System.out.println(" " + soldier.getName());
     }
   }
+
+  public static void displayBoard(){
+    Graphics g = new Graphics(gBoard);
+    g.print();
+  }
   
   public static void makeGBoard(){
     for(int i = 0; i < 10; i++){
