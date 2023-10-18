@@ -26,7 +26,7 @@ public class Soldado{
 
   //SECCION DE GETERS
 
-  public boolean getNegro(){
+  public boolean isNegro(){
     return this.negro;
   }
   public String getName(){
