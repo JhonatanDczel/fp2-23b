@@ -7,49 +7,26 @@ import graphics.*;
 
 public class VideoJuego{
   
-  public static ArrayList<ArrayList<Soldado>> board = new ArrayList<>(10);
+  public static Soldado[][] board = new Soldado[10][10];
   public static Picture gBoard;
   public static Soldado maxLife = new Soldado("sold");
   public static int promedio = 0;
   
   public static void main(String[] args){
-    for (int i = 0; i < 10; i++) {
-      ArrayList<Soldado> fila = new ArrayList<>(10);
-      for (int j = 0; j < 10; j++) {
-        fila.add(null);
-      }
-      board.add(fila);
-    }
-
-    Soldado[] army1 = initializeArmy(1,true); 
-    Soldado[] army2 = initializeArmy(2, false); 
-
-    displayArmy(army1, "Ejercito 1");
-    displayArmy(army2, "Ejercito 2");
-
+    Soldado[] army1 = initializeArmy(); 
+    displayArmy(army1);
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
-
-    Soldado[] totales = new Soldado[army1.length + army2.length];
-
-    System.arraycopy(army1, 0, totales, 0, army1.length);
-    System.arraycopy(army2, 0, totales, army1.length, army2.length);
-
-    System.out.println("Ranking de soldados por vida:");
-    bubbleSortLife(totales);
-    displayArmy(totales, "");
-    
-    whoWins(army1, army2);
-
+    bubbleSortLife(army1);
+    displayArmy(army1);
     makeGBoard();
     displayBoard();
-
 
   }
 
 
-  public static void displayArmy(Soldado[] army, String str){
-    System.out.println("\n===== " + str + " =====");
+  public static void displayArmy(Soldado[] army){
+    System.out.println("\n===== Army Soldiers =====");
     for(Soldado soldier : army){
       displaySoldier(soldier);
     }
@@ -72,12 +49,8 @@ public class VideoJuego{
       Picture fila = null;
       for(int j = 0; j < 10; j++){
         Picture c = Picture.casilleroBlanco();
-        if(board.get(i).get(j) != null){
-          Picture sold = Picture.soldier();
-          if(board.get(i).get(j).getNegro())
-            sold = sold.invertir();
-          c = sold.superponer(c);
-        }
+        if(board[i][j] != null)
+          c = Picture.soldier().superponer(c);
         if(j == 0){
           fila = c;
           continue;
@@ -92,16 +65,14 @@ public class VideoJuego{
     } 
   }
 
-  public static Soldado[] initializeArmy(int n, boolean negro){
+  public static Soldado[] initializeArmy(){
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
     Soldado[] army = new Soldado[randNum];
 
     for(int i = 0; i < randNum; i++){
-      army[i] = new Soldado("Soldado " + n + "x" + (i + 1));
-      if(negro)
-        army[i].setNegro(true);
+      army[i] = new Soldado("Soldado " + (i + 1));
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
@@ -123,23 +94,21 @@ public class VideoJuego{
     } while(!isEmpty(column, row));
     s.setColumn(column);
     s.setRow(row);
-    board.get(row).set(column, s);
+    board[row][column] = s;
   }
   public static boolean isEmpty(int column, int row){
-    return board.get(row).get(column) == null;
+    return board[row][column] == null;
   }
-  public static void whoWins(Soldado[] army1, Soldado[] army2){
-    System.out.println("La metrica tomada para el ganador es: cantidad");
+  public static String whoWins(Soldado[] army1, Soldado[] army2){
     if (army1.length > army2.length)
-      System.out.println("\n***** Army 1 is the winner! *****");
-    else{
-      if (army2.length > army1.length)
-        System.out.println("\n***** Army 2 is the winner! *****");
-      else
-        System.out.println("\n***** It's a tie. No clear winner. *****");
-  
-    }
+      return "\n***** Army 1 is the winner! *****";
+
+    if (army2.length > army1.length)
+      return "\n***** Army 2 is the winner! *****";
+
+    return "\n***** It's a tie. No clear winner. *****";
   }
+  
   public static void insertionSortLife(Soldado[] army){
     for(int i = 1; i < army.length; i++){
       Soldado actual = army[i];
