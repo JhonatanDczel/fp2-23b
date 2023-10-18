@@ -67,7 +67,7 @@ public class VideoJuego{
     } 
   }
 
-  public static Soldado[] initializeArmy(int n){
+  public static Soldado[] initializeArmy(int n, boolean negro){
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
@@ -75,6 +75,8 @@ public class VideoJuego{
 
     for(int i = 0; i < randNum; i++){
       army[i] = new Soldado("Soldado " + n + "x" + i);
+      if(negro)
+        army[i].setNegro(true);
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
