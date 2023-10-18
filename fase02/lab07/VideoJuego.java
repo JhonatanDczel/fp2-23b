@@ -51,8 +51,11 @@ public class VideoJuego{
       Picture fila = null;
       for(int j = 0; j < 10; j++){
         Picture c = Picture.casilleroBlanco();
-        if(board[i][j] != null)
+        if(board[i][j] != null){
           c = Picture.soldier().superponer(c);
+          if(board[i][j].isNegro())
+            c = Picture.soldier().invertir().superponer(c);
+        }
         if(j == 0){
           fila = c;
           continue;
