@@ -10,6 +10,10 @@ public class Soldado{
   }
 
   //SECCION DE SETERS
+
+  public void setNegro(boolean n){
+    this.negro = n;
+  }
   public void setLife(int life){
     this.life = life;
   }
@@ -21,6 +25,7 @@ public class Soldado{
   }
 
   //SECCION DE GETERS
+
   public boolean getNegro(){
     return this.negro;
   }
