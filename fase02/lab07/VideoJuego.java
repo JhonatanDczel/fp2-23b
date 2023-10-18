@@ -13,20 +13,22 @@ public class VideoJuego{
   public static int promedio = 0;
   
   public static void main(String[] args){
-    Soldado[] army1 = initializeArmy(); 
-    displayArmy(army1);
+    Soldado[] army1 = initializeArmy(0); 
+    Soldado[] army2 = initializeArmy(1); 
+    displayArmy(army1, "Ejercito 1");
+    displayArmy(army2, "Ejercito 2");
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
     bubbleSortLife(army1);
-    displayArmy(army1);
+    displayArmy(army1, "Ranking de soldados:");
     makeGBoard();
     displayBoard();
 
   }
 
 
-  public static void displayArmy(Soldado[] army){
-    System.out.println("\n===== Army Soldiers =====");
+  public static void displayArmy(Soldado[] army, String str){
+    System.out.println("\n===== " + str + " =====");
     for(Soldado soldier : army){
       displaySoldier(soldier);
     }
@@ -65,14 +67,14 @@ public class VideoJuego{
     } 
   }
 
-  public static Soldado[] initializeArmy(){
+  public static Soldado[] initializeArmy(int n){
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
     Soldado[] army = new Soldado[randNum];
 
     for(int i = 0; i < randNum; i++){
-      army[i] = new Soldado("Soldado " + (i + 1));
+      army[i] = new Soldado("Soldado " + n + "x" + i);
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
