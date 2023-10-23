@@ -13,7 +13,7 @@ public class VideoJuego{
   public static int promedio = 0;
   
   public static void main(String[] args){
-    Soldado[] army1 = initializeArmy(0, true); 
+    Soldado[] army1 = initializeArmy(0, false); 
     Soldado[] army2 = initializeArmy(1, true); 
     displayArmy(army1, "Ejercito 1");
     displayArmy(army2, "Ejercito 2");
