@@ -14,14 +14,14 @@ public class VideoJuego{
   public static int promedio = 0;
   
   public static void main(String[] args){
-    Soldado[] army1 = initializeArmy(0, false); 
-    Soldado[] army2 = initializeArmy(1, true); 
+    HashMap<String, Soldado> army1 = initializeArmyHashMap(0, false);
+    HashMap<String, Soldado> army2 = initializeArmyHashMap(1, true);
     displayArmy(army1, "Ejercito 1");
     displayArmy(army2, "Ejercito 2");
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
-    bubbleSortLife(army1);
-    displayArmy(army1, "Ranking de soldados:");
+    // bubbleSortLife(army1);
+    //displayArmy(army1, "Ranking de soldados:");
     makeGBoard();
     displayBoard();
 
@@ -49,10 +49,10 @@ public class VideoJuego{
     return army;
 
   }
-  public static void displayArmy(Soldado[] army, String str){
+  public static void displayArmy(HashMap<String, Soldado> army, String str){
     System.out.println("\n===== " + str + " =====");
-    for(Soldado soldier : army){
-      displaySoldier(soldier);
+    for(String soldado : army.keySet()){
+      displaySoldier(army.get(soldado));
     }
   }
 
