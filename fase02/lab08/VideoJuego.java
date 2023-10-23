@@ -2,6 +2,7 @@
 // Colaboro: --------
 // Tiempo: 30 minutos
 import java.util.*;
+import java.util.HashMap;
 import graphics.*;
 
 
