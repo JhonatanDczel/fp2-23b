@@ -37,8 +37,7 @@ public class VideoJuego{
     for(int i = 0; i < randNum; i++){
       String nombre = "Soldado " + n + "x" + i;
       army.put(nombre,new Soldado(nombre));
-      if(negro)
-        army[i].setNegro(true);
+      army.get(nombre).setNegro(negro);
       army[i].setLife(rand.nextInt(5) + 1);
       if(army[i].getLife() > maxLife.getLife())
         maxLife = army[i];
