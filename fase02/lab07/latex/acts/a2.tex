@@ -1,0 +1,20 @@
+\section{Actividad principal}
+A continuacion se cubriran los requerimientos principales de este laboratorio
+
+\subsection{Iniciando 2 ejercitos}
+    En este punto, se inicial dos ejercitos con nombres autogenerados, para eso, se modifica el codigo de inicializacion de ejercitos, para permitir ingresar un parametro extra (Un numero entero que indica el numero de ejercito)
+\begin{lstlisting}[language=java, caption={Codigo fuente, Videojuego.java}]
+public static void main(String[] args){
+    Soldado[] army1 = initializeArmy(0, true); 
+    Soldado[] army2 = initializeArmy(1, true); 
+... 
+  public static void displayArmy(Soldado[] army, String str){
+    System.out.println("\n===== " + str + " =====");
+    for(Soldado soldier : army){
+      displaySoldier(soldier);
+    }
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item Como vemos, los ejercitos se generaran con un numero que sera lo que contendra su nombre
+\end{itemize}
