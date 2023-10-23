@@ -52,9 +52,18 @@ public class VideoJuego{
           s = c1[i][j];
         if(c2[i][j] != null)
           s = c2[i][j];
+        if(c1[i][j] != null && c2[i][j] != null)
+          s = combate(c1[i][j], c2[i][j]);
         board[i][j] = s;
       }
     }
+  }
+
+  //Este metodo determinara el ganador en un enfrentamiento de dos soldados
+  public static Soldado combate(Soldado s1, Soldado s2){
+    if(s2.getLife() > s1.getLife())
+      return s2;
+    return s1;
   }
 
   public static void displayArmy(Soldado[] army, String str){
