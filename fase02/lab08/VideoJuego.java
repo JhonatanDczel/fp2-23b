@@ -44,7 +44,7 @@ public class VideoJuego{
       promLife += army.get(nombre).getLife();
       genColumnRow(army.get(nombre));
     }
-    promLife = promLife / army.length;
+    promLife = promLife / army.size();
     promedio = (promLife + promedio) / 2;
     return army;
 
