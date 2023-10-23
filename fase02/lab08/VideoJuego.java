@@ -28,6 +28,9 @@ public class VideoJuego{
   }
 
 
+  public static void initializeArmyHashMap(int n, boolean negro){
+
+  }
   public static void displayArmy(Soldado[] army, String str){
     System.out.println("\n===== " + str + " =====");
     for(Soldado soldier : army){
