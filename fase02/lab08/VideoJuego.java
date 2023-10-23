@@ -20,20 +20,42 @@ public class VideoJuego{
     displayArmy(army2, "Ejercito 2");
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
-    // bubbleSortLife(army1);
 
-    displayArmy(army1, "Ranking de soldados:");
+    HashMap<String, Soldado> ranking = ranking(army1, army2);
+    displayArmy(ranking, "Ranking de soldados:");
     makeGBoard();
     displayBoard();
 
   }
 
 
+  public static HashMap<String, Soldado> ranking(HashMap<String, Soldado> army1, HashMap<String, Soldado> army2){
+    Soldado[] a1 = toArray(army1);
+    Soldado[] a2 = toArray(army2);
+    Soldado[] total = new Soldado[a1.length + a2.length];
+    int i = 0;
+
+    for(Soldado s : a1){
+      total[i] = s;
+      i++;
+    }
+    for(Soldado s : a2){
+      total[i] = s;
+      i++;
+    }
+    bubbleSortLife(total);
+    HashMap<String, Soldado> ranking = new HashMap<>();
+    for(Soldado s : total){
+      ranking.put(s.getName(), s);
+    }
+    return ranking;
+  }
   public static Soldado[] toArray(HashMap<String, Soldado> armyH){
     Soldado[] army = new Soldado[armyH.size()];
     int i = 0;
     for(String name : armyH.keySet()){
-      army[0] = armyH.get(name);
+      army[i] = armyH.get(name);
+      i++;
     }
     return army;
   }
