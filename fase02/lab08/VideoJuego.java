@@ -29,6 +29,25 @@ public class VideoJuego{
 
 
   public static HashMap<String, Soldado> initializeArmyHashMap(int n, boolean negro){
+    int promLife = 0;
+    Random rand = new Random();
+    int randNum = rand.nextInt(10) + 1;
+    HashMap<String, Soldado> army = new HashMap<>();
+
+    for(int i = 0; i < randNum; i++){
+      String nombre = "Soldado " + n + "x" + i;
+      army.put(nombre,new Soldado(nombre));
+      if(negro)
+        army[i].setNegro(true);
+      army[i].setLife(rand.nextInt(5) + 1);
+      if(army[i].getLife() > maxLife.getLife())
+        maxLife = army[i];
+      promLife += army[i].getLife();
+      genColumnRow(army[i]);
+    }
+    promLife = promLife / army.length;
+    promedio = (promLife + promedio) / 2;
+    return army;
 
   }
   public static void displayArmy(Soldado[] army, String str){
