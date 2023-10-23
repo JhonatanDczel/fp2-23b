@@ -28,7 +28,7 @@ public class VideoJuego{
   }
 
 
-  public static void initializeArmyHashMap(int n, boolean negro){
+  public static HashMap<String, Soldado> initializeArmyHashMap(int n, boolean negro){
 
   }
   public static void displayArmy(Soldado[] army, String str){
