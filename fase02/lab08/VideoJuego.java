@@ -21,14 +21,24 @@ public class VideoJuego{
     System.out.println("Soldado con maxima vida:");
     displaySoldier(maxLife);
     // bubbleSortLife(army1);
-    //displayArmy(army1, "Ranking de soldados:");
+
+    displayArmy(army1, "Ranking de soldados:");
     makeGBoard();
     displayBoard();
 
   }
 
 
+  public static Soldado[] toArray(HashMap<String, Soldado> armyH){
+    Soldado[] army = new Soldado[armyH.size()];
+    int i = 0;
+    for(String name : armyH.keySet()){
+      army[0] = armyH.get(name);
+    }
+    return army;
+  }
   public static HashMap<String, Soldado> initializeArmyHashMap(int n, boolean negro){
+
     int promLife = 0;
     Random rand = new Random();
     int randNum = rand.nextInt(10) + 1;
