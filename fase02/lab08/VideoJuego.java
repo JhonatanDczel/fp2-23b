@@ -38,11 +38,11 @@ public class VideoJuego{
       String nombre = "Soldado " + n + "x" + i;
       army.put(nombre,new Soldado(nombre));
       army.get(nombre).setNegro(negro);
-      army[i].setLife(rand.nextInt(5) + 1);
-      if(army[i].getLife() > maxLife.getLife())
-        maxLife = army[i];
-      promLife += army[i].getLife();
-      genColumnRow(army[i]);
+      army.get(nombre).setLife(rand.nextInt(5) + 1);
+      if(army.get(nombre).getLife() > maxLife.getLife())
+        maxLife = army.get(nombre);
+      promLife += army.get(nombre).getLife();
+      genColumnRow(army.get(nombre));
     }
     promLife = promLife / army.length;
     promedio = (promLife + promedio) / 2;
