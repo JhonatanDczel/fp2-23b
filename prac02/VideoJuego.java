@@ -15,6 +15,8 @@ public class VideoJuego{
   public static Picture gboard; //Este es el objeto Picture que representa al tablero
                                 //
   public static int promedio = 0; //Este es el promedio de vida global
+  public static int con1;
+  public static int con2;
 
   public static void main(String[] args){
     //Se le pide al usuario que ingrese el numero de soldados
@@ -26,6 +28,8 @@ public class VideoJuego{
     campo1 = new Soldado[cantidad][cantidad];
     campo2 = new Soldado[cantidad][cantidad];
     board = new Soldado[cantidad][cantidad];
+    con1 = cantidad;
+    con2 = cantidad;
 
     //Se inicializan dos ejercitos de soldados, el primer parametro es el numero de ejercito, el segundo sirve para activar la coloracion de negro y el tercer parametro es la cantidad de soldados que se generaran
     //Cada ejercito se inicializara en su respectivo campo
@@ -41,6 +45,7 @@ public class VideoJuego{
     war(campo1, campo2);
     makeGBoard(board, gboard);
 
+    System.out.println(whoWins(campo1, campo2));
   }
 
   //Este metodo genera el enfrentamiento entre dos campos de soldados
@@ -53,17 +58,26 @@ public class VideoJuego{
         if(c2[i][j] != null)
           s = c2[i][j];
         if(c1[i][j] != null && c2[i][j] != null)
-          s = combate(c1[i][j], c2[i][j]);
+          s = combate(c1, c2, i, j);
         board[i][j] = s;
       }
     }
   }
 
   //Este metodo determinara el ganador en un enfrentamiento de dos soldados
-  public static Soldado combate(Soldado s1, Soldado s2){
-    if(s2.getLife() > s1.getLife())
-      return s2;
-    return s1;
+  public static Soldado combate(Soldado[][] c1, Soldado[][] c2, int i, int j){
+    if(c2[i][j].getLife() > c1[i][j].getLife()){
+      c2[i][j].setLife(c2[i][j].getLife() - c1[i][j].getLife());
+      c1[i][j] = null;
+      con1--;
+      return c2[i][j];
+    }else{
+      c1[i][j].setLife(c1[i][j].getLife() - c2[i][j].getLife());
+      c2[i][j] = null;
+      con2--;
+      return c1[i][j];
+    }
+
   }
 
   public static void displayArmy(Soldado[] army, String str){
@@ -168,14 +182,28 @@ public class VideoJuego{
   public static boolean isEmpty(int column, int row, Soldado[][] campo){
     return campo[row][column] == null;
   }
-  public static String whoWins(Soldado[] army1, Soldado[] army2){
-    if (army1.length > army2.length)
+
+  //Este metodo determina cual de los dos ejercitos es el ganador
+  public static String whoWins(Soldado[][] army1, Soldado[][] army2){
+    if (con1 > con2)
       return "\n***** Army 1 is the winner! *****";
 
-    if (army2.length > army1.length)
+    if (con2 > con1)
       return "\n***** Army 2 is the winner! *****";
 
     return "\n***** It's a tie. No clear winner. *****";
+  }
+
+  //Este metodo cuenta los soldados en cada campo de batalla
+  public static int sobrevivientes(Soldado[][] campo){
+    int count = 0;
+    for(Soldado[] fila : campo){
+      for(Soldado s : fila){
+        if(s != null)
+          count++;
+      }
+    }
+    return count;
   }
   
 }
