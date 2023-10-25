@@ -1,0 +1,51 @@
+\section{Ordenando un HashMap}
+\begin{itemize}
+  \item Antes de continuar, las especificaciones como, mostrar al soldado con mayor vida, mostrar el nivel global de vida y los datos por ejercito de todos los soldados ya han sido cubiertas desde muchos laboratorios anteriores, asi que no hay mayor cambio en su funcionamiento
+  \item Asi que ahora nos centraremos en el ultimo cambio que se pide hacer en el laboratorio: el ranking de soldados por vida
+  \item En anteriores laboratorios era demasiado simple implementar un metodo que una dos arrays de Soldados y luego aplicar un algoritmo de ordenamiento por vida
+  \item Ahora las cosas se complican un poco mas, ya que los HashMap no tienen un orden especifico
+  \item Para lograr trabajar con el HashMap, lo tendremos que convertir a un array, y para eso usamos el metodo:
+\end{itemize}
+\begin{lstlisting}
+  public static Soldado[] toArray(HashMap<String, Soldado> armyH){
+    Soldado[] army = new Soldado[armyH.size()];
+    int i = 0;
+    for(String name : armyH.keySet()){
+      army[i] = armyH.get(name);
+      i++;
+    }
+    return army;
+  }
+ 
+\end{lstlisting}
+\begin{itemize}
+  \item El codigo es simple, devuelve un array de Soldados, a partir de un HashMap
+  \item Ahora con esto, podemos implementar otro metodo llamado ranking, que tomara dos arrays de Soldados como parametro, los unira, y los ordenara usando un algoritmo de ordenamiento:
+\end{itemize}
+\begin{lstlisting}
+  public static HashMap<String, Soldado> ranking(HashMap<String, Soldado> army1, HashMap<String, Soldado> army2){
+    Soldado[] a1 = toArray(army1);
+    Soldado[] a2 = toArray(army2);
+    Soldado[] total = new Soldado[a1.length + a2.length];
+    int i = 0;
+
+    for(Soldado s : a1){
+      total[i] = s;
+      i++;
+    }
+    for(Soldado s : a2){
+      total[i] = s;
+      i++;
+    }
+    bubbleSortLife(total);
+    HashMap<String, Soldado> ranking = new HashMap<>();
+    for(Soldado s : total){
+      ranking.put(s.getName(), s);
+    }
+    return ranking;
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item Como vemos, este metodo se apoya del metodo toArray que creamos anteriormente
+  \item Con el metodo ranking ya creado, ahora podemos proceder a mostrar los datos por pantalla
+\end{itemize}
