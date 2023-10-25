@@ -1,8 +1,63 @@
 \section{Commits mas importantes}
 \begin{itemize}
   \item A continuacion se muestran los commits mas importantes
+  \item Los commits se hicieron siguiendo la convencion para commits de git, y siguiendo las recomendaciones practicas para hacer mensajes de commits
+    \item Cada mensaje de commit esta estructurado por un titulo y una descripcion separados por una linea en blanco
 \end{itemize}
 
 
-    \begin{lstlisting}[language=bash, caption={commits mas importantes}]
-    \end{lstlisting}
+\begin{lstlisting}[language=bash, caption={commits mas importantes}]
+
+    commit c1082e4d2b725108cdbf1f4acb639a89da4174d8
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 14:02:50 2023 -0500
+
+        Creando el proyecto lab08
+
+        Se copiaron los archivos soldado, videojuego y graphics del laboratorio
+        anterior
+
+    commit a362ecf01678492c2ba977fd8c3d4f866ccc0313
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 14:12:17 2023 -0500
+
+        Hace que el metodo initialice army devuelva hashmap
+
+    commit 40035dcc9534d58e9b577105339203b1dd0aa839
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 14:08:29 2023 -0500
+
+        Creacion del metodo initialiceArmyHashMap
+
+    commit c78508b8e703041b1d11d8410744bed4c9870f31
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 14:25:05 2023 -0500
+
+        Se cambio la forma de establecer el atributo negro
+
+        Se cambio la forma en que se establece que un ejercito sea de color
+        negro, antes del cambio, se usaba un condicional para evaluar el valor
+        booleano negro, ahora, se ingresa directemente este valor como atributo
+        del soldado
+
+    commit 6e7b92190399f9550e32bb58243d0b07ba26d918
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 15:06:45 2023 -0500
+
+        Se crea metodo para ordenar el ejercito
+
+        Como no se puede ordenar directamente un hashmap, ya que no mantiene un
+        oprden especifico, se copia el contenido a un array antes de mandarlo al
+        metodo de ordenamiento de soldados por vida
+
+    commit edfb9c396ca95be5c3038fb18c4bb282894758da
+    Author: JhonatanDczel <jariasq@unsa.edu.pe>
+    Date:   Mon Oct 23 15:48:12 2023 -0500
+
+        Adaptando el codigo para hacer el ordenamiento
+
+        Se adapto el codigo para crear un array grande que una a los dos
+        ejercitos, luego se creo el metodo ranking que agarra estos dos
+        ejercitos, los junta y crea uno mas grande que ordena con el algoritmo
+        bubble sort, finalmente el resultado se muestra en pantalla
+\end{lstlisting}
