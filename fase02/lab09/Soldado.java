@@ -7,9 +7,16 @@ public class Soldado {
   private int vidaActual;
   private int velocidad;
   private String actitud;
-  private boolean vive;
+  private boolean vive = true;
 
-  public Soldado(){
+  public Soldado(String name, int life){
+    this.nombre = name;
+    this.vidaActual = life;
+  }
+  public Soldado(String name, int life, boolean isLive){
+    this.nombre = name;
+    this.vidaActual = life;
+    this.vive = isLive;
   }
   public void atacar(){
     this.actitud = "ofensiva";
