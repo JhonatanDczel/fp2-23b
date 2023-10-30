@@ -40,12 +40,22 @@ public class Soldado {
 
   public void serAtacado(){
     this.vidaActual--;
-    if(vidaActual = 0){
+    if(this.vidaActual == 0){
       morir();
     }
   }
 
   public void morir(){
     this.vive = false;
+  }
+
+  // Setters
+  public void setVidaActual(int vida){
+    this.vidaActual = vida;
+  }
+
+  // Getters
+  public int getVidaActual(){
+    return this.vidaActual;
   }
 }
