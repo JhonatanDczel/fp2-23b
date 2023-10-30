@@ -11,6 +11,10 @@ public class Soldado {
   public Soldado(){
   }
   public void atacar(){
+    this.actitud = "ofensiva";
+    atacar();
+  }
+  public void avanzar(){
     this.velocidad++;
   }
 }
