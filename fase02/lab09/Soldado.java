@@ -4,6 +4,7 @@ public class Soldado {
   private int nivelDefensa;
   private int nivelVida;
   private int nivelActual;
+  private int vidaActual;
   private int velocidad;
   private String actitud;
   private boolean vive;
@@ -35,5 +36,9 @@ public class Soldado {
 
   public void avanzar(){
     this.velocidad++;
+  }
+
+  public void serAtacado(){
+    this.vidaActual--;
   }
 }
