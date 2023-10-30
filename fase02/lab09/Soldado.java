@@ -40,6 +40,9 @@ public class Soldado {
 
   public void serAtacado(){
     this.vidaActual--;
+    if(vidaActual = 0){
+      morir();
+    }
   }
 
   public void morir(){
