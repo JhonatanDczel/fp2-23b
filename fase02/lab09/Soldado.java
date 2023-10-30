@@ -41,4 +41,8 @@ public class Soldado {
   public void serAtacado(){
     this.vidaActual--;
   }
+
+  public void morir(){
+    this.vive = false;
+  }
 }
