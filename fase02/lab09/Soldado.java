@@ -8,6 +8,8 @@ public class Soldado {
   private int velocidad;
   private String actitud;
   private boolean vive = true;
+  private int columna;
+  private int fila;
 
   public Soldado(String name, int life){
     this.nombre = name;
