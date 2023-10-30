@@ -22,6 +22,14 @@ public class Soldado {
   public void huir(){
     this.velocidad += 2;
   }
+
+  public void retroceder(){
+    if(this.velocidad > 0){
+      this.velocidad = 0;
+      this.actitud = "defensiva";
+    }
+  }
+
   public void avanzar(){
     this.velocidad++;
   }
