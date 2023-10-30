@@ -18,6 +18,10 @@ public class Soldado {
     this.vidaActual = life;
     this.vive = isLive;
   }
+  public Soldado(int life, int nivel){
+    this.vidaActual = life;
+    this.nivelActual = nivel;
+  }
   public void atacar(){
     this.actitud = "ofensiva";
     atacar();
