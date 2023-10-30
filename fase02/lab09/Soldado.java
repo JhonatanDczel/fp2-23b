@@ -10,4 +10,7 @@ public class Soldado {
 
   public Soldado(){
   }
+  public void atacar(){
+    this.velocidad++;
+  }
 }
