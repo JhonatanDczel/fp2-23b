@@ -20,7 +20,7 @@ public class Soldado {
   }
 
   public void huir(){
-    this.velocidad = this.
+    this.velocidad += 2;
   }
   public void avanzar(){
     this.velocidad++;
