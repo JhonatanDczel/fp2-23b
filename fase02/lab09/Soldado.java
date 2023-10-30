@@ -18,6 +18,10 @@ public class Soldado {
   public void defender(){
     this.velocidad = 0;
   }
+
+  public void huir(){
+    this.velocidad = this.
+  }
   public void avanzar(){
     this.velocidad++;
   }
