@@ -7,4 +7,7 @@ public class Soldado {
   private int velocidad;
   private String actitud;
   private boolean vive;
+
+  public Soldado(){
+  }
 }
