@@ -28,6 +28,9 @@ public class Soldado {
       this.velocidad = 0;
       this.actitud = "defensiva";
     }
+    if(this.velocidad <= 0){
+      this.velocidad--;
+    }
   }
 
   public void avanzar(){
