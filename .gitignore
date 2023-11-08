@@ -1,5 +1,5 @@
 #ignorar los archivos .class y .jar
-./main/*
+/main/*
 Enunciado*.pdf
 *.class 
 *.jar
