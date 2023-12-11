@@ -10,4 +10,11 @@ public class Soldado {
   private String actitud;
   private boolean vive;
   private String team;
+  public Soldado(String t) {
+    team = t;
+    velocidad = 0;
+    vive = true;
+    actitud = "ataque";
+
+  }
 }
