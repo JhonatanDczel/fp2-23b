@@ -156,5 +156,25 @@ public class VideoJuego {
     e.add(soldadoNuevo);
     t[newCol][newFila] = soldadoNuevo;
   }
+  public static void modificarSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Ingresa la columna: ");
+    int col = sc.nextInt();
+    System.out.print("Ingresa la fila: ");
+    int fila = sc.nextInt();
+
+    Soldado s = t[col][fila];
+    System.out.println("Ingresa nivel de vida nuevo: ");
+    s.setNivelVida(sc.nextInt());
+    System.out.println("Ingresa nivel de ataque nuevo: ");
+    s.setNivelAtaque(sc.nextInt());
+    System.out.println("Ingresa nivel de defensa nuevo: ");
+    s.setNivelDefensa(sc.nextInt());
+    System.out.println("Ingresa la columna nueva: ");
+    s.setColumna(sc.nextInt());
+    System.out.println("Ingresa la fila nueva: ");
+    s.setFila(sc.nextInt());
+  }
 
 }
