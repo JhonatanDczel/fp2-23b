@@ -457,4 +457,23 @@ public class VideoJuego {
     }
   }
 
+  public static void atacar(Soldado[][] t, Soldado s1, Soldado s2) {
+    int sum = s1.getNivelVida() + s2.getNivelVida();
+    System.out.println("Tu soldado tiene " + ((100.0/sum)*s1.getNivelVida())
+    + "% de posibilidades de vencer, y el enemigo " + ((100.0/sum)*s2.getNivelVida())
+    + "% de posibilidades de vencer" );
+    if(s1.getNivelVida() > Math.random() * (s1.getNivelVida() + s2.getNivelVida())) {
+      System.out.println("Derrotaste al soldado enemigo:\n" + s2);
+      t[s1.getColumna()][s1.getFila()] = null;
+      s1.setColumna(s2.getColumna());
+      s1.setFila(s2.getFila());
+      t[s1.getColumna()][s1.getFila()] = s1;
+      s1.setNivelVida(s1.getNivelVida() + 1);
+    } else {
+      System.out.println("Te derroto un soldado enemigo;\n" + s1 + " ah muerto");
+      s1.morir();
+      t[s1.getColumna()][s1.getFila()] = null;
+    }
+  }
+
 }
