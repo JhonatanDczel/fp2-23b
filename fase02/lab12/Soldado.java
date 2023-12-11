@@ -40,4 +40,24 @@ public class Soldado {
     actitud = "fuga";
     velocidad += 2;
   }
+  public void avanzar() {
+    velocidad += 1;
+  }
+
+  public void serAtacado() {
+    vidaActual -= 1;
+    if(vidaActual == 0) morir();
+  }
+  public void morir() { 
+    vive = false;
+  }
+
+  public void retroceder() {
+    if (velocidad > 0) {
+      velocidad = 0;
+      actitud = "defensiva";
+    } else if (velocidad == 0) {
+      velocidad = -1; 
+    }
+  }
 }
