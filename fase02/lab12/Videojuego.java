@@ -132,5 +132,29 @@ public class VideoJuego {
 
     t[col][fila] = null;
   }
+  public static void clonarSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Ingresa la columna: ");
+    int col = sc.nextInt();
+    System.out.print("Ingresa la fila: ");
+    int fila = sc.nextInt();
+
+    Soldado soldadoOriginal = t[col][fila];
+
+    Soldado soldadoNuevo = new Soldado(soldadoOriginal.getTeam());
+    soldadoNuevo.setNivelAtaque(soldadoOriginal.getNivelAtaque());
+    soldadoNuevo.setNivelDefensa(soldadoOriginal.getNivelDefensa());
+    soldadoNuevo.setNivelVida(soldadoOriginal.getNivelVida());
+    soldadoNuevo.setNombre("Soldado " + (e.size() + 1));
+
+    System.out.print("Ingresa la columna nueva: ");
+    int newCol = sc.nextInt();
+    System.out.print("Ingresa la fila nueva: ");
+    int newFila = sc.nextInt();
+
+    e.add(soldadoNuevo);
+    t[newCol][newFila] = soldadoNuevo;
+  }
 
 }
