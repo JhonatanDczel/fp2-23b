@@ -69,5 +69,17 @@ public class Soldado {
   public void setColumna(int c) { columna = c; }
 
   public void setNivelVida(int p) { nivelVida = p; }
+
+  public String getNombre() { return nombre; }
+
+  public int getFila() { return fila; }
+
+  public int getColumna() { return columna; }
+
+  public int getNivelVida() { return nivelVida; }
+
+  public int getNivelAtaque() { return nivelAtaque; }
+
+  public int getNivelDefensa() { return nivelDefensa; }
 }
 
