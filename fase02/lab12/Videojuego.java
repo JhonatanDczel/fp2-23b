@@ -348,4 +348,23 @@ public class VideoJuego {
     printArr(newArr2);
   }
 
+  public static void printRankingPointsBubble(Soldado[][] t, ArrayList<Soldado> e) {
+    ArrayList<Soldado> newArr = new ArrayList<Soldado>();
+
+    for(Soldado s : e) {
+      newArr.add(s);
+    }
+
+    for(int i = 0; i < newArr.size() - 1; i += 1) {
+      for(int j = 0; j < newArr.size() - 1 - i; j+=1) {
+        if(newArr.get(j).getNivelVida() > newArr.get(j+1).getNivelVida()) {
+          Soldado num = newArr.get(j+1);
+          newArr.set(j+1, newArr.get(j));
+          newArr.set(j, num);
+        }
+      } 
+    }
+    System.out.println(newArr);
+  }
+
 }
