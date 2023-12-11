@@ -176,5 +176,27 @@ public class VideoJuego {
     System.out.println("Ingresa la fila nueva: ");
     s.setFila(sc.nextInt());
   }
+   //Estos son metodos por implementar
+  public static void compararSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+
+  }
+  public static void intercambiarSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+
+  }
+  public static void verSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+
+  }
+  public static void verEjercito(Soldado[][] t, ArrayList<Soldado> e, String team) {
+
+  }
+  public static void sumarNiveles(Soldado[][] t, ArrayList<Soldado> e, String team) {
+
+  }
+  public static void jugar() {
+
+  }
+  public static void volver() {
+
+  }
 
 }
