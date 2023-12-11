@@ -60,4 +60,14 @@ public class Soldado {
       velocidad = -1; 
     }
   }
+  public String getTeam() { return team; }
+
+  public void setNombre(String n) { nombre = n; }
+
+  public void setFila(int f) { fila = f; }
+
+  public void setColumna(int c) { columna = c; }
+
+  public void setNivelVida(int p) { nivelVida = p; }
 }
+
