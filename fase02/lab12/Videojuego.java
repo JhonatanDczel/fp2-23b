@@ -24,5 +24,24 @@ public class VideoJuego {
     System.out.println("___________________________________");
     System.out.println("RANKING DE PUNTOS EJERCITO2 POR SELECT SORT");
     printRankingPointsSelect(table, ejercito2);
+
+
+    System.out.println("###################################");
+    int turno = 1;
+    while (true) {
+      printTable(table);
+      mover(table, ejercito1, ejercito2, turno);
+
+      turno = turno == 1 ? 2 : 1;
+
+      String winner = getWinner(ejercito1, ejercito2);
+
+      if(winner != null) {
+        System.out.println("###########################");
+        System.out.println("GANA EL EQUIPO " + winner);
+        System.out.println("###########################");
+        break;
+      }
+    }
   }
 }
