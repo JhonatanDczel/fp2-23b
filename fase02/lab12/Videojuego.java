@@ -86,5 +86,29 @@ public class VideoJuego {
     if(input == 10) jugar();
     if(input == 11) volver();
   }
+  public static void crearSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+    Scanner sc = new Scanner(System.in);
+    Soldado s = new Soldado(team);
+
+    if(e.size() >= 10) {
+      System.out.println("El ejercito tiene el maximo de soladados: ");
+      return;
+    }
+
+    System.out.print("Ingresa el nivel del soldado: ");
+    s.setNivelVida(sc.nextInt());
+    System.out.print("Ingresa el nivel de ataque: ");
+    s.setNivelAtaque(sc.nextInt());
+    System.out.print("Ingresa el nivel de defensa: ");
+    s.setNivelDefensa(sc.nextInt());
+    System.out.print("Ingresa la columna: ");
+    s.setColumna(sc.nextInt());
+    System.out.print("Ingresa la fila: ");
+    s.setFila(sc.nextInt());
+    s.setNombre("Soldado " + (e.size() + 1));
+
+    e.add(s);
+    t[s.getColumna()][s.getFila()] = s;
+  }
 
 }
