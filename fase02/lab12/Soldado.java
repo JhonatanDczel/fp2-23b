@@ -81,5 +81,11 @@ public class Soldado {
   public int getNivelAtaque() { return nivelAtaque; }
 
   public int getNivelDefensa() { return nivelDefensa; }
+
+  public void setNivelAtaque(int n) { nivelAtaque = n; }
+
+  public void setNivelDefensa(int n) { nivelDefensa = n; }
+
+  public boolean isLive() { return vive; }
 }
 
