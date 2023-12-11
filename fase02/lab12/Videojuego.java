@@ -404,4 +404,57 @@ public class VideoJuego {
     return n > random(n + m);
   }
 
+  public static void mover(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2, int turno) {
+    Scanner sc = new Scanner(System.in);
+    while (true) {
+      System.out.println("Toca moverse al equipo " + (turno == 1 ? "*" : "#"));
+      System.out.println("Ingrese la posicion de la ficha a mover: ");
+      int y = sc.next().toUpperCase().charAt(0) - 65;
+      int x = sc.nextInt() - 1;
+      Soldado s = t[x][y];
+
+      if (s == null) {
+        System.out.println("Jugada no valida");
+        continue;
+      }
+
+      if (!s.getTeam().equals(turno == 1 ? "*" : "#")) {
+        System.out.println("NO ES EL TURNO DEL EQUIPO: " + s.getTeam());
+        continue;
+      }
+
+      System.out.println("Ingrese la nueva posicion deseada: ");
+      int yF = sc.next().toUpperCase().charAt(0) - 65;
+      int xF = sc.nextInt() - 1;
+      Soldado sF = t[xF][yF];
+
+      if (x - xF > 1 || x - xF < -1 || y - yF > 1 || y - yF < -1) {
+        System.out.println("Superaste el maximo de casillas por movimiento");
+        continue;
+      }
+      if (xF < 0 || xF > 9 || y < 0 || y > 9) {
+        System.out.println("Limite del tablero excedido");
+        continue;
+      }
+
+      if (sF == null) {
+        s.setColumna(xF);
+        s.setFila(yF);
+        t[xF][yF] = s;
+        t[x][y] = null;
+        return;
+      }
+
+      if (sF.getTeam().equals(s.getTeam())) {
+        System.out.println("Ya se encuentra un soldado aliado en esa posicion");
+        continue;
+      }
+
+      if (!sF.getTeam().equals(s.getTeam())) {
+        atacar(t, s, sF);
+        return;
+      }
+    }
+  }
+
 }
