@@ -17,4 +17,17 @@ public class Soldado {
     actitud = "ataque";
 
   }
+  public Soldado(int v, String t) {
+    team = t;
+    velocidad = v;
+    vive = true;
+    actitud = "ataque";
+  }
+  public Soldado(int v, int nV, String t) {
+    team = t;
+    vive = true;
+    velocidad = v;
+    nivelVida = nV;
+    actitud = "ataque";
+  }
 }
