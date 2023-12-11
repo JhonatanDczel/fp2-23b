@@ -247,5 +247,35 @@ public class VideoJuego {
       System.out.println("  -------------------------------------------------------------");
     }
   }
+  public static void printArr(Soldado[] arr) {
+    for(Soldado n : arr) {
+      if(n != null)System.out.println(n + " | ");
+    }
+  }
+  public static int random(int n) {
+    return (int) (Math.random() * n);
+  }
+  public static void printMayorNivel(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2) {
+    int maxPoints1 = 0;
+    int maxPoints2 = 0;
+
+    for(int i = 0; i < e1.size(); i += 1) {
+      if(e1.get(i).getNivelVida() > maxPoints1) maxPoints1 = e1.get(i).getNivelVida();
+    }
+    for(int i = 0; i < e2.size(); i += 1) {
+      if(e2.get(i).getNivelVida() > maxPoints2) maxPoints2 = e2.get(i).getNivelVida();
+    }
+
+    System.out.println("Los soldados con el mayor nivel de puntos de la primera flota son:");
+    for(Soldado s : e1) { 
+      if(maxPoints1 == s.getNivelVida())
+        System.out.println(s);
+    }
+    System.out.println("Los soldados con el mayor nivel de puntos de la segunda flota son:");
+    for(Soldado s : e1) { 
+      if(maxPoints2 == s.getNivelVida())
+        System.out.println(s);
+    }
+  }
 
 }
