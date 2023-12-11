@@ -210,5 +210,12 @@ public class VideoJuego {
       if(input == 3) break;
     }
   }
+  public static void fillTable(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2) {
+    int nSoldados1 = random(10) + 1;
+    for(int i = 0; i < nSoldados1; i += 1) addSoldado(t, i, e1, "*");
+
+    int nSoldados2 = random(10) + 1;
+    for(int i = 0; i < nSoldados2; i += 1) addSoldado(t, i, e2, "#");
+  }
 
 }
