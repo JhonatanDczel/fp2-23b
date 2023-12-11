@@ -305,4 +305,47 @@ public class VideoJuego {
     }
   }
 
+  public static void printSoladosOrdenados(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2) {
+    int count1 = 0;
+    Soldado[] newArr1 = new Soldado[10];
+
+    for(Soldado s : e1) {
+      newArr1[count1] = s;
+      count1 += 1;
+    }
+
+    for(int i = 0; i < count1 - 1 ; i += 1) {
+      for(int j = 0; j < count1 - 1 - i; j += 1) {
+        if(newArr1[j].getNombre().charAt(8) > newArr1[j + 1].getNombre().charAt(8)) {
+          Soldado s = newArr1[j];
+          newArr1[j] = newArr1[j + 1];
+          newArr1[j + 1] = s;
+        }
+      }
+    }
+
+    int count2 = 0;
+    Soldado[] newArr2 = new Soldado[10];
+
+    for(Soldado s : e2) {
+      newArr2[count2] = s;
+      count2 += 1;
+    }
+
+    for(int i = 0; i < count2 - 1 ; i += 1) {
+      for(int j = 0; j < count2 - 1 - i; j += 1) {
+        if(newArr2[j].getNombre().charAt(8) > newArr2[j + 1].getNombre().charAt(8)) {
+          Soldado s = newArr2[j];
+          newArr2[j] = newArr2[j + 1];
+          newArr2[j + 1] = s;
+        }
+      }
+    }
+
+    System.out.println("Soldados ordenado de la primera flota");
+    printArr(newArr1);
+    System.out.println("Soldados ordenado de la segunda flota");
+    printArr(newArr2);
+  }
+
 }
