@@ -110,5 +110,27 @@ public class VideoJuego {
     e.add(s);
     t[s.getColumna()][s.getFila()] = s;
   }
+  public static void eliminarSoldado(Soldado[][] t, ArrayList<Soldado> e, String team) {
+    Scanner sc = new Scanner(System.in);
+
+    if(e.size() <= 1) {
+      System.out.println("El ejercito nesecita al menos 1 soldado");
+      return;
+    }
+
+    System.out.print("Ingresa la columna: ");
+    int col = sc.nextInt();
+    System.out.print("Ingresa la fila: ");
+    int fila = sc.nextInt();
+
+    for(int i = 0; i < e.size(); i += 1) {
+      if(e.get(i).getColumna() == col && e.get(i).getFila() == fila){
+        e.remove(i);
+        break;
+      }
+    }
+
+    t[col][fila] = null;
+  }
 
 }
