@@ -217,5 +217,35 @@ public class VideoJuego {
     int nSoldados2 = random(10) + 1;
     for(int i = 0; i < nSoldados2; i += 1) addSoldado(t, i, e2, "#");
   }
+  public static void addSoldado(Soldado[][] t, int i, ArrayList<Soldado> e, String team) {
+    int points = random(5) + 1;
+    int x = random(10);
+    int y = random(10);
+    String name = "Soldado " + (i + 1);
+    if(!(t[x][y] == null)) addSoldado(t, i, e, team);
+    else {
+      Soldado soldado = new Soldado(team);
+      soldado.setColumna(x);
+      soldado.setFila(y);
+      soldado.setNombre(name);
+      soldado.setNivelVida(points);
+      t[x][y] = soldado;
+      e.add(soldado);
+    }
+  }
+  public static void printTable(Soldado[][] t) {
+    System.out.println("     A     B     C     D     E     F     G     H     I     J     ");
+    System.out.println("  -------------------------------------------------------------");
+    for(int i = 0; i < t.length; i += 1) {
+      System.out.print((i + 1) + " |");
+      for(int j = 0; j < t.length; j += 1) {
+        Soldado soldado = t[i][j];
+        if(soldado == null) System.out.print("     |");
+        else System.out.print(" " + soldado.getTeam() + "/"+soldado.getNivelVida()+" |");
+      }
+      System.out.println();
+      System.out.println("  -------------------------------------------------------------");
+    }
+  }
 
 }
