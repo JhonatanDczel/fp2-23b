@@ -277,5 +277,32 @@ public class VideoJuego {
         System.out.println(s);
     }
   }
+  public static void printPromedioPuntos(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2) {
+    double sum1 = 0;
+    int count1 = 0;
+    double sum2 = 0;
+    int count2 = 0;
+
+    for(Soldado s : e1){
+      sum1 += s.getNivelVida();
+      count1 += 1;
+    }
+    for(Soldado s : e2){
+      sum2 += s.getNivelVida();
+      count2 += 1;
+    }
+    System.out.println("El promedio de la primera flota es: " + (sum1/count1));
+    System.out.println("El promedio de la segunda flota es: " + (sum2/count2));
+  }
+  public static void printPuntosAll(Soldado[][] t, ArrayList<Soldado> e1, ArrayList<Soldado> e2) {
+    System.out.println("Nivel de vida de cada soldado de la primera flota: ");
+    for(Soldado s : e1) { 
+      System.out.println("Nivel de vida del " + s.getNombre() + " es: " + s.getNivelVida());
+    }
+    System.out.println("Nivel de vida de cada soldado de la segunda flota: ");
+    for(Soldado s : e2) { 
+      System.out.println("Nivel de vida del " + s.getNombre() + " es: " + s.getNivelVida());
+    }
+  }
 
 }
