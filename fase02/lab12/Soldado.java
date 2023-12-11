@@ -30,4 +30,14 @@ public class Soldado {
     nivelVida = nV;
     actitud = "ataque";
   }
+  public void atacar() {
+    actitud = "ofensiva";
+  }
+  public void defender() {
+    actitud = "defensiva";
+  }
+  public void huir() {
+    actitud = "fuga";
+    velocidad += 2;
+  }
 }
