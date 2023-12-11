@@ -87,5 +87,16 @@ public class Soldado {
   public void setNivelDefensa(int n) { nivelDefensa = n; }
 
   public boolean isLive() { return vive; }
+
+  public String toString() {
+    return "Nombre: " + nombre +
+    " | Ubicacion: " + fila + ", " + columna +
+    " | nivelVida: " + nivelVida + 
+    " | Estado: " + (vive ? "Vivo" : "Muerto") +
+    " | Actitud: "+ actitud +"\n" ;
+  }
+  private int random(int n) {
+    return (int) (Math.random() * n + 1);
+  }
 }
 
