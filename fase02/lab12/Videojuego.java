@@ -366,5 +366,42 @@ public class VideoJuego {
     }
     System.out.println(newArr);
   }
+  public static void printRankingPointsSelect(Soldado[][] t, ArrayList<Soldado> e) {
+    ArrayList<Soldado> newArr = new ArrayList<Soldado>();
+
+    for(Soldado s : e) {
+      newArr.add(s);
+    }
+
+    for (int i = 0; i < newArr.size() - 1; i += 1) {
+      int min = i;
+      for (int j = i; j < newArr.size(); j += 1) {
+        min = newArr.get(min).getNivelVida() < newArr.get(j).getNivelVida() ? j : min;
+      }
+      Soldado soldado = newArr.get(i);
+      newArr.set(i, newArr.get(min));
+      newArr.set(min, soldado);
+    }
+    System.out.println(newArr);
+  }
+  public static String getWinner(ArrayList<Soldado> e1 , ArrayList<Soldado> e2) {
+    boolean isWinner = true;
+
+    for(Soldado s: e1) {
+      isWinner = isWinner && !s.isLive();
+    }
+    if(isWinner) return e1.get(0).getTeam();
+
+    isWinner = true;
+    for(Soldado s: e2) {
+      isWinner = isWinner && !s.isLive();
+    }
+    if(isWinner) return e2.get(0).getTeam();
+
+    return null;
+  }
+  public static boolean randomWinner(int n, int m) {
+    return n > random(n + m);
+  }
 
 }
