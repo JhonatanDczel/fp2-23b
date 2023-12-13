@@ -1,3 +1,9 @@
+commit 7c31bc6ece1993270edd9d537fb700f6e31ba115
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 16:45:14 2023 -0500
+
+    lab12 latex commits
+
 commit 4f13bb844cb735654e424b6fb21f43e4e38009f0
 Author: JhonatanDczel <jariasq@unsa.edu.pe>
 Date:   Wed Dec 13 16:02:58 2023 -0500
