@@ -1,63 +1,62 @@
 \section{Commits mas importantes}
 \begin{itemize}
   \item A continuacion se muestran los commits mas importantes
-  \item Los commits se hicieron siguiendo la convencion para commits de git, y siguiendo las recomendaciones practicas para hacer mensajes de commits
-    \item Cada mensaje de commit esta estructurado por un titulo y una descripcion separados por una linea en blanco
+  \item Los commits se hicieron siguiendo la convencion para commits de git, y siguiendo las recomendaciones practicas para hacer mensajes de commits (Mensajes de forma imperativa)
 \end{itemize}
 
 
-\begin{lstlisting}[language=bash, caption={commits mas importantes}]
+\subsection*{Commit 7f2adda566d664a4c7c38300c68c287c27e220d6}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Implementa el método "getWinner" que determina el ganador en el juego.
 
-    commit c1082e4d2b725108cdbf1f4acb639a89da4174d8
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 14:02:50 2023 -0500
+\subsection*{Commit 22d7b9aac5a07bcc41552fbe65401617f11164db}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Agrega el método para imprimir el ranking de soldados por puntos, proporcionando una visión general del rendimiento de los soldados.
 
-        Creando el proyecto lab08
+\subsection*{Commit 883c7b61657b46f8add303a013decb7c71167e3f}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Introduce métodos para imprimir promedios y puntos, contribuyendo a la visualización estadística de los soldados.
 
-        Se copiaron los archivos soldado, videojuego y graphics del laboratorio
-        anterior
+\subsection*{Commit b7aecfc012fda83b168a8a0b318f4e80f528d68f}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Implementa el método principal "main," que sirve como punto de entrada y coordinación de la aplicación.
 
-    commit a362ecf01678492c2ba977fd8c3d4f866ccc0313
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 14:12:17 2023 -0500
+\subsection*{Commit 8c95e9be0340d97b729310b1ca0d1ca1a372968e}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Desarrolla la lógica para modificar un soldado existente en el juego.
 
-        Hace que el metodo initialice army devuelva hashmap
+\subsection*{Commit 70e2bad4bbd4bddd3d02ce881d90c947d2a302fb}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Implementa la funcionalidad para eliminar un soldado del ejército.
 
-    commit 40035dcc9534d58e9b577105339203b1dd0aa839
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 14:08:29 2023 -0500
+\subsection*{Commit 496c05baf98c4b3233cbcc33c5b20323e2dba4f9}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Agrega la funcionalidad para crear un nuevo soldado y añadirlo al ejército.
 
-        Creacion del metodo initialiceArmyHashMap
+\subsection*{Commit 89bcc0118d1dd84f6edb69549684e1767a0e77f1}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Introduce el modo de juego personalizado, proporcionando opciones para personalizar y gestionar los ejércitos.
 
-    commit c78508b8e703041b1d11d8410744bed4c9870f31
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 14:25:05 2023 -0500
+\subsection*{Commit 274cf853e8a6b713a3ee1a2157103a431cf30009}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Agrega la funcionalidad inicial, marcando el punto de partida del desarrollo del juego.
 
-        Se cambio la forma de establecer el atributo negro
+\subsection*{Commit 1740eabf3958fed46ecd4be9987d88a37a93d8a2}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Configura los getters y setters para la clase Soldado, estableciendo la estructura básica de la entidad.
 
-        Se cambio la forma en que se establece que un ejercito sea de color
-        negro, antes del cambio, se usaba un condicional para evaluar el valor
-        booleano negro, ahora, se ingresa directemente este valor como atributo
-        del soldado
+\subsection*{Commit 0c4a358709095cfe75a19e87c1eb852ca20152e1}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Crea métodos básicos de acciones, sentando las bases para las operaciones relacionadas con los soldados en el juego.
 
-    commit 6e7b92190399f9550e32bb58243d0b07ba26d918
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 15:06:45 2023 -0500
+\subsection*{Commit 5be9489569976460f460a45809a7f17eedf1416a}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Agrega métodos para el constructor sobrecargado, permitiendo la creación de soldados con parámetros específicos.
 
-        Se crea metodo para ordenar el ejercito
+\subsection*{Commit a7fb4575d45eaadc5f8a62a5e5baaa9c956c53a4}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Introduce atributos para la clase Soldado, estableciendo las propiedades básicas de un soldado en el juego.
 
-        Como no se puede ordenar directamente un hashmap, ya que no mantiene un
-        oprden especifico, se copia el contenido a un array antes de mandarlo al
-        metodo de ordenamiento de soldados por vida
-
-    commit edfb9c396ca95be5c3038fb18c4bb282894758da
-    Author: JhonatanDczel <jariasq@unsa.edu.pe>
-    Date:   Mon Oct 23 15:48:12 2023 -0500
-
-        Adaptando el codigo para hacer el ordenamiento
-
-        Se adapto el codigo para crear un array grande que una a los dos
-        ejercitos, luego se creo el metodo ranking que agarra estos dos
-        ejercitos, los junta y crea uno mas grande que ordena con el algoritmo
-        bubble sort, finalmente el resultado se muestra en pantalla
-\end{lstlisting}
+\subsection*{Commit 41f67e32852f4721ae938bbf9d0187685ff05141}
+\textbf{Autor:} JhonatanDczel \\
+\textbf{Descripción:} Crea los archivos para el laboratorio, marcando el inicio del proyecto y la organización de la estructura inicial del código.
