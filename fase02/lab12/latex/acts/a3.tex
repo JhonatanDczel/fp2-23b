@@ -1,45 +1,37 @@
-\section{Mostrando el tablero por pantalla}
+\section{Clase VideoJuego}
+La clase VideoJuego contiene la logica principal y es la clase que contiene el metodo main, por lo tanto, el que debería llamarse para ejecutar el juego. 
+La estructura de la clase esta dada de la siguiente manera:
+
 \begin{itemize}
-  \item Para generar la grafica nos apoyaremos de la biblioteca graphics, desarrollada el anterior semestre
-  \item Tendremos dos maneras de manejar la grafica, la primera es un array dibimensional, que contiene las unbicaciones de los soldados en el tablero, y la segunda es un objeto de tipo Picture que contiene la representacion grafica del tablero en un determinado momento
-  \item Para eso necesitaremos dos metodos, el primero de ellos genera un tablero a partir de un array bidimensional (Atributo global)
+  \item Metodos: 
+	\item juegoRapido
+	\item juegoPersonalizado
+	\item crearSoldado
+	\item eliminarSoldado
+	\item clonarSoldado
+	\item modificarSoldado
+	\item compararSoldado
+	\item intercambiarSoldado
+	\item verSoldado
+	\item verEjercito
+	\item sumarNiveles
+	\item jugar
+	\item volver
+	\item main
+	\item fillTable
+	\item addSoldado
+	\item printTable
+	\item printArr
+	\item random
+	\item printMayorNivel
+	\item printPromedioPuntos
+	\item printPuntosAll
+	\item printSoladosOrdenados
+	\item printRankingPointsBubble
+	\item printRankingPointsSelect
+	\item getWinner
+	\item randomWinner
+	\item mover
+	\item atacar
 \end{itemize}
-\begin{lstlisting}
- public static void makeGBoard(){
-    for(int i = 0; i < 10; i++){
-      Picture fila = null;
-      for(int j = 0; j < 10; j++){
-        Picture c = Picture.casilleroBlanco();
-        if(board[i][j] != null){
-          c = Picture.soldier().superponer(c);
-          if(board[i][j].isNegro())
-            c = Picture.soldier().invertir().superponer(c);
-        }
-        if(j == 0){
-          fila = c;
-          continue;
-        }
-        fila = fila.alLado(c);
-      }
-      if(i == 0){
-        gBoard = fila;
-        continue;
-      }
-      gBoard = gBoard.encima(fila);
-    } 
-  }
-\end{lstlisting}
-\begin{itemize}
-  \item El metodo itera sobre todos los elementos del array bidimensional "board"
-  \item Con esto contruye el tablero tomando uno a uno sus elementos, en caso de haber un null en cierta posicion, solo imprime un casillero en blanco, en caso de haber un soldado, se pregunta si este tiene coloracion negro, en cuyo caso imprime un soldado negro sobre un fondo blanco, y caso contrario imprime un soldado blanco en casillero blanco
-  \item El segundo metodo que usamos es el que agarra un objeto Picture, y lo grafica:
-\end{itemize}
-\begin{lstlisting}
-  public static void displayBoard(){
-    Graphics g = new Graphics(gBoard);
-    g.print();
-  }
-\end{lstlisting}
-\begin{itemize}
-  \item El metodo es arto simple, agarra un objeto Picture, genera un nuevo objeto Graphics a partir de el, y lo muestra en pantalla
-\end{itemize}
+A continuación veremos la explicación de los metodos principales para el funcionamiento.
