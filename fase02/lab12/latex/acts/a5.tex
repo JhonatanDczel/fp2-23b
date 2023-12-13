@@ -1,0 +1,55 @@
+\section{Metodo principal}
+\begin{itemize}
+  \item Ahora procedere a mostrar el metodo main que controla todas las acciones del programa
+\end{itemize}
+\begin{lstlisting}
+  public static void main(String[] args){
+    HashMap<String, Soldado> army1 = initializeArmyHashMap(0, false);
+    HashMap<String, Soldado> army2 = initializeArmyHashMap(1, true);
+    displayArmy(army1, "Ejercito 1");
+    displayArmy(army2, "Ejercito 2");
+    System.out.println("Soldado con maxima vida:");
+    displaySoldier(maxLife);
+
+    HashMap<String, Soldado> ranking = ranking(army1, army2);
+    displayArmy(ranking, "Ranking de soldados:");
+    makeGBoard();
+    displayBoard();
+
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item El metodo inicia generando dos HashMaps
+  \item Luego muestra usando el metodo displayArmy que veremos a continuacion:
+\end{itemize}
+\begin{lstlisting}
+  public static void displayArmy(HashMap<String, Soldado> army, String str){
+    System.out.println("\n===== " + str + " =====");
+    for(String soldado : army.keySet()){
+      displaySoldier(army.get(soldado));
+    }
+  }
+
+  public static void displaySoldier(Soldado s){
+    System.out.println(" " + s.getName() + ":");
+    System.out.println("  Nivel de vida: " + s.getLife());
+    System.out.println("  Fila: " + (s.getRow() + 1));
+    System.out.println("  Columna: " + (s.getColumn() + 1));
+    System.out.print("\n");
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item El metodo se apoya de otro, (displaySoldier) que muestra los datos de un soldado, y hace eso con todo el array de Soldados
+  \item Continuando con el metodo principal, luego muestra al soldado con la mayor puntuacion de vida
+  \item Luego se genera un nuevo HashMap "ranking" que tendra a los soldados ordenados
+  \item Luego llama al metodo ranking e imprime su resultado
+  \item Finalmente se crea el tablero grafico, y se muestra
+  \item Tenemos las siguientes variables globales:
+\end{itemize}
+\begin{lstlisting}
+  public static Soldado[][] board = new Soldado[10][10];
+  public static Picture gBoard;
+  public static Soldado maxLife = new Soldado("sold");
+  public static int promedio = 0;
+\end{lstlisting}
+

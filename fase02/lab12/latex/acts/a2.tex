@@ -1,0 +1,69 @@
+\section{Inicializando dos ejercitos}
+\begin{itemize}
+  \item Se necesitan crear dos ejercitos usando HashMap, para lo que crearemos un nuevo metodo que nos permita hacerlo
+\end{itemize}
+\begin{lstlisting} [language=java]
+ public static HashMap<String, Soldado> initializeArmyHashMap(int n, boolean negro){
+
+    int promLife = 0;
+    Random rand = new Random();
+    int randNum = rand.nextInt(10) + 1;
+    HashMap<String, Soldado> army = new HashMap<>();
+
+    for(int i = 0; i < randNum; i++){
+      String nombre = "Soldado " + n + "x" + i;
+      army.put(nombre,new Soldado(nombre));
+      army.get(nombre).setNegro(negro);
+      army.get(nombre).setLife(rand.nextInt(5) + 1);
+      if(army.get(nombre).getLife() > maxLife.getLife())
+        maxLife = army.get(nombre);
+      promLife += army.get(nombre).getLife();
+      genColumnRow(army.get(nombre));
+    }
+    promLife = promLife / army.size();
+    promedio = (promLife + promedio) / 2;
+    return army;
+
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item El codigo es una adaptacion de la generacion normal de ejercitos en un array
+  \item Con la diferencia de que los soldados creados estaran conforme en cantidad con el ultimo parametro que se le pase al metodo
+  \item Los objetos Soldado se guardan como valores de las claves que son sus nombres
+  \item Los otros dos parametros que recibe son n (numero identificador del ejercito) y negro (variable booleana que representa la coloracion de un ejercito)
+  \item Para acceder a los Soldados y ponerlos se hacen uso de metodos de HashMap
+    \item Se cumple con las especificaciones:
+      \begin{itemize}
+        \item Numero aleatorio entre 1 y 10
+          \item Vida aleatoria entre 1 y 5
+            \item Nombre autogenerado para cada uno  
+              \item Que no hayan dos soldados en una misma casilla, esto se lograra con el siguiente metodo que situa a los soldados sobre el tablero:
+      \end{itemize}
+\end{itemize}
+\begin{lstlisting} [language=java]
+  public static void genColumnRow(Soldado s){
+    Random rand = new Random();
+    int column;
+    int row;
+    do {
+      column = rand.nextInt(10);
+      row = rand.nextInt(10);
+    } while(!isEmpty(column, row));
+    s.setColumn(column);
+    s.setRow(row);
+    board[row][column] = s;
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item Este codigo consiste principalmente de un bucle do while 
+  \item La condicion de parada es que se haya encontrado un sitio vacio para el lugar que se prueba en cada iteracion
+  \item Se usa un metodo auxiliar que devuelve un valor de tipo booleano, es este:
+\end{itemize}
+\begin{lstlisting}
+  public static boolean isEmpty(int column, int row){
+    return board[row][column] == null;
+  }
+\end{lstlisting}
+\begin{itemize}
+  \item Este codigo verifica si el espacio en el que queremos insertar un objeto ya esta ocupado por otro
+\end{itemize}
