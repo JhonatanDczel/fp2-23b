@@ -1,69 +1,159 @@
-\section{Inicializando dos ejercitos}
+\section{Clase Soldado}
 \begin{itemize}
-  \item Se necesitan crear dos ejercitos usando HashMap, para lo que crearemos un nuevo metodo que nos permita hacerlo
+    \item Los atributos para la clase soldado son:
 \end{itemize}
 \begin{lstlisting} [language=java]
- public static HashMap<String, Soldado> initializeArmyHashMap(int n, boolean negro){
+  private String nombre;
+  private int fila;
+  private int nivelAtaque = random(5);
+  private int nivelDefensa = random(5);
+  private int columna;
+  private int nivelVida;
+  private int vidaActual;
+  private int velocidad;
+  private String actitud;
+  private boolean vive;
+  private String team;
+\end{lstlisting}
+\begin{itemize}
+  \item Cada atributo que lo requiere, tiene sus metodos setters y getters para encapsular la información.
+    \item Se usan 3 constructores sobrecargados que son los siguientes:
+\end{itemize}
 
-    int promLife = 0;
-    Random rand = new Random();
-    int randNum = rand.nextInt(10) + 1;
-    HashMap<String, Soldado> army = new HashMap<>();
+\begin{lstlisting}
+  public Soldado(String t) {
+    team = t;
+    velocidad = 0;
+    vive = true;
+    actitud = "ataque";
 
-    for(int i = 0; i < randNum; i++){
-      String nombre = "Soldado " + n + "x" + i;
-      army.put(nombre,new Soldado(nombre));
-      army.get(nombre).setNegro(negro);
-      army.get(nombre).setLife(rand.nextInt(5) + 1);
-      if(army.get(nombre).getLife() > maxLife.getLife())
-        maxLife = army.get(nombre);
-      promLife += army.get(nombre).getLife();
-      genColumnRow(army.get(nombre));
+  }
+  public Soldado(int v, String t) {
+    team = t;
+    velocidad = v;
+    vive = true;
+    actitud = "ataque";
+  }
+  public Soldado(int v, int nV, String t) {
+    team = t;
+    vive = true;
+    velocidad = v;
+    nivelVida = nV;
+    actitud = "ataque";
+  }
+\end{lstlisting}
+
+\begin{itemize}
+    \item Estos constructores nos servirán cuando vayamos a crear soldados con distintos datos base. 
+      \item Adicionalmente tenemos los metodos de accion del soldado:
+\end{itemize}
+\begin{lstlisting} [language=java]
+  public void atacar() {
+    actitud = "ofensiva";
+  }
+  public void defender() {
+    actitud = "defensiva";
+  }
+  public void huir() {
+    actitud = "fuga";
+    velocidad += 2;
+  }
+  public void avanzar() {
+    velocidad += 1;
+  }
+
+  public void serAtacado() {
+    vidaActual -= 1;
+    if(vidaActual == 0) morir();
+  }
+  public void morir() { 
+    vive = false;
+  }
+
+  public void retroceder() {
+    if (velocidad > 0) {
+      velocidad = 0;
+      actitud = "defensiva";
+    } else if (velocidad == 0) {
+      velocidad = -1; 
     }
-    promLife = promLife / army.size();
-    promedio = (promLife + promedio) / 2;
-    return army;
+  }
+\end{lstlisting}
 
-  }
-\end{lstlisting}
 \begin{itemize}
-  \item El codigo es una adaptacion de la generacion normal de ejercitos en un array
-  \item Con la diferencia de que los soldados creados estaran conforme en cantidad con el ultimo parametro que se le pase al metodo
-  \item Los objetos Soldado se guardan como valores de las claves que son sus nombres
-  \item Los otros dos parametros que recibe son n (numero identificador del ejercito) y negro (variable booleana que representa la coloracion de un ejercito)
-  \item Para acceder a los Soldados y ponerlos se hacen uso de metodos de HashMap
-    \item Se cumple con las especificaciones:
-      \begin{itemize}
-        \item Numero aleatorio entre 1 y 10
-          \item Vida aleatoria entre 1 y 5
-            \item Nombre autogenerado para cada uno  
-              \item Que no hayan dos soldados en una misma casilla, esto se lograra con el siguiente metodo que situa a los soldados sobre el tablero:
-      \end{itemize}
-\end{itemize}
-\begin{lstlisting} [language=java]
-  public static void genColumnRow(Soldado s){
-    Random rand = new Random();
-    int column;
-    int row;
-    do {
-      column = rand.nextInt(10);
-      row = rand.nextInt(10);
-    } while(!isEmpty(column, row));
-    s.setColumn(column);
-    s.setRow(row);
-    board[row][column] = s;
-  }
-\end{lstlisting}
-\begin{itemize}
-  \item Este codigo consiste principalmente de un bucle do while 
-  \item La condicion de parada es que se haya encontrado un sitio vacio para el lugar que se prueba en cada iteracion
-  \item Se usa un metodo auxiliar que devuelve un valor de tipo booleano, es este:
+    \item Las acciones cambian los estados de los atributos del soldado, a los que accederemos despues con los metodos accesores:
 \end{itemize}
 \begin{lstlisting}
-  public static boolean isEmpty(int column, int row){
-    return board[row][column] == null;
+  public String getTeam() {
+    return team; 
+  }
+
+  public void setNombre(String n) {
+    nombre = n; 
+  }
+
+  public void setFila(int f) {
+    fila = f; 
+  }
+
+  public void setColumna(int c) {
+    columna = c; 
+  }
+
+  public void setNivelVida(int p) {
+    nivelVida = p; 
+  }
+
+  public String getNombre() {
+    return nombre; 
+  }
+
+  public int getFila() {
+    return fila; 
+  }
+
+  public int getColumna() {
+    return columna; 
+  }
+
+  public int getNivelVida() {
+    return nivelVida; 
+  }
+
+  public int getNivelAtaque() {
+    return nivelAtaque; 
+  }
+
+  public int getNivelDefensa() {
+    return nivelDefensa; 
+  }
+
+  public void setNivelAtaque(int n) {
+    nivelAtaque = n; 
+  }
+
+  public void setNivelDefensa(int n) {
+    nivelDefensa = n; 
+  }
+
+  public boolean isLive() { 
+    return vive; 
   }
 \end{lstlisting}
 \begin{itemize}
-  \item Este codigo verifica si el espacio en el que queremos insertar un objeto ya esta ocupado por otro
+    \item Estos metodos accesores nos servirán para manejar la lógica interna del videojuego
+      \item Adicionalmente tenemos algunos metodos auxiliares que usamos en la misma clase:
 \end{itemize}
+
+\begin{lstlisting}
+  public String toString() {
+    return "Nombre: " + nombre +
+    " | Ubicacion: " + fila + ", " + columna +
+    " | nivelVida: " + nivelVida + 
+    " | Estado: " + (vive ? "Vivo" : "Muerto") +
+    " | Actitud: "+ actitud +"\n" ;
+  }
+  private int random(int n) {
+    return (int) (Math.random() * n + 1);
+  }
+\end{lstlisting}
