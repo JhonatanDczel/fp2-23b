@@ -1,152 +1,203 @@
-\section{Ejecucion grafica y por consola}
-\begin{itemize}
-  \item A continuacion se vera la Ejecucion tanto grafica como por consola
-\end{itemize}
-\subsection{Ejecucion por consola}
+\section{Ejecucion del juego}
+
+\textbf{Seleccion de la Opcion "Juego rapido":}
+
+El usuario elige la opcion "Juego rapido" ingresando el número 1 en el menú principal.
 \begin{lstlisting}
-===== Ejercito 1 =====
- Soldado 0x8:
-  Nivel de vida: 3
-  Fila: 9
-  Columna: 2
-
- Soldado 0x6:
-  Nivel de vida: 3
-  Fila: 3
-  Columna: 1
-
- Soldado 0x7:
-  Nivel de vida: 5
-  Fila: 1
-  Columna: 1
-
- Soldado 0x4:
-  Nivel de vida: 4
-  Fila: 2
-  Columna: 2
-
- Soldado 0x5:
-  Nivel de vida: 1
-  Fila: 6
-  Columna: 3
-
- Soldado 0x2:
-  Nivel de vida: 4
-  Fila: 4
-  Columna: 6
-
- Soldado 0x3:
-  Nivel de vida: 3
-  Fila: 10
-  Columna: 1
-
- Soldado 0x0:
-  Nivel de vida: 4
-  Fila: 2
-  Columna: 6
-
- Soldado 0x1:
-  Nivel de vida: 2
-  Fila: 3
-  Columna: 3
-
-
-===== Ejercito 2 =====
- Soldado 1x3:
-  Nivel de vida: 1
-  Fila: 1
-  Columna: 4
-
- Soldado 1x1:
-  Nivel de vida: 3
-  Fila: 5
-  Columna: 3
-
- Soldado 1x2:
-  Nivel de vida: 4
-  Fila: 3
-  Columna: 9
-
- Soldado 1x0:
-  Nivel de vida: 1
-  Fila: 6
-  Columna: 5
-
-Soldado con maxima vida:
- Soldado 0x7:
-  Nivel de vida: 5
-  Fila: 1
-  Columna: 1
-
-
-===== Ranking de soldados: =====
- Soldado 0x7:
-  Nivel de vida: 5
-  Fila: 1
-  Columna: 1
-
- Soldado 0x2:
-  Nivel de vida: 4
-  Fila: 4
-  Columna: 6
-
- Soldado 1x2:
-  Nivel de vida: 4
-  Fila: 3
-  Columna: 9
-
- Soldado 0x0:
-  Nivel de vida: 4
-  Fila: 2
-  Columna: 6
-
- Soldado 0x4:
-  Nivel de vida: 4
-  Fila: 2
-  Columna: 2
-
- Soldado 1x1:
-  Nivel de vida: 3
-  Fila: 5
-  Columna: 3
-
- Soldado 0x8:
-  Nivel de vida: 3
-  Fila: 9
-  Columna: 2
-
- Soldado 0x6:
-  Nivel de vida: 3
-  Fila: 3
-  Columna: 1
-
- Soldado 0x3:
-  Nivel de vida: 3
-  Fila: 10
-  Columna: 1
-
- Soldado 0x1:
-  Nivel de vida: 2
-  Fila: 3
-  Columna: 3
-
- Soldado 1x3:
-  Nivel de vida: 1
-  Fila: 1
-  Columna: 4
-
- Soldado 0x5:
-  Nivel de vida: 1
-  Fila: 6
-  Columna: 3
-
- Soldado 1x0:
-  Nivel de vida: 1
-  Fila: 6
-  Columna: 5
+1. Juego rapido
+2. Juego personalizado
+3. Salir
+1
 \end{lstlisting}
-\begin{itemize}
-  \item Como vemos, la estructura del metodo main esta representada en la salida por consola
-  \item A continuacion se vera la salida grafica:
-\end{itemize}
-\includegraphics[width=0.5\textwidth]{img/exec.png}
+
+\textbf{Inicio del Juego Rapido:}
+
+Se presenta un mensaje indicando que para salir de la partida, el usuario debe ingresar 'S'.
+\begin{lstlisting}
+Para salir de la partida ingresa 'S'
+\end{lstlisting}
+
+\textbf{Informacion de los Soldados con Mayor Nivel de Puntos:}
+
+Se muestran los soldados con el mayor nivel de puntos para la primera y segunda flota.
+\begin{lstlisting}
+Los soldados con el mayor nivel de puntos de la primera flota son:
+Nombre: Soldado 1 | Ubicacion: 6, 4 | Nivel de Vida: 4 | Estado: Vivo | Actitud: Ataque
+
+Nombre: Soldado 4 | Ubicacion: 4, 3 | Nivel de Vida: 4 | Estado: Vivo | Actitud: Ataque
+
+Los soldados con el mayor nivel de puntos de la segunda flota son:
+\end{lstlisting}
+
+\textbf{Impresion del Promedio de Puntos:}
+
+Se imprime el promedio de puntos para la primera y segunda flota.
+\begin{lstlisting}
+El promedio de la primera flota es: 2.75
+El promedio de la segunda flota es: 3.125
+\end{lstlisting}
+
+\textbf{Soldados Ordenados en el Campo de Juego:}
+
+Se muestra la informacion de los soldados ordenados en el campo de juego para ambas flotas.
+\begin{lstlisting}
+SOLDADOS ORDENADOS
+Soldados ordenados de la primera flota
+Nombre: Soldado 1 | Ubicacion: 6, 4 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 2 | Ubicacion: 6, 1 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 3 | Ubicacion: 6, 8 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 4 | Ubicacion: 4, 3 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 5 | Ubicacion: 1, 2 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 6 | Ubicacion: 5, 7 | nivelVida: 3 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 7 | Ubicacion: 5, 5 | nivelVida: 3 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 8 | Ubicacion: 3, 1 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+
+Soldados ordenados de la segunda flota
+Nombre: Soldado 1 | Ubicacion: 1, 8 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 2 | Ubicacion: 7, 7 | nivelVida: 5 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 3 | Ubicacion: 2, 6 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 4 | Ubicacion: 3, 7 | nivelVida: 1 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 5 | Ubicacion: 5, 2 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 6 | Ubicacion: 5, 8 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 7 | Ubicacion: 4, 0 | nivelVida: 5 | Estado: Vivo | Actitud: ataque
+ |
+Nombre: Soldado 8 | Ubicacion: 5, 9 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+ |
+\end{lstlisting}
+
+\textbf{Ranking de Puntos de Ejército 1 y 2:}
+
+Se imprime el ranking de puntos para la primera flota usando el algoritmo de ordenamiento Bubble Sort y para la segunda flota usando el algoritmo de ordenamiento Select Sort.
+\begin{lstlisting}
+RANKING DE PUNTOS EJERCITO 1 POR BUBBLE SORT
+[Nombre: Soldado 2 | Ubicacion: 6, 1 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 3 | Ubicacion: 6, 8 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 5 | Ubicacion: 1, 2 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 8 | Ubicacion: 3, 1 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 6 | Ubicacion: 5, 7 | nivelVida: 3 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 7 | Ubicacion: 5, 5 | nivelVida: 3 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 1 | Ubicacion: 6, 4 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 4 | Ubicacion: 4, 3 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+]
+
+RANKING DE PUNTOS EJERCITO 2 POR SELECT SORT
+[Nombre: Soldado 2 | Ubicacion: 7, 7 | nivelVida: 5 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 7 | Ubicacion: 4, 0 | nivelVida: 5 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 5 | Ubicacion: 5, 2 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 1 | Ubicacion: 1, 8 | nivelVida: 4 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 3 | Ubicacion: 2, 6 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 6 | Ubicacion: 5, 8 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 8 | Ubicacion: 5, 9 | nivelVida: 2 | Estado: Vivo | Actitud: ataque
+, Nombre: Soldado 4 | Ubicacion: 3, 7 | nivelVida: 1 | Estado: Vivo | Actitud: ataque
+]
+\end{lstlisting}
+
+\textbf{Inicio del Juego Interactivo:}
+
+Se presenta la interfaz del campo de juego con las posiciones de los soldados de ambos equipos.
+\begin{lstlisting}
+###################################
+     A     B     C     D     E     F     G     H     I     J
+  -------------------------------------------------------------
+1 |     |     |     |     | #/5 |     |     |     |     |     |
+  -------------------------------------------------------------
+2 |     |     |     | */2 |     |     | */2 |     |     |     |
+  -------------------------------------------------------------
+3 |     | */2 |     |     |     | #/4 |     |     |     |     |
+  -------------------------------------------------------------
+4 |     |     |     |     | */4 |     |     |     |     |     |
+  -------------------------------------------------------------
+5 |     |     |     |     |     |     | */4 |     |     |     |
+  -------------------------------------------------------------
+6 |     |     |     |     |     | */3 |     |     |     |     |
+  -------------------------------------------------------------
+7 |     |     | #/2 |     |     |     |     |     |     |     |
+  -------------------------------------------------------------
+8 |     |     |     | #/1 |     | */3 |     | #/5 |     |     |
+  -------------------------------------------------------------
+9 |     | #/4 |     |     |     | #/2 | */2 |     |     |     |
+  -------------------------------------------------------------
+10 |     |     |     |     |     | #/2 |     |     |     |     |
+  -------------------------------------------------------------
+
+Toca moverse al equipo *
+Ingrese la posicion de la ficha a mover:
+\end{lstlisting}
+
+\textbf{Desarrollo de la Partida Interactiva:}
+
+Se muestra la interaccion entre los equipos, indicando cuando es el turno de cada uno y solicitando las acciones de movimiento.
+\begin{lstlisting}
+...
+
+Toca moverse al equipo *
+Ingrese la posicion de la ficha a mover:
+A, 1
+Jugada no valida
+
+Toca moverse al equipo *
+Ingrese la posicion de la ficha a mover:
+E, 1
+NO ES EL TURNO DEL EQUIPO: #
+
+Toca moverse al equipo *
+Ingrese la posicion de la ficha a mover:
+D, 2
+Ingrese la nueva posicion deseada:
+A, 1
+Superaste el maximo de casillas por movimiento
+
+Toca moverse al equipo *
+Ingrese la posicion de la ficha a mover:
+D, 2
+Ingrese la nueva posicion deseada:
+C, 2
+...
+\end{lstlisting}
+
+\textbf{Estado Final del Campo de Juego:}
+
+Se muestra el estado final del campo de juego después de las acciones realizadas por los jugadores.
+\begin{lstlisting}
+     A     B     C     D     E     F     G     H     I     J
+  -------------------------------------------------------------
+1 |     |     |     |     | #/5 |     |     |     |     |     |
+  -------------------------------------------------------------
+2 |     |     | */2 |     |     |     | */2 |     |     |     |
+  -------------------------------------------------------------
+3 |     | */2 |     |     |     | #/4 |     |     |     |     |
+  -------------------------------------------------------------
+4 |     |     |     |     | */4 |     |     |     |     |     |
+  -------------------------------------------------------------
+5 |     |     |     |     |     |     | */4 |     |     |     |
+  -------------------------------------------------------------
+6 |     |     |     |     |     | */3 |     |     |     |     |
+  -------------------------------------------------------------
+7 |     |     | #/2 |     |     |     |     |     |     |     |
+  -------------------------------------------------------------
+8 |     |     |     | #/1 |     | */3 |     | #/5 |     |     |
+  -------------------------------------------------------------
+9 |     | #/4 |     |     |     | #/2 | */2 |     |     |     |
+  -------------------------------------------------------------
+10 |     |     |     |     |     | #/2 |     |     |     |     |
+  -------------------------------------------------------------
+
+Toca moverse al equipo #
+Ingrese la posicion de la ficha a mover:
+\end{lstlisting}
+
+El juego proporciona una experiencia interactiva, permitiendo al usuario gestionar y mover sus soldados en el campo de juego. Las salidas detalladas en consola ofrecen informacion clave sobre el estado de las flotas, los soldados y el desarrollo de la partida. 
