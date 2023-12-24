@@ -17,3 +17,8 @@ class Hidroavion implements Barco, Avion {
     System.out.println("Hidroavion navegando en el aire");
   }
 }
+
+public class Ejercicio3 {
+  public static void main(String[] args) {
+  }
+}
