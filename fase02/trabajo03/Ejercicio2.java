@@ -5,6 +5,14 @@ class Cilindro extends Circulo{
     super(x, y, radio);
     this.longitud = longitud;
   }
+
+  public void setLongitud(double longitud){
+    this.longitud = longitud;
+  }
+
+  public double getLongitud(){
+    return this.longitud;
+  }
 }
 
 class Punto{
