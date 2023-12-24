@@ -1,5 +1,10 @@
 class Cilindro extends Circulo{
   private double longitud;
+
+  public Cilindro(double x, double y, double radio, double longitud) {
+    super(x, y, radio);
+    this.longitud = longitud;
+  }
 }
 
 class Punto{
