@@ -1,0 +1,75 @@
+
+\section{Ejercicio 01}
+
+\subsection{Descripción General}
+El código presentado consta de dos clases en Java: \texttt{Punto} y \texttt{Circulo}. Estas clases se utilizan para representar puntos en un plano cartesiano y círculos respectivamente. La clase \texttt{Circulo} hereda de la clase \texttt{Punto}, lo que implica que un objeto de tipo \texttt{Circulo} hereda todas las propiedades y métodos de un objeto \texttt{Punto}.
+
+\subsection{Clase \texttt{Punto}}
+\subsubsection{Atributos}
+\begin{itemize}
+    \item \texttt{private double x}: Representa la coordenada x del punto.
+    \item \texttt{private double y}: Representa la coordenada y del punto.
+\end{itemize}
+
+\subsubsection{Constructor}
+\begin{itemize}
+    \item \texttt{public Punto(double x, double y)}: Inicializa las coordenadas (x, y) del punto con los valores proporcionados.
+\end{itemize}
+
+\subsubsection{Métodos}
+\begin{itemize}
+    \item \texttt{public double distancia(Punto otroPunto)}: Calcula la distancia entre el punto actual y otro punto dado utilizando la fórmula de distancia euclidiana.
+    \item \texttt{public double getX()}: Obtiene la coordenada x del punto.
+    \item \texttt{public double getY()}: Obtiene la coordenada y del punto.
+    \item \texttt{public void setY(double y)}: Establece la coordenada y del punto.
+    \item \texttt{public void setX(double x)}: Establece la coordenada x del punto.
+\end{itemize}
+
+\subsection{Clase \texttt{Circulo}}
+\subsubsection{Atributos}
+\begin{itemize}
+    \item \texttt{private double radio}: Representa el radio del círculo.
+\end{itemize}
+
+\subsubsection{Constructor}
+\begin{itemize}
+    \item \texttt{public Circulo(double x, double y, double radio)}: Inicializa las coordenadas (x, y) del centro del círculo y su radio. Utiliza la llamada al constructor de la clase base \texttt{Punto} mediante \texttt{super(x, y)}.
+\end{itemize}
+
+\subsubsection{Métodos}
+\begin{itemize}
+    \item \texttt{public double getRadio()}: Obtiene el radio del círculo.
+    \item \texttt{public void setRadio(double radio)}: Establece el radio del círculo.
+\end{itemize}
+
+\subsection{Ejemplo de Uso}
+\begin{lstlisting}
+\begin{lstlisting}
+\begin{lstlisting}[language=Java]
+public class EjemploUso {
+  public static void main(String[] args) {
+    // Crear un punto en el plano cartesiano
+    Punto puntoA = new Punto(1.0, 2.0);
+    
+    // Obtener las coordenadas del punto
+    double coordenadaX = puntoA.getX();
+    double coordenadaY = puntoA.getY();
+    
+    // Crear un círculo con centro en el puntoA y radio 3.0
+    Circulo circuloA = new Circulo(coordenadaX, coordenadaY, 3.0);
+    
+    // Obtener el radio del círculo
+    double radioCirculoA = circuloA.getRadio();
+    
+    // Establecer nuevas coordenadas al puntoA
+    puntoA.setX(4.0);
+    puntoA.setY(5.0);
+    
+    // Calcular la distancia entre el puntoA y el centro del círculoA
+    double distancia = puntoA.distancia(new Punto(coordenadaX, coordenadaY));
+  }
+}
+\end{lstlisting}
+\end{lstlisting}
+
+En este ejemplo, se muestran instancias de las clases \texttt{Punto} y \texttt{Circulo}, así como el acceso a sus métodos para obtener y establecer valores, y calcular la distancia entre el punto y el centro del círculo.
