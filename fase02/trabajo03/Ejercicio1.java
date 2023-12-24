@@ -6,6 +6,11 @@ class Punto{
     this.x = x;
     this.y = y; 
   }
+
+  public double distancia(Punto otroPunto){
+    return Math.sqrt(Math.pow(otroPunto.x - this.x, 2) + Math.pow(otroPunto.y - this.y, 2));
+  }
+
   public double getX(){
     return this.x;
   }
@@ -33,5 +38,9 @@ class Circulo extends Punto{
 
   public double getRadio(){
     return this.radio;
+  }
+
+  public void setRadio(double radio){
+    this.radio = radio;
   }
 }
