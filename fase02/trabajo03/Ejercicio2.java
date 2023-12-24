@@ -1,9 +1,13 @@
 class Cilindro extends Circulo{
-  private double longitud;
+  protected double longitud;
 
   public Cilindro(double x, double y, double radio, double longitud) {
     super(x, y, radio);
     this.longitud = longitud;
+  }
+
+  public double superficie(){
+    return 2 * this.radio * (this.longitud + this.radio);
   }
 
   public void setLongitud(double longitud){
@@ -16,8 +20,8 @@ class Cilindro extends Circulo{
 }
 
 class Punto{
-  private double x;
-  private double y;
+  protected double x;
+  protected double y;
 
   public Punto(double x, double y){
     this.x = x;
@@ -46,7 +50,7 @@ class Punto{
 }
 
 class Circulo extends Punto{
-  private double radio;
+  protected double radio;
 
   public Circulo(double x, double y, double radio){
     super(x, y);
