@@ -1,37 +1,71 @@
-\section{Clase VideoJuego}
-La clase VideoJuego contiene la logica principal y es la clase que contiene el metodo main, por lo tanto, el que debería llamarse para ejecutar el juego. 
-La estructura de la clase esta dada de la siguiente manera:
+\section{Ejercicio 03}
 
+\subsection{Descripción General}
+En este ejercicio, se ha implementado un conjunto de interfaces y una clase para representar la funcionalidad de un hidroavión. Se han definido dos interfaces, \texttt{Barco} y \texttt{Avion}, cada una con un método que representa la acción específica de navegar y volar, respectivamente. Además, se ha creado una clase \texttt{Hidroavion} que implementa ambas interfaces, permitiendo que un objeto de esta clase pueda realizar tanto operaciones de barco como de avión.
+
+\subsection{Código}
+\textbf{Interfaces:}
+\begin{lstlisting}[language=Java]
+interface Barco {
+  void navegar();
+}
+
+interface Avion {
+  void volar();
+}
+\end{lstlisting}
+
+\textbf{Clase Hidroavion:}
+\begin{lstlisting}[language=Java]
+class Hidroavion implements Barco, Avion {
+  @Override
+  public void navegar() {
+    System.out.println("Hidroavion navegando en el agua");
+  }
+
+  @Override
+  public void volar() {
+    System.out.println("Hidroavion navegando en el aire");
+  }
+}
+\end{lstlisting}
+
+\textbf{Clase de Prueba (\texttt{Ejercicio3}):}
+\begin{lstlisting}[language=Java]
+public class Ejercicio3 {
+  public static void main(String[] args) {
+    // Crear una instancia de hidroavion
+    Hidroavion hidroavion = new Hidroavion();
+
+    // Llamar a los métodos de las interfaces
+    hidroavion.navegar();
+    hidroavion.volar();
+  }
+}
+\end{lstlisting}
+
+\subsection{Explicación del Código}
+\textbf{Interfaces (\texttt{Barco} y \texttt{Avion}):}
 \begin{itemize}
-  \item Metodos: 
-	\item juegoRapido
-	\item juegoPersonalizado
-	\item crearSoldado
-	\item eliminarSoldado
-	\item clonarSoldado
-	\item modificarSoldado
-	\item compararSoldado
-	\item intercambiarSoldado
-	\item verSoldado
-	\item verEjercito
-	\item sumarNiveles
-	\item jugar
-	\item volver
-	\item main
-	\item fillTable
-	\item addSoldado
-	\item printTable
-	\item printArr
-	\item random
-	\item printMayorNivel
-	\item printPromedioPuntos
-	\item printPuntosAll
-	\item printSoladosOrdenados
-	\item printRankingPointsBubble
-	\item printRankingPointsSelect
-	\item getWinner
-	\item randomWinner
-	\item mover
-	\item atacar
+  \item Se han definido dos interfaces, una para la funcionalidad de barco y otra para la funcionalidad de avión. Cada interfaz contiene un método que representa la acción específica asociada con la respectiva interfaz.
 \end{itemize}
-A continuación veremos la explicación de los metodos principales para el funcionamiento.
+
+\textbf{Clase \texttt{Hidroavion}:}
+\begin{itemize}
+  \item Esta clase implementa ambas interfaces \texttt{Barco} y \texttt{Avion}.
+  \item Se han proporcionado las implementaciones concretas para los métodos \texttt{navegar} y \texttt{volar} en función del comportamiento esperado de un hidroavión.
+\end{itemize}
+
+\textbf{Clase de Prueba (\texttt{Ejercicio3}):}
+\begin{itemize}
+  \item En la clase de prueba, se crea una instancia de \texttt{Hidroavion}.
+  \item Se invocan los métodos \texttt{navegar} y \texttt{volar} para demostrar la funcionalidad dual del hidroavión, capaz de navegar tanto en el agua como en el aire.
+\end{itemize}
+
+\subsection{Ejemplo de Ejecución}
+Al ejecutar la clase \texttt{Ejercicio3}, se obtendrá la siguiente salida:
+\begin{lstlisting}
+Hidroavion navegando en el agua
+Hidroavion navegando en el aire
+\end{lstlisting}
+Este resultado demuestra que el hidroavión es capaz de realizar ambas acciones, navegar en el agua y volar en el aire, gracias a la implementación de las interfaces \texttt{Barco} y \texttt{Avion}.
