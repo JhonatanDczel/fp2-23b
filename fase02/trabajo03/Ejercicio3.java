@@ -20,5 +20,9 @@ class Hidroavion implements Barco, Avion {
 
 public class Ejercicio3 {
   public static void main(String[] args) {
+    Hidroavion Hidroavion = new Hidroavion();
+
+    hidroavion.navegar();
+    hidroavion.volar();
   }
 }
