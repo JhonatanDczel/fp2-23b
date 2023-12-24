@@ -11,4 +11,9 @@ class Hidroavion implements Barco, Avion {
   public void navegar(){
     System.out.println("Hidroavion navegando en el agua");
   }
+
+  @Override
+  public void volar() {
+    System.out.println("Hidroavion navegando en el aire");
+  }
 }
