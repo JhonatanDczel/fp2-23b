@@ -1,7 +1,7 @@
 \section{Ejercicio 02}
 
 \subsection{Descripción General}
-En este segundo fragmento de código, se introduce la nueva clase: \texttt{Cilindro}. Además, se expande la clase \texttt{Circulo} que ahora hereda de la clase \texttt{Punto}. Estas clases están diseñadas para representar un cilindro tridimensional, puntos en un plano cartesiano, y círculos respectivamente.
+Para el segundo ejercicio, se introduce la nueva clase: \texttt{Cilindro}. Además, se expande la clase \texttt{Circulo} que ahora hereda de la clase \texttt{Punto}. Estas clases están diseñadas para representar un cilindro tridimensional, puntos en un plano cartesiano, y círculos respectivamente.
 
 \subsection{Clase Cilindro}
 \textbf{Atributos:}
@@ -59,8 +59,7 @@ En este segundo fragmento de código, se introduce la nueva clase: \texttt{Cilin
     \item \texttt{public void setRadio(double radio)}: Establece el radio del círculo.
 \end{itemize}
 
-\subsection{Ejemplo de Uso (sin cambios)}
-\begin{lstlisting}
+\subsection{Ejemplo de Uso}
 \begin{lstlisting}[language=Java]
 public class EjemploUso {
   public static void main(String[] args) {
@@ -71,19 +70,11 @@ public class EjemploUso {
     double coordenadaX = puntoA.getX();
     double coordenadaY = puntoA.getY();
     
-    // Crear un círculo con centro en el puntoA y radio 3.0
-    Circulo circuloA = new Circulo(coordenadaX, coordenadaY, 3.0);
+    // Crear un cilindro con centro en el puntoA, radio 3.0 y altura 10.0
+    Cilindro cilindro = new Cilindro(coordenadaX, coordenadaY, 3.0, 10.0);
     
-    // Obtener el radio del círculo
-    double radioCirculoA = circuloA.getRadio();
-    
-    // Establecer nuevas coordenadas al puntoA
-    puntoA.setX(4.0);
-    puntoA.setY(5.0);
-    
-    // Calcular la distancia entre el puntoA y el centro del círculoA
-    double distancia = puntoA.distancia(new Punto(coordenadaX, coordenadaY));
+    // Obtener la superficie del cilindro
+    double superficieCilindro = cilindro.superficie();
   }
 }
-\end{lstlisting}
 \end{lstlisting}
