@@ -22,3 +22,7 @@ class Punto{
     this.x = x;
   }
 }
+
+class Circulo extends Punto{
+  private double radio;
+}
