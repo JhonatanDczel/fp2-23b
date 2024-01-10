@@ -1,0 +1,1272 @@
+commit 7c31bc6ece1993270edd9d537fb700f6e31ba115
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 16:45:14 2023 -0500
+
+    lab12 latex commits
+
+commit 4f13bb844cb735654e424b6fb21f43e4e38009f0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 16:02:58 2023 -0500
+
+    lab12 latex atc6
+
+commit 9592a976b0f0020a2a2ef1bc60639cb3a33d8f0b
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 15:47:08 2023 -0500
+
+    lab12 latex act5
+
+commit 8432d9784eb626c4be4f41a16aeecfe39cea53b2
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 15:34:04 2023 -0500
+
+    lab12 latex: act4
+
+commit 9c95540d7ae2fab9902adb286b1cf9692bcbc728
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 14:58:02 2023 -0500
+
+    lab12 latex act 2
+
+commit af3402c35d50ed8fa688623fca2961810f6aaa85
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 14:39:20 2023 -0500
+
+    lab12 sube el archivo tree
+
+commit 13a99d795fa8b5e53d9faee30216dbf1956867cf
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 14:36:54 2023 -0500
+
+    lab12 activity log
+
+commit 7d34a86dc8126321d2fe7b56cae7169142880413
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Dec 13 14:23:30 2023 -0500
+
+    Lab12: LATEX
+
+commit b5cbd9167b54efab681a79b4fbdd7a332eb243b5
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:17:34 2023 -0500
+
+    Corrije el error del nombre de la calse
+
+commit e356eb461c7dff5498a28d3fb3320b854e22004f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:16:47 2023 -0500
+
+    Agrega el metodo atacar
+
+commit 4dc49751901b6f07b91a10d2e5779e9f3129cce1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:16:22 2023 -0500
+
+    Agrega el metodo mover
+
+commit 7f2adda566d664a4c7c38300c68c287c27e220d6
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:15:53 2023 -0500
+
+    Metodo get winner
+
+commit 22d7b9aac5a07bcc41552fbe65401617f11164db
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:15:20 2023 -0500
+
+    Metodo que imprime el ranking de soldados por puntos
+
+commit bb7929ccc6bd8bb19d1fd8557c7106860fdc1d2c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:15:05 2023 -0500
+
+    Metodo que imprime el ranking de soldados
+
+commit 883c7b61657b46f8add303a013decb7c71167e3f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:14:33 2023 -0500
+
+    Metodo para imprimir promedios y para imprimir puntos
+
+commit fac683dc304d8790a71619c2d65af3071f58f514
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:14:00 2023 -0500
+
+    Metodos para imprimir datos al usuario
+
+commit 74de182a2726ebf7ee60568e4122b3bfc9b73e12
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:13:34 2023 -0500
+
+    Metodos auxiliares
+
+commit 5c576a53984d95bbe311de1e8aaf37aae72b5de2
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:13:10 2023 -0500
+
+    Metodo auxuiar filltable
+
+commit b7aecfc012fda83b168a8a0b318f4e80f528d68f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:12:36 2023 -0500
+
+    Metodo main
+
+commit 4bfe657d2b89fe3158be4e931b6063df49b675a9
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:12:14 2023 -0500
+
+    Metodos para implementar a futuro para otros laboratorios
+
+commit 8c95e9be0340d97b729310b1ca0d1ca1a372968e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:11:37 2023 -0500
+
+    Metodo modificar soldado
+
+commit a79161adec9d2010b05992af603f72f07fe1fe25
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:11:16 2023 -0500
+
+    Metodo clonar soldado
+
+commit 70e2bad4bbd4bddd3d02ce881d90c947d2a302fb
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:10:52 2023 -0500
+
+    Metodo eliminar soldado
+
+commit 496c05baf98c4b3233cbcc33c5b20323e2dba4f9
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:10:29 2023 -0500
+
+    Metodo crear soldado
+
+commit 89bcc0118d1dd84f6edb69549684e1767a0e77f1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:10:03 2023 -0500
+
+    Modo de juego personalizado
+
+commit 7cd0bf907f300b1b4780fa3cf364a842a3198005
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:08:35 2023 -0500
+
+    commit
+
+commit 274cf853e8a6b713a3ee1a2157103a431cf30009
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:07:24 2023 -0500
+
+    Agrega la funcionalidad inicial
+
+commit 02e7ef0f37f7876792ccf3682f84824cd090e05a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:04:24 2023 -0500
+
+    Lógica inicial para el bucle del juego
+
+commit 1740eabf3958fed46ecd4be9987d88a37a93d8a2
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 17:01:39 2023 -0500
+
+    Agrega la plantilla inicial para la clse
+
+commit 8c48e98f82ef122e5671d7c98a4718a56ad6ff3f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:59:22 2023 -0500
+
+    Agrega metodos internos
+
+commit 09fca53c141a1c6ef0fbe646c55fe1b530b81311
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:59:01 2023 -0500
+
+    Termina los getters y setters
+
+commit 8daf0b93de6173d3cd9a9ce1c6cb21e8a74e38e0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:58:38 2023 -0500
+
+    Mas getters y setters
+
+commit c4fa3b5d2e3dc2db506551c336a8a826e100a85c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:58:17 2023 -0500
+
+    Configura getters y setters
+
+commit 6f166730f59aee220934b906996f8eb49b26cb2b
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:57:06 2023 -0500
+
+    Completa los metodos de acciones
+
+commit 0c4a358709095cfe75a19e87c1eb852ca20152e1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:56:36 2023 -0500
+
+    Crea metodos basicos de acciones
+
+commit 5be9489569976460f460a45809a7f17eedf1416a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:56:08 2023 -0500
+
+    Agrega metodos para el constructor sobrecargado
+
+commit b246f79e012cdb097295ca1cc158d1a4b2c071e4
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:55:39 2023 -0500
+
+    Constructor
+
+commit a7fb4575d45eaadc5f8a62a5e5baaa9c956c53a4
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:55:17 2023 -0500
+
+    Atributos para la clase Soldado
+
+commit 41f67e32852f4721ae938bbf9d0187685ff05141
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Dec 11 16:54:22 2023 -0500
+
+    Crea los archivos para el laboratorio
+
+commit ed4e043d25a5c0faefb763746e1a2c45c455ddac
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Nov 8 15:52:03 2023 -0500
+
+    Elimina la carpeta main del repositorio remoto
+
+commit 1e7a36ae377c8340c79e6ea23d4b1a919b046494
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Nov 8 15:51:22 2023 -0500
+
+    Otra actualizacion de gitignore
+
+commit 722ff451f710bafdddcab8d882bc1ca028140f9d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Nov 8 15:46:37 2023 -0500
+
+    Otra actualizacion del gitignore
+
+commit abb26951581c2dad17320fae6ea154d77a5d13b1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Nov 8 15:45:08 2023 -0500
+
+    Actualizacion del gitignore
+
+commit f77399934672905a999000438912710b6d445709
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 14:32:26 2023 -0500
+
+    Generador de ejercitos de soldado con nombre autogenerado
+
+commit f0c9f8e230b41b834e5b132a3a45777b0c5a0225
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 14:26:30 2023 -0500
+
+    Se agrega un atributo a soladdo
+
+commit 484f72fb043af4e7176e1031a4490cc613fa9da9
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 14:17:05 2023 -0500
+
+    Tercer metodo sobrecargado que servira de tester
+
+commit 439dac7c4b33169fc5d230bf2fce48163715c221
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 14:14:39 2023 -0500
+
+    Metodos sobrecargados del constructor
+
+commit 1fd68c73708cf1dce13a45883cbd329508712682
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 14:07:33 2023 -0500
+
+    Crea los metodos setters y getters para soldado
+
+commit d9136f3096823567ccccd5e7072dbf32b96f08dc
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 13:12:16 2023 -0500
+
+    Actualiza el metodo de ser atacado
+
+commit fd2ee15ce5513bbd1ffb8690466dd513c49f283f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 13:11:19 2023 -0500
+
+    Crea el metodo morir
+
+commit 9d8dad46091a93a95bf3c0e98e737dc27e853596
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 13:10:12 2023 -0500
+
+    Crea el metodo de serAtacado
+
+commit 19333a838973a3ac770f0aaaad77c054534fd48a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:55:02 2023 -0500
+
+    Segunda condicion de retroceder()
+
+commit afb5ca3712f0c55f923285593f2da7d989d05485
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:52:46 2023 -0500
+
+    Condicional del metodo retroceder()
+
+commit f6fd7d879f4400bf15de4e0238360802617e878e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:49:18 2023 -0500
+
+    Se agrega el incremento de 2 a defender()
+
+commit eac6b90e9c79c63ceea22e474bf8c2b0dea1fb8f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:48:46 2023 -0500
+
+    Crea el metodo huir
+
+commit ceddd36402e2d7970886cc49dd79779616a045a0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:48:16 2023 -0500
+
+    Crea el metodo defender()
+
+commit 73b83db096278cf9c6b3db35a4f2e58e8835ab8f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:47:06 2023 -0500
+
+    Crea el metodo de ataque
+    
+    Adicionalmente se crea le metodo de avanzar, que incrementa la velocidad
+    en 1
+
+commit b491a79b5936e1ba94355628f72e6c53f9e4c9da
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 11:32:01 2023 -0500
+
+    La velocidad aumenta cuando se ataca
+
+commit d64c62e8192748a4c5db4796e1a1ee69a719da9f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 10:52:37 2023 -0500
+
+    Crea el metodo constructor de soldado
+
+commit 64e314029a137154fd22b1a0f44c744bf8b988de
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 10:19:06 2023 -0500
+
+    Implementa atributos de la clase Soldado
+    
+    Se agregaron los atributos en modo private ya que se accederan a estos
+    mediante los metodos accesores
+
+commit 390fc9a082a2890e8ade4c0828e5fa31ef2d4582
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 30 10:15:52 2023 -0500
+
+    Se creo la clase Soldado en lab09
+    
+    Se creo la clase soldado que empieza estando en blanco
+
+commit 5ab17dfd9e068249c855fa8feaceb070895dd8a3
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 25 04:52:17 2023 -0500
+
+    INFORME COMPLETO
+
+commit d26843bfe8f78e6c7ea01d71647633824e60859e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 25 04:36:05 2023 -0500
+
+    INFORME: ACT5
+
+commit 03c416dae04b069a6d57dc9f9c0120a39dc21c09
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 25 04:29:24 2023 -0500
+
+    INFORME: ACT4
+
+commit fa55a702cae748a36b0df20197b66b1ea98f94b6
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 25 04:22:00 2023 -0500
+
+    INFORME: ACT3
+
+commit 8a280de00137f3f97e3727934f910236cb3d115b
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 25 04:14:32 2023 -0500
+
+    INFORME: ACT2
+
+commit 32e3c443593da97eb013a55151ab3556cf636854
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 18:20:00 2023 -0500
+
+    INFORME: Parte inicial
+
+commit d48b0a4a50cc38a615fdf1163398b31536aca6df
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 17:22:19 2023 -0500
+
+    PRAC02 Guerra completada
+
+commit c45f9a9ae298eb4664f7ebd01c8205e5fab23c71
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 17:17:27 2023 -0500
+
+    PRAC02 AVANCE GUERRA
+
+commit 9727fb5a86769ae49da39d68d26a9cb2a9fd7e8a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 16:10:43 2023 -0500
+
+    PRAC02: COPIANDO
+
+commit e0cfdb79de27af7ac746e28fddc9295a77f8959e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 16:00:57 2023 -0500
+
+    INFORME: Eliminando png's
+
+commit a5e4a66492489d3d37ccbae2dad48ab6a67f006d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:59:44 2023 -0500
+
+    INFORME: Actividades head
+
+commit d8954010c23366defefcc617fdc3a6f0582340fc
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:56:16 2023 -0500
+
+    INFORME: Datos de laboratorio
+
+commit 6673da82dd83b26ef37354350851b27d7171944e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:55:16 2023 -0500
+
+    Se borraron los archivos de compilacion existentes
+
+commit cef157b602c9a28990ec78ec70c7edd674e7aab6
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:52:32 2023 -0500
+
+    INFORME: se borro la informacion anterior
+
+commit ca09d6c9656a253a58364d7a17e8ad7248ffbc80
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:50:28 2023 -0500
+
+    INFORME: se copiaron los arcihvos del anterior laboratorio
+
+commit edfb9c396ca95be5c3038fb18c4bb282894758da
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:48:12 2023 -0500
+
+    Adaptando el codigo para hacer el ordenamiento
+    
+    Se adapto el codigo para crear un array grande que una a los dos
+    ejercitos, luego se creo el metodo ranking que agarra estos dos
+    ejercitos, los junta y crea uno mas grande que ordena con el algoritmo
+    bubble sort, finalmente el resultado se muestra en pantalla
+
+commit 6e7b92190399f9550e32bb58243d0b07ba26d918
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:06:45 2023 -0500
+
+    Se crea metodo para ordenar el ejercito
+    
+    Como no se puede ordenar directamente un hashmap, ya que no mantiene un
+    oprden especifico, se copia el contenido a un array antes de mandarlo al
+    metodo de ordenamiento de soldados por vida
+
+commit 7ff1b9fad4c3c0eb60e4fa1e183dd54935a7d136
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 15:00:36 2023 -0500
+
+    Adapta el metodo para mostrar soldados
+    
+    Se adapta al uso de hashmap
+
+commit 204a42f209fb8f18348bcb8989c494f8319576ee
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:30:48 2023 -0500
+
+    Se cambia army.length por army.size
+
+commit 887e3bc8ec8fb475122f993d1c73236242b6edbb
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:30:08 2023 -0500
+
+    Adapta el resto del metodo de inicializacion
+
+commit c78508b8e703041b1d11d8410744bed4c9870f31
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:25:05 2023 -0500
+
+    Se cambio la forma de establecer el atributo negro
+    
+    Se cambio la forma en que se establece que un ejercito sea de color
+    negro, antes del cambio, se usaba un condicional para evaluar el valor
+    booleano negro, ahora, se ingresa directemente este valor como atributo
+    del soldado
+
+commit 2952cc9b10aadef133baf7dc5ce61f0b849f7987
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:21:51 2023 -0500
+
+    Adaptacion del metodo a hashmap
+
+commit a362ecf01678492c2ba977fd8c3d4f866ccc0313
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:12:17 2023 -0500
+
+    Hace que el metodo initialice army devuelva hashmap
+
+commit 40035dcc9534d58e9b577105339203b1dd0aa839
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:08:29 2023 -0500
+
+    Creacion del metodo initialiceArmyHashMap
+
+commit b3083e5670a3fbf77533c2d7e43f93d27bd7b440
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:07:07 2023 -0500
+
+    Se agrego la importacion de hashmap
+
+commit c1082e4d2b725108cdbf1f4acb639a89da4174d8
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 14:02:50 2023 -0500
+
+    Creando el proyecto lab08
+    
+    Se copiaron los archivos soldado, videojuego y graphics del laboratorio
+    anterior
+
+commit fc635edb658c75c23f038e26d66113d1e50639c1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 12:00:56 2023 -0500
+
+    INFORME LAB07 COMPLETO
+
+commit 77d8066f2ba2e4d528efab98ce3a04eccda7e3d2
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:59:44 2023 -0500
+
+    Evaluacion de rubricas
+
+commit 9e771e1a7bb3a7cc57eb066721bd98a4d0bb45b6
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:58:33 2023 -0500
+
+    Informe: Parte de commits principales
+
+commit d14a67b071ef1172365c78150d05f982e01f0de0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:49:15 2023 -0500
+
+    Informe: Agregando la ejecucion
+
+commit b5f68e71ddce8183592a1f263204b7586ff3faa0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:41:15 2023 -0500
+
+    Informe: Actividad principal
+
+commit b15a0a16d43599cc996c7690467aae49ed37af60
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:24:43 2023 -0500
+
+    Informe: Actividad principal iniciando 2 ejercitos
+
+commit 5ff3c5d8226127c5319c3845adfd3607802ab087
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 11:13:39 2023 -0500
+
+    Informe: Actividades iniciales
+
+commit 38507249cd9caee1b6aae69e0278099602d309a0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 10:44:30 2023 -0500
+
+    Informe: Agrega las actividades del laboratorio
+
+commit 8facb6caf5c39a75fdfa64d6d8fd5c4782e78d71
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 10:38:06 2023 -0500
+
+    INFORME: Agrega los datos del laboratorio
+
+commit 8ba8cf9e5b9b0c74dc3007b58b9a2a5b137267cf
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 10:33:02 2023 -0500
+
+    LATEX: Prueba de compilado latex
+
+commit 1c514453878c9f564f2ef2eccb0fbae8835cce48
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:57:38 2023 -0500
+
+    LATEX: agrega el archivo que tendra las secciones
+    
+    Se agrega el archivo main ubicado en el directorio acts (actos) que
+    tendra los importes a las secciones que contendra el informe
+
+commit 7e2c8759d45210a3e57f254e5b3a7ffd15fb7c7e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:55:58 2023 -0500
+
+    LATEX: Se agrega el documento principal
+    
+    Se agrega el archivo latex que contiene las importaciones a todos los
+    demas archivos
+
+commit f2c641adf186ee5ff5f2e6e06bf1138f253460b5
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:54:13 2023 -0500
+
+    LATEX: Carga de imagenes
+    
+    Se agrego el directorio img que contiene los recursos multimedia para el
+    informe
+
+commit 7b5743b531f0749fad848c4985c3e85e1460d26f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:51:23 2023 -0500
+
+    LATEX:Agrega las rubricas de evaluacion al informe
+    
+    Se agrega el archivo del final del documento, que contiene la
+    calificacion con respecto a las rubricas en el directorio foot
+
+commit c5ad1dda028bda6b0e3a06d1a02381dcff560a57
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:48:57 2023 -0500
+
+    LATEX: Agrega el contenido de la tabla principal
+    
+    Se agrega la parte principal de la tabla que aparece al inicio del
+    documento, que incluye las actividades que se realizaran, los equipos y
+    materiales y el url del repositorio
+
+commit dc770056c0070365f45af966127d419944c5fced
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:46:19 2023 -0500
+
+    LATEX: Agrega el estilo para la muestra de codigo
+    
+    Se agrega la definicion del estilo de codigo que sera mostrado
+
+commit 99997e5eb80c69e9fce273bbb8fc33f5da8f29d6
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:44:28 2023 -0500
+
+    LATEX: Agrega la definicion de datos del informe
+    
+    Se agrega en un archivo separado, la definicion de datos como numero de
+    practica, nombre de la universidad, etc
+
+commit a78de79cad6205449900bf71ef7666bed3f8845a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:43:17 2023 -0500
+
+    LATEX: Agrega el formato del documento
+    
+    Se separo la parte de definiciones del documento en un archivo separado
+    para poder manejar el informe con mas modularidad
+
+commit 627de02fc89444749cba688cf381abd878cfd4c9
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 23 00:42:01 2023 -0500
+
+    LATEX: agrega el archivo de packages
+    
+    Para tener mas modularidad entre los archivos del informe, se separo la
+    parte del package en otro archivo para poder invocarlo despues
+
+commit 6d9927b0c6492488f73098814a06be58db3ead91
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:40:24 2023 -0500
+
+    Informe LATEX, copia de archivos
+    
+    Se hizo una copia de archivos del laboratorio anterior para crear el
+    informe en latex
+
+commit da532908095e179fce9779e9963d13762d536b6a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:37:20 2023 -0500
+
+    Actividad5: Prueba de coloreado
+    
+    Se hicieron 3 pruebas de coloreado de soldados, la primera con los
+    soldados en blanco, la segunda alternando colores, y la tercera con los
+    soldados de color
+
+commit da60e154a436ff0c1b4411386f323a14402edf6e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:35:23 2023 -0500
+
+    Actividad 5: Implementa el cambio de color
+    
+    Se implemento el codigo en el metodo makeGBoard, para invertir el color
+    en caso de que el atributo "isNegro" sea verdadero, para invertir el
+    color se usa un metodo que esta en la biblioteca graphcis, que cambia la
+    forma en que es representada la figura y luego cambia tambien el color
+    en que es dibujada la figura
+
+commit 032d262fd9d93c1faeaac5b2d33bcfc9b9eb7bea
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:32:31 2023 -0500
+
+    Actividad5: Implementa y prueba de atributo negro
+
+commit 25e5e8e9511772b072bff0752d435503acba9cf3
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:29:27 2023 -0500
+
+    Actividad5: Modifica el metodo de creacion
+    
+    Se modifica el metodo de inicializacion de ejercitos, para hacer que se
+    pueda especificar el color del mismo
+
+commit df1c6ab19ac2f4d707adb642b33cbcd103a621a1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:26:08 2023 -0500
+
+    Actividad5: Cambia el nombre de un metodo getter
+    
+    Se cambia el nombre de el metodo getNegro a "isNegro", ya que la
+    convencion para metodos que devuelven valores de un estado booleano, es
+    que el nombre del metodo este en forma de pregunta a fin de que se pueda
+    usar de manera mas natural en un condicional
+
+commit 0e8fa115dde8ed93be949ad5dae6d4bbb3c509ee
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:24:25 2023 -0500
+
+    Actividad5: Agrega un metodo setter en Soldado
+    
+    Se agrega el metodo setter para el atributo "negro" en la clase
+    Soldado.java, como es un valor booleano, tendremos que especificar true
+    o false, el valor por defecto del atributo es false.
+
+commit e1f65ce2385ad38f7ba171219d3ede2fe766195a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:22:27 2023 -0500
+
+    Actividad5: Agrega un metodo getter en Soldado
+    
+    Se agrega un metodo getter para el atributo booleano "negro" en la clase
+    Soldado.java, el metodo recibe el nombre de getNegro()
+
+commit 5c63eb95e23f2878921d8c0e2ddae6b430c5df17
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:20:37 2023 -0500
+
+    Actividad5: Modifica los tributos en Soldado.java
+    
+    Se agrega un atributo llamado "negro" que es de valor booleano, es true
+    en caso de querer que nuestro ejercito se muestre de color negro, y
+    false, si queremos que nuestro ejercito se muestre en el color por
+    defecto, blanco.
+
+commit 94fbd5984ef78bba0f3279931da37cdb9ae225f7
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:17:40 2023 -0500
+
+    Actividad5: Inicia 2 ejercitos
+    
+    En este punto, se inicial dos ejercitos con nombres autogenerados, para
+    eso, se modifica el codigo de inicializacion de jeercitos, para permitir
+    ingresar un parametro extra (Un numero entero que indica el numero de
+    ejercito)
+
+commit 87e61fbcfd20fe0660ae218f3f324e23e5166329
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 12:07:32 2023 -0500
+
+    Actividad4: Regresa el modelo de ArrayList a array
+    
+    Siguiendo las indicaciones, se escogio el modelo de array bidimensional
+    simple para el tablero, ya que el modo de trabajar con el es mas simple,
+    la forma de acceder a elementos, modificarlos y crearlos es mucho mas
+    rapido y eficiente que con un ArrayList.
+
+commit 53bc5c08d38fb9d931979bee8b1d013a615d7384
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Oct 18 11:54:46 2023 -0500
+
+    Actividad 1: Crea un proyecto llamado Laboratorio7
+    
+    Se creo el directorio lab07 como subdirectorio de fase02
+
+commit d693e81ed1af5a0ac1bddc44fa48d3f2a4cc16c5
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 17:44:07 2023 -0500
+
+    INFORME DE LABORATORIO 06 LATEX
+
+commit 4b5eecad1cf099cf55b1e66815fc5c8cf952848c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 16:43:16 2023 -0500
+
+    Implementacion de distinto color para ejercitos
+    
+    Se agrego una moficiacion en Videojuego.java, para pintar de negro
+    ciertos ejercitos y asi tener dos colores para representarlos
+    El Soldado.java se agrego un nuevo atributo, que indica si un soldado
+    debera colorearse de negro o no
+
+commit bad9e0d93b8adc82891638530b51dc0250daa7d1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 16:17:23 2023 -0500
+
+    Implementa mecanismo para determinar ganador
+    
+    Se implemento el metodo WhoWins, que detecta cual de los dos ejercitos
+    resulto como ganador, para esto se basa en la cantidad de soldados que
+    tiene cada ejercito, ya que siempre se impondra la cantidad numerica en
+    una batalla
+
+commit 6316d6416b04735eefb840dc9898c7be70712a4c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 16:11:06 2023 -0500
+
+    Agregar ranking de soldados por vida
+    
+    Se agrego la funcionalidad de hacer un ranking de soldados, para eso, se
+    juntan los dos ejercitos y luego se aplica el ordenamiento por bubble
+    sort
+
+commit d4c878a641ecad05ce16390458da3bf0d0018fd3
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 16:02:24 2023 -0500
+
+    Crea dos ejercitos de soldados y los muestra
+    
+    Se crean dos ejercitos, seteando sus nombres con "1x1"... luego se
+    ubican en pantalla y los datos de creacion se muestran por consola
+
+commit 394799acf85f7bbde78257b4c2deb3d9a90b6674
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 15:58:14 2023 -0500
+
+    Lab 06: Cambiando modelo a ArrayList
+    
+    Dado que la unica expecificaciones que el tablero sea un arraylist, es
+    unt rabajo trivial cambiar de tipo de lista y cambiar tambien la forma
+    en que se accede a los elementos y como se setean elementos
+
+commit dc901db6280c6c3cb58da0be6310255a8d18788c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 15:39:10 2023 -0500
+
+    LABORATORIO 05 INFORME LATEX
+
+commit 741839fff18cd3d15c9dad5557c6fef0c10eec71
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 14:29:38 2023 -0500
+
+    Implementa el ordenamiento de vida por insertion
+    
+    Se agrega un metodo que ordena a llos soldad
+    s por su vida
+
+commit 91add39b83886415a2102efd661401efd5290e83
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 14:18:59 2023 -0500
+
+    Implementa el metodo de ordenamiento bubble
+    
+    Se Agregan dos metodos, uno auxiliar para intercambiar dos soldados, y
+    otro que es el metodo de ordenamiento por burbuja, usanco como base de
+    comparacion la vida de los soldado
+
+commit dc45ba3e12c6d70eae88bad11ae1a0460a32f25d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 14:10:53 2023 -0500
+
+    Muestra los datos del soldado con mas vida
+    
+    Se agrego al main la funcionalidad de mostrar los datos del soldado que
+    mas vida tuvo al momento de ser creado
+
+commit 77cdc2375d0ccbd32f949926324223755d788f29
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 14:08:42 2023 -0500
+
+    Muestra los datos de los soldados
+    
+    Se agrego un metodo para mostrar los datos de un soldado,, luego otro
+    metodo para recorrer un ejercito mostrando los datos de los soldados que
+    contiene
+
+commit 7a9b21503e5bb29321cf14cf63e80a516022a664
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:58:11 2023 -0500
+
+    Reconoce al soldado de mayor vida
+    
+    En la inicializacion de ejercitos, se agrega codigo para comparar los
+    nuevos soldados que van siendo creados con el soldado actual con mayor
+    vida, en caso de que uno de ellos tenga mas vidas que este, se convierte
+    en el nuevo soldado con mayor vida
+
+commit 83881dbda9de1a470812355865b1df61b30c7a6f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:53:11 2023 -0500
+
+    Agregar atributo de promedio de vida
+    
+    Este atributo contendra el promedio de vida de todos los soldados que
+    han sido creados
+
+commit d162a8925fe59ea70ed1102a2c765a9f4bdd78ad
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:50:32 2023 -0500
+
+    Agrega el prototipo para calcular la vida promedio
+    
+    Se agrego codigo para recabar datos en la inicializacion de los
+    ejercitos, luego dividirlos entre el total de soldados y finalmente
+    guardarlos en una variable que contiene el promedio de vida de los ejercitos
+
+commit 686cc633b17c5967511b97dc8ef0d311adf6d12a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:38:43 2023 -0500
+
+    Crea el etodo displayBoard
+    
+    este metodo agarra el tablero (gBoard) y abre una ventana con la
+    representacion grafica del estado actual
+
+commit 0726010d554f4fcb577c27e74d91be94bbed972d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:35:36 2023 -0500
+
+    Crea un metodo que dibuja el tablero
+    
+    Se maneja el tablero y los soldados como atributos en la calse y se
+    modifica sus valores, evitando errores con pasar valores por referencia
+
+commit 21c0de14822b4271d21dc2df144d7626f7398eb1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 13:17:11 2023 -0500
+
+    Modificar Picture para mostrar soldados
+    
+    Mosifique el codigo de la biblioteca graphics para generar en pantalla
+    un soldado
+
+commit 79e66e9e69a8be0a1a3ad8145f2b5a181d75bbbe
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 10:18:23 2023 -0500
+
+    Cambia el tablero de String[][] a Soldado[][]
+    
+    En lugar de tener un tablero de string, necesitamos un tablero de
+    soldados
+
+commit c038d2d7e7d9861544d5eef2cd3525cc290d188d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 10:14:41 2023 -0500
+
+    Arregla el error de tablero
+    
+    Estabamos olvidando agregar al soldado al tablero luego de crearlo
+
+commit d53d0fb5620edef79329eb845833aea3df29641d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 10:11:06 2023 -0500
+
+    actividad 4: biblioteca para graficar el tablero
+    
+    Se agrego la biblioteca graphics.jar que hicimos en Fundamentos 1, para
+    graficar el tablero con los soldados representados por peones
+
+commit a29e995c25ca044bd611a5259f85c9c1295f0ff5
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 09:55:27 2023 -0500
+
+    Avanza la actividad 5
+    
+    Se crea el metodo generateColumnRow, que busca una fila y columna que no
+    este ocupada aun, y cuando la encuentra, pone a un soldado en
+    determinada fila y columna
+
+commit 28665d39cc5d4e770d97ede919d618e28374933b
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 09:48:38 2023 -0500
+
+    Avanza con la actividad 5
+    
+    Crea un metodo auxiliar llamado isEmpty para saber si una fila y columna
+    esta vacia o no lo esta
+
+commit 5a4c515463e334555acd69dadea0b3bfb40d321d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 09:34:44 2023 -0500
+
+    Avanza la actividad 5
+    
+    Se puso el sistema para que el soldado reciba una cantidad de vida
+    aleatoriamente entre 1 y 5
+
+commit d3836f09055b85511b245d215119318622dacd6b
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 09:32:10 2023 -0500
+
+    Avanzar con la actividad 5
+    
+    Se hizo el inicializador de soldados de entre 1 y 10 soldados
+
+commit f1ef7a39016c465a391cce3804443090edc9cc94
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Oct 16 09:24:41 2023 -0500
+
+    Completa la actividad 2
+    
+    Se creo la clase soldado.java con las especificaciones requeridas de
+    atributos y metodos
+
+commit d11009b95725f37e26823da21d9479c457c44c70
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Thu Oct 12 15:10:27 2023 -0500
+
+    Crear el proyecto laboratorio 05
+    
+    Agregar el documento de enunciado y crear la estructura de
+    archivos para el trabajo
+
+commit d66d4fcd3d72ddc4422d0f7cf8745828c3296ef3
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 18:04:33 2023 -0500
+
+    Informe de laboratorio 04
+
+commit 2f292fdf7e2e183286d99f2fa95c73bc3be5ffb1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:49:48 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento de nombres por insercion
+
+commit 9b1f5460554796ac356fd9dcae4fc20bb3d3a123
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:46:26 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento de Puntos por insercion
+
+commit a68dcb2c45cf068ed3fdf3733bfd3113f16abe6c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:18:23 2023 -0500
+
+    Actividad 1: Implementacion del algoritmo de ordenamiento de puntos por seleccion
+
+commit 18c3176724a4529cf0e77038215cdf5e180088ae
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 01:07:19 2023 -0500
+
+    Actividad 1: Implementacion del metodo de busqueda binaria por nombre
+
+commit 9d17b77d4c8765f48912d14f257c630a80e05fba
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 00:29:07 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenar por nombre burbuja
+
+commit 746580d74447fa33f469635e0a882c13ee0d4fe0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 00:19:06 2023 -0500
+
+    Actividad 1: Implementacion del metodo ordenar por nombre seleccion
+
+commit d2d4e3feb2893c3650bfffa559b6f99ad0272f4a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 27 00:02:36 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento por nombre
+
+commit 0db1011f08fff2f98effb4123c5d2136ea68879d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Tue Sep 26 23:54:17 2023 -0500
+
+    Actividad 1: Implementacion del metodo de ordenamiento por puntos usando el algoritmo burbuja
+
+commit 66cf73eb51e08b1a48c531dd3861805b416e97c4
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 18:29:20 2023 -0500
+
+    Actividad 1: Implementacion del metodo Busqueda Lineal
+
+commit 0e3b7ca977831137cacdcb7a27613f46bd856d55
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 12:18:15 2023 -0500
+
+    Laboratorio 03: Informe de Laboratorio
+
+commit ac2abb32f6f077e13f0202653e456ccbeacfee2e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 10:58:13 2023 -0500
+
+    Actividad 3: hacer la actividad 5 del laboratorio 1 pero con arreglo de objetos
+
+commit ccd2d7c9d210b83aa4903a69d0eb6879a173ce52
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 10:52:43 2023 -0500
+
+    Actividad 2: hacer La actividad 4 del laboratorio 1 con arreglo de objetos
+
+commit bc49db90fdedaade7c05d8c526608e093f0de518
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 10:38:18 2023 -0500
+
+    Actividad 1: Terminando el metodo para desordenar un array de objetos aleatoriamente
+
+commit 314a4ec7803f41d98d669fa97931009c74d6f6cb
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 25 00:39:00 2023 -0500
+
+    Actividad 1: Implementacion del metodo para mostrar nave con mayor puntaje
+
+commit 42a4a4e1302014164874c6b1f84c058192d0870a
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 24 23:40:26 2023 -0500
+
+    Actividad 1: Implementacion del metodo Mostrar por Puntos
+
+commit fccb38fc7393407813e66bd7e9cab4272aa6b0e7
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 24 23:28:06 2023 -0500
+
+    Actividad 1: Optimicacion del metodo Mostrar Por Nombre para hacer que reconozca mayusculas y minusculas
+
+commit 4a2c4c69527f7d5ce9194f4a28ae5eb8d874424d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 24 23:25:02 2023 -0500
+
+    Actividad 1: Implementacion del metodo Mostrar Naves Por Nombre
+
+commit b64e3bb6c1c5a0c79960205dde57b18a62e459e3
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 24 20:41:29 2023 -0500
+
+    Actividad 1: Implementacion del metodo Mostrar Naves usando un ciclo for each
+
+commit 689ce4e09e886234c9a67bf2205bf00e943f6e16
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 24 20:40:02 2023 -0500
+
+    Actividad 1: Implementacion del metodo Mostrar Naves
+
+commit 6a8e70acc9c77d2ac316c03e607347eff4a3433c
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Thu Sep 21 00:51:03 2023 -0500
+
+    Subida de informes de laboratorios 01 y 02
+
+commit ac4b27bed13d9852c0bd8796cf1562711052890d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 16:47:43 2023 -0500
+
+    Laboratorio 2: El juego del ahorcado
+
+commit ecaf6b7a88335c0e939ff2dfdd8f495a1f2ea5f0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:55:51 2023 -0500
+
+    Actividad 5: Correccion del metodo initializeArmy para hacer arreglos de distinto tamanio
+
+commit b677c02cb3bb2108ebdee3b764311fa6064865e5
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:51:47 2023 -0500
+
+    Implementacion del metodo main y CLI
+
+commit e74a1e3de60872c4a6a1f0c56b6e2dd439300982
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:48:17 2023 -0500
+
+    Actividad 5: implementacion del metodo whoWins para saber cual ejercito es el ganador
+
+commit df4708da398d55209f12efcf96462027506db4f1
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:41:57 2023 -0500
+
+    Actividad 5: creacion del metodo display, y pruebas de todos los metodos implementados hasta ahora
+
+commit dec37f9034019e67b02950dcf3fe0d95e262bbd7
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:36:06 2023 -0500
+
+    Actividad 5 (Avance) Creacion del metodo de inicializacion de ejercitos
+
+commit 7b1f3fcf27aa6648382085fb0e4c89f65fbfe463
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:22:19 2023 -0500
+
+    Actividad 4: Creacion de 5 soladdos con nombre y nivel de vida
+
+commit 16be139b91de01bba151bd764cd1a4cc44a62710
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:16:18 2023 -0500
+
+    Actividad 3: Creacion de 5 soldados y sus nombres usando arreglos estandar
+
+commit ee785756b8f5260846a11bbe48ad19dc0b6b450e
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 09:07:48 2023 -0500
+
+    Inicio Actividad 2
+
+commit 2f3ca47fa45c5bc8aa42dd447b0f19f1b6b95cad
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 20 08:57:57 2023 -0500
+
+    Actividad 2: creacion de 5 soldados con el nivel de vida, y ajuste del codigo para poder ingresar los datos de cada uno y luego mostrarlos en pantalla
+
+commit 6f8fdd7000a3c75fb8409f05e12df7e941cfb387
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Tue Sep 19 13:20:37 2023 -0500
+
+    Actividad 1: Cinco soldados con nombres
+
+commit 6f1f099db7c6a8a7e490f9e58a9eb7366681136f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 18 17:50:42 2023 -0500
+
+    Avance Laboratorio 1
+
+commit 3b6c3c402b581ca43216641e6ab811dad6007017
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Mon Sep 18 08:23:46 2023 -0500
+
+    Actividad 1
+
+commit 7d9f11219f738a6a7064d1dbb030e9568b446a8f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sun Sep 17 21:29:28 2023 -0500
+
+    Eliminando el archivo README
+
+commit b9ca167d836b4baf512cb28b1155b564a15cb4a0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 13 18:44:30 2023 -0500
+
+    Primer programa en java del repositorio
+
+commit 6fb9dfae3e779c8559b2089a716eb56ce7eef5a8
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 13 18:29:42 2023 -0500
+
+    Creacion de la jerarquia de directorios
+
+commit 8981ed513c0325d498f9200d253a3b0847659174
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Wed Sep 13 15:18:45 2023 -0500
+
+    My first commit

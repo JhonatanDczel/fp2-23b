@@ -1,0 +1,55 @@
+\section{Juego Personalizado}
+El método \texttt{juegoPersonalizado} proporciona una interfaz interactiva para que el usuario personalice y gestione los soldados de dos equipos en un juego de estrategia. Cada opción del menú está asociada a una función específica que realiza acciones como crear, eliminar, clonar o modificar soldados, así como visualizar información sobre los mismos y el estado general de los ejércitos. el método también incluye opciones para avanzar al juego o volver al menú principal.
+A continuación se detalla su estructura interna:
+
+
+\subsection{Inicialización de Variables}
+Se utiliza un objeto \texttt{Scanner} para la entrada de datos desde la consola. Se crea una matriz llamada \texttt{table} de dimensiones $10 \times 10$ para representar el campo de juego. Se declaran dos \texttt{ArrayList} llamados \texttt{ejercito1} y \texttt{ejercito2} para almacenar los soldados de cada equipo.
+\begin{lstlisting}
+Scanner sc = new Scanner(System.in);
+Soldado[][] table = new Soldado[10][10];
+ArrayList<Soldado> ejercito1 = new ArrayList<Soldado>();
+ArrayList<Soldado> ejercito2 = new ArrayList<Soldado>();
+fillTable(table, ejercito1, ejercito2);
+\end{lstlisting}
+
+\subsection{Rellenar la Matriz y Listas de Soldados}
+Se invoca el método \texttt{fillTable} para inicializar la matriz y las listas de soldados de ambos equipos.
+\begin{lstlisting}
+fillTable(table, ejercito1, ejercito2);
+\end{lstlisting}
+
+\subsection{Impresión de Soldados Ordenados}
+Se imprime en la consola la información de los soldados ordenados en el campo de juego.
+\begin{lstlisting}
+System.out.println("SOLDADOS ORDENADOS");
+printSoladosOrdenados(table, ejercito1, ejercito2);
+System.out.println("###################################");
+\end{lstlisting}
+
+\subsection{Selección del Equipo a Personalizar}
+Se solicita al usuario que ingrese el símbolo del equipo (\texttt{"*"} o \texttt{"\#"}) que desea personalizar. Se determina el \texttt{ArrayList} del equipo seleccionado mediante un operador ternario.
+\begin{lstlisting}
+System.out.print("Escoge al equipo a personalizar: ");
+String team = sc.next();
+ArrayList<Soldado> currentE = team.equals("*") ? ejercito1 : ejercito2;
+\end{lstlisting}
+
+\subsection{Menú de Opciones}
+Se presenta un menú con varias opciones numeradas que permiten al usuario realizar acciones específicas en relación con los soldados y equipos.
+\begin{lstlisting}
+System.out.println("Escoge una opcion: ");
+// ... (Listado de opciones)
+int input = sc.nextInt();
+\end{lstlisting}
+
+\subsection{Ejecución de Acciones Según la Opción Seleccionada}
+Se utiliza una serie de condicionales para determinar la acción a realizar según la opción ingresada por el usuario.
+\begin{lstlisting}
+if (input == 1) crearSoldado(table, currentE, team);
+if (input == 2) eliminarSoldado(table, currentE, team);
+// ... (Resto de opciones)
+if (input == 10) jugar();
+if (input == 11) volver();
+\end{lstlisting}
+

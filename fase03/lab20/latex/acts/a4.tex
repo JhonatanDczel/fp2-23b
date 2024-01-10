@@ -1,0 +1,79 @@
+\section{Juego Rapido}
+
+El método \texttt{juegoRapido()} representa la implementación de un juego estratégico entre dos ejércitos de soldados dispuestos en una matriz bidimensional. A continuación, se proporciona una explicación detallada del código:
+
+\subsection{Configuración Inicial}
+La función comienza solicitando al usuario ingresar 'S' si desea salir de la partida.
+Si se ingresa 'S', la función termina inmediatamente. En caso contrario, se procede a la configuración inicial del juego.
+\begin{lstlisting}
+Scanner sc = new Scanner(System.in);
+System.out.println("Para salir de la partida ingresa 'S'");
+String salir = sc.next();
+if (salir.toLowerCase().charAt(0) == 's') return;
+\end{lstlisting}
+
+\subsection{Inicialización de Variables}
+Se crea una matriz table de dimensiones 10x10 para representar el campo de batalla,
+y dos listas (ejercito1 y ejercito2) que contendrán instancias de la clase Soldado.
+La función fillTable() se llama para inicializar la matriz y las listas.
+\begin{lstlisting}
+Soldado[][] table = new Soldado[10][10];
+ArrayList<Soldado> ejercito1 = new ArrayList<Soldado>();
+ArrayList<Soldado> ejercito2 = new ArrayList<Soldado>();
+fillTable(table, ejercito1, ejercito2);
+\end{lstlisting}
+
+\subsection{Impresión de Información Inicial}
+Se imprime en consola el soldado con mayor nivel en cada ejército y,
+posteriormente, se muestra el promedio de puntos de ambos ejércitos.
+\begin{lstlisting}
+printMayorNivel(table, ejercito1, ejercito2);
+System.out.println("___________________________________");
+System.out.println("IMPRIMIR PROMEDIO DE PUNTOS");
+printPromedioPuntos(table, ejercito1, ejercito2);
+System.out.println("___________________________________");
+\end{lstlisting}
+
+\subsection{Ordenamiento y Ranking}
+Se imprime la lista de soldados ordenada por algún criterio no especificado
+y se muestra el ranking de puntos de ambos ejércitos, utilizando algoritmos de ordenamiento Bubble Sort y Select Sort, respectivamente.
+\begin{lstlisting}
+System.out.println("___________________________________");
+System.out.println("SOLDADOS ORDENADOS");
+printSoladosOrdenados(table, ejercito1, ejercito2);
+System.out.println("___________________________________");
+System.out.println("RANKING DE PUNTOS EJERCITO1 POR BUBBLE SORT");
+printRankingPointsBubble(table, ejercito1);
+System.out.println("___________________________________");
+System.out.println("RANKING DE PUNTOS EJERCITO2 POR SELECT SORT");
+printRankingPointsSelect(table, ejercito2);
+\end{lstlisting}
+
+\subsection{Desarrollo del Juego}
+Se inicia un bucle que representa los turnos del juego.
+En cada turno, se muestra el estado actual del campo de batalla (printTable(table))
+y se realiza un movimiento de los soldados. Se alterna entre los dos ejércitos en cada turno.
+\begin{lstlisting}
+int turno = 1;
+while (true) {
+  printTable(table);
+  mover(table, ejercito1, ejercito2, turno);
+
+  turno = turno == 1 ? 2 : 1;
+
+  String winner = getWinner(ejercito1, ejercito2);
+
+  if (winner != null) {
+    System.out.println("###########################");
+    System.out.println("GANA EL EQUIPO " + winner);
+    System.out.println("###########################");
+    break;
+  }
+}
+\end{lstlisting}
+
+\subsection{Conclusión del Juego}
+Cuando se determina un ganador (mediante la función getWinner()),
+se imprime el equipo ganador y se finaliza el juego.
+
+Entonces, el método \texttt{juegoRapido()} encapsula la lógica de un juego estratégico entre dos ejércitos de soldados, proporcionando información inicial, estadísticas y una interfaz para que los usuarios participen en turnos alternativos hasta que se determine un ganador.

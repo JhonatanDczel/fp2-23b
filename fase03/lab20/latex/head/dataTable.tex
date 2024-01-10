@@ -1,0 +1,116 @@
+
+	
+	\vspace*{10pt}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.9cm}|x{4.3cm}|x{5.1cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+
+	\section{Actividades}
+	\begin{itemize}		
+      \item Al ejecutar el videojuego, el programa deberá dar las opciones:
+      \item 1. Juego rápido (tal cual como en el laboratorio 11)
+Al acabar el juego mostrar las opciones de volver a jugar y de volver al
+menú principal. También se deberá tener la posibilidad de cancelar el
+juego actual en cualquier momento, permitiendo escoger entre empezar
+un juego totalmente nuevo o salir al menú principal.
+      \item 2. Juego personalizado: permite festionar ejércitos. Primero se generan los 2 ejércitos con sus respectivos soldados y se muestran sus datos. Luego se tendrá que escoger cuál de los 2 ejércitos se va a gestionar, después se mostrarán las siguientes opciones:
+        \begin{itemize}
+          \item Crear Soldado: permitirá crear un nuevo soldado personalizado
+y añadir al final del ejército (recordar que límite es de 10
+soldados por ejército)
+          \item Eliminar Soldado (no debe permitir un ejército vacío)
+          \item Clonar Soldado (crea una copia exacta del soldado) y se añade
+al final del ejército (recordar que límite es de 10 soldados por
+ejército)
+          \item Modificar Soldado (con submenú para cambiar alguno de los
+atributos nivelAtaque, nivelDefensa, vidaActual)
+          \item Comparar Soldados (verifica si atributos: nombre, nivelAtaque,
+nivelDefensa, vidaActual y vive son iguales)
+          \item Intercambiar Soldados (intercambia 2 soldados en sus posiciones
+en la estructura de datos del ejército)
+          \item Ver soldado (Búsqueda por nombre)
+          \item Ver ejército
+          \item Sumar niveles (usando Method-Call Chaining), calcular las
+sumatorias de nivelVida, nivelAtaque, nivelDefensa, velocidad de
+todos los soldados de un ejército 
+            \begin{itemize}
+              \item Por ejemplo, si ejército tendría 3 soldados:
+              \item s=s1.sumar(s2).sumar(s3);
+              \item s es un objeto Soldado nuevo que contendría las
+sumatorias de los 4 atributos indicados de los 3 soldados.
+Ningún soldado cambia sus valores
+            \end{itemize}
+          \item Jugar (se empezará el juego con los cambios realizados) y con
+las mismas opciones de la opción 1.
+          \item Volver (muestra el menú principal)
+Después de escoger alguna de las opciones 1) a 9) se podrá volver a
+elegir uno de los ejércitos y se mostrarán las opciones 1) a 11)
+        \end{itemize} 
+        \item 3. Salir
+	\end{itemize}
+		
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Sistema Operativo ArchCraft GNU Linux 64 bits Kernell
+		\item NeoVim
+		\item OpenJDK 64-Bit 20.0.1 
+		\item Git 2.42.0
+		\item Cuenta en GitHub con el correo institucional.
+		\item Programación Orientada a Objetos.
+		\item Creacion de programas con CLI	
+            \item Bilioteca Graphics (origen propio)
+	\end{itemize}
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+            \item URL del Repositorio GitHub para clonar o recuperar.
+            \item \url{https://github.com/JhonatanDczel/fp2-23b.git}
+            \item URL para el laboratorio \itemPracticeNumber{} en el Repositorio GitHub.
+            \item \itemUrl
+	\end{itemize}
