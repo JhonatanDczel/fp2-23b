@@ -1,55 +1,99 @@
-\section{Juego Personalizado}
-El método \texttt{juegoPersonalizado} proporciona una interfaz interactiva para que el usuario personalice y gestione los soldados de dos equipos en un juego de estrategia. Cada opción del menú está asociada a una función específica que realiza acciones como crear, eliminar, clonar o modificar soldados, así como visualizar información sobre los mismos y el estado general de los ejércitos. el método también incluye opciones para avanzar al juego o volver al menú principal.
-A continuación se detalla su estructura interna:
+\section{Clase VideoJuego}
+La clase \texttt{VideoJuego} es la clase principal que ejecuta el programa del videojuego. Aquí se analiza cada parte del código considerando los requisitos del enunciado:
 
-
-\subsection{Inicialización de Variables}
-Se utiliza un objeto \texttt{Scanner} para la entrada de datos desde la consola. Se crea una matriz llamada \texttt{table} de dimensiones $10 \times 10$ para representar el campo de juego. Se declaran dos \texttt{ArrayList} llamados \texttt{ejercito1} y \texttt{ejercito2} para almacenar los soldados de cada equipo.
-\begin{lstlisting}
-Scanner sc = new Scanner(System.in);
-Soldado[][] table = new Soldado[10][10];
-ArrayList<Soldado> ejercito1 = new ArrayList<Soldado>();
-ArrayList<Soldado> ejercito2 = new ArrayList<Soldado>();
-fillTable(table, ejercito1, ejercito2);
+\begin{lstlisting}[language=Java]
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  while (true) {
+    // ... (declaración de variables y configuración inicial)
+    play(table, reino1, reino2);
+  }
+}
 \end{lstlisting}
 
-\subsection{Rellenar la Matriz y Listas de Soldados}
-Se invoca el método \texttt{fillTable} para inicializar la matriz y las listas de soldados de ambos equipos.
-\begin{lstlisting}
-fillTable(table, ejercito1, ejercito2);
+\textbf{Ciclo Principal:} La ejecución del juego está envuelta en un bucle infinito, que representa el ciclo principal del videojuego. Esto permite que el juego continúe ejecutándose indefinidamente hasta que sea interrumpido.
+
+\textbf{Selección de Reinos:} Se generan dos reinos aleatorios y se asegura que no sean el mismo, garantizando que no haya "guerra civil".
+
+\textbf{Creación del Mapa:} Se instancia un objeto de la clase \texttt{Mapa} llamado \texttt{table}, que representa el mapa del juego.
+
+\textbf{Generación de Ejércitos:} Se generan ejércitos para cada reino con un número aleatorio de soldados (entre 1 y 10). Se utiliza el método \texttt{addEjercito} para agregar soldados al mapa y a las listas de ejércitos.
+
+\textbf{Inicio del Juego:} Se inicia el juego llamando al método \texttt{play} y pasando como argumentos el mapa y las listas de ejércitos.
+
+\begin{lstlisting}[language=Java]
+public static void play(Mapa table, ArrayList<Ejercito> reino1, ArrayList<Ejercito> reino2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    printTable(table);
+    mover(table, reino1, reino2, turno);
+    turno = turno == 1 ? 2 : 1;
+  } 
+}
 \end{lstlisting}
 
-\subsection{Impresión de Soldados Ordenados}
-Se imprime en la consola la información de los soldados ordenados en el campo de juego.
-\begin{lstlisting}
-System.out.println("SOLDADOS ORDENADOS");
-printSoladosOrdenados(table, ejercito1, ejercito2);
-System.out.println("###################################");
+\textbf{Ciclo del Juego:} Este método maneja el flujo del juego en un bucle infinito. Dentro del bucle, se imprime el estado actual del tablero, se realiza un movimiento y se alterna el turno entre los dos reinos.
+
+\textbf{Impresión del Tablero:} Se utiliza el método \texttt{printTable} para mostrar visualmente el estado actual del tablero, incluyendo la ubicación de los ejércitos y sus estadísticas.
+
+\textbf{Movimiento de Ejércitos:} Se llama al método \texttt{mover} para que los jugadores realicen sus movimientos, lo que implica seleccionar un soldado y moverlo a una nueva posición en el tablero.
+
+\begin{lstlisting}[language=Java]
+public static void addEjercito(Mapa t, ArrayList<Ejercito> r, String equipo, int i, String reino) {
+  // ... (declaración de variables y configuración inicial)
+  Ejercito ejercito = new Ejercito(equipo);
+  // ... (configuración del ejército, asignación de posición y adición al tablero y la lista del reino)
+}
 \end{lstlisting}
 
-\subsection{Selección del Equipo a Personalizar}
-Se solicita al usuario que ingrese el símbolo del equipo (\texttt{"*"} o \texttt{"\#"}) que desea personalizar. Se determina el \texttt{ArrayList} del equipo seleccionado mediante un operador ternario.
-\begin{lstlisting}
-System.out.print("Escoge al equipo a personalizar: ");
-String team = sc.next();
-ArrayList<Soldado> currentE = team.equals("*") ? ejercito1 : ejercito2;
+\textbf{Generación de Ejércitos:} Este método se encarga de añadir un ejército al tablero y a la lista correspondiente a un reino específico. Se asegura de que no haya soldados en la misma posición y asigna atributos aleatorios a cada soldado.
+
+\begin{lstlisting}[language=Java]
+public static void printTable(Mapa t) {
+  // ... (impresión visual del tablero, mostrando la posición y estadísticas de los soldados)
+}
 \end{lstlisting}
 
-\subsection{Menú de Opciones}
-Se presenta un menú con varias opciones numeradas que permiten al usuario realizar acciones específicas en relación con los soldados y equipos.
-\begin{lstlisting}
-System.out.println("Escoge una opcion: ");
-// ... (Listado de opciones)
-int input = sc.nextInt();
+\textbf{Impresión del Tablero:} Este método muestra visualmente el estado actual del tablero, representando la posición de los soldados, sus equipos y estadísticas en cada celda.
+
+\begin{lstlisting}[language=Java]
+public static void mover(Mapa t, ArrayList<Ejercito> e1, ArrayList<Ejercito> e2, int turno) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (solicitud de entrada del jugador y manejo de movimientos)
+  }
+}
 \end{lstlisting}
 
-\subsection{Ejecución de Acciones Según la Opción Seleccionada}
-Se utiliza una serie de condicionales para determinar la acción a realizar según la opción ingresada por el usuario.
-\begin{lstlisting}
-if (input == 1) crearSoldado(table, currentE, team);
-if (input == 2) eliminarSoldado(table, currentE, team);
-// ... (Resto de opciones)
-if (input == 10) jugar();
-if (input == 11) volver();
+\textbf{Movimiento de Soldados:} Este método permite a los jugadores mover sus soldados en el tablero. Se solicita la posición actual y la nueva posición deseada. Se valida que el movimiento sea legal antes de realizarlo.
+
+\begin{lstlisting}[language=Java]
+public static void atacarEjercito(Ejercito e1, Ejercito e2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (generación y visualización del mapa de la batalla)
+    moverSoldados(mapa, e1, e2, turno);
+    turno = turno == 1 ? 2 : 1;
+    sum1 = 0;
+    sum2 = 0;
+  }
+}
 \end{lstlisting}
 
+\textbf{Ataque a Ejército:} Este método simula un enfrentamiento entre dos ejércitos. Se generan las posiciones y se muestran visualmente los movimientos en el mapa de la batalla. Luego, los soldados atacan hasta que se decide un ganador.
+
+\begin{lstlisting}[language=Java]
+public static void atacarSoldados(Soldado[][] m, Soldado s1, Soldado s2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (simulación y visualización del combate entre dos soldados)
+  }
+}
+\end{lstlisting}
+
+\textbf{Ataque a Soldados:} Este método simula un combate entre dos soldados en el mapa de la batalla. Se evalúa la probabilidad de victoria y se realiza el combate.
+
+\textbf{Conclusiones:}
+La clase \texttt{VideoJuego} implementa de manera completa la lógica central del juego, incluyendo la generación de ejércitos, el manejo de movimientos en el tablero, la simulación de batallas y la presentación visual del estado actual del juego. La estructura modular del código permite una fácil comprensión y mantenimiento.
+
+Se ha logrado cumplir con los requisitos del enunciado, y la implementación proporciona una experiencia de juego iterativa que se ajusta a las reglas y características establecidas.
