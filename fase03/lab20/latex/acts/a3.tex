@@ -1,0 +1,141 @@
+\section{La clase Soldado y clases heredadas}
+
+La clase \texttt{Soldado} y sus clases heredadas (\texttt{Arquero}, \texttt{Caballero}, \texttt{Espadachin} y \texttt{Lancero}) representan las entidades que participan en el juego de estrategia. A continuación, se proporciona un análisis detallado de los métodos y funcionalidades de estas clases.
+
+\subsection{Clase \texttt{Soldado}}
+
+La clase \texttt{Soldado} es la clase base que encapsula las características y comportamientos comunes de todos los soldados en el juego. Aquí hay un resumen de sus principales métodos y atributos:
+
+\textbf{Atributos:}
+\begin{itemize}
+    \item \texttt{nombre}: Nombre del soldado.
+    \item \texttt{fila}: Posición en la fila.
+    \item \texttt{columna}: Posición en la columna.
+    \item \texttt{nivelVida}: Nivel de vida máximo.
+    \item \texttt{vidaActual}: Vida actual del soldado.
+    \item \texttt{actitud}: Actitud del soldado (ofensiva o defensiva).
+    \item \texttt{vive}: Indica si el soldado está vivo.
+    \item \texttt{team}: Equipo al que pertenece el soldado.
+    \item \texttt{MAX}: Constante con un valor de 0.
+    \item \texttt{numSoldados, numTeam1, numTeam2}: Contadores estáticos para el número total de soldados y la cantidad en cada equipo.
+\end{itemize}
+
+\textbf{Constructores:}
+\begin{itemize}
+    \item \texttt{Soldado(String t)}: Constructor que inicializa el equipo y actualiza el contador según el equipo.
+    \item \texttt{Soldado(int nV, String t)}: Constructor que también inicializa el nivel de vida.
+\end{itemize}
+
+\textbf{Métodos de Ataque y Defensa:}
+\begin{itemize}
+    \item \texttt{atacar(), defender()}: Cambian la actitud del soldado.
+\end{itemize}
+
+\textbf{Métodos de Estado y Vida:}
+\begin{itemize}
+    \item \texttt{serAtacado()}: Reduce la vida actual y verifica si el soldado muere.
+    \item \texttt{morir()}: Actualiza los contadores y establece que el soldado ha muerto.
+    \item \texttt{isLive()}: Retorna si el soldado está vivo.
+    \item \texttt{toString()}: Retorna una representación en cadena del soldado.
+\end{itemize}
+
+\textbf{Métodos de Acceso y Modificación:}
+\begin{itemize}
+    \item Métodos \texttt{get} y \texttt{set} para acceder y modificar los atributos.
+\end{itemize}
+
+\textbf{Métodos Estáticos:}
+\begin{itemize}
+    \item \texttt{random(int n)}: Genera un número aleatorio entre 1 y $n$.
+    \item \texttt{sumar(Soldado s)}: Crea un nuevo soldado sumando los niveles de vida de dos soldados.
+    \item \texttt{getNumSoldados(), getNumTeam1(), getNumTeam2()}: Retorna los contadores estáticos.
+\end{itemize}
+
+\subsection{Clase \texttt{Arquero}}
+
+La clase \texttt{Arquero} hereda de \texttt{Soldado} e introduce el concepto de flechas. Aquí hay un resumen de sus principales métodos y atributos:
+
+\textbf{Atributos Adicionales:}
+\begin{itemize}
+    \item \texttt{numFlechas}: Número de flechas disponibles.
+\end{itemize}
+
+\textbf{Constructor:}
+\begin{itemize}
+    \item \texttt{Arquero(int nivelVida, String team)}: Llama al constructor de \texttt{Soldado} y establece el número de flechas.
+\end{itemize}
+
+\textbf{Métodos de Ataque Adicionales:}
+\begin{itemize}
+    \item \texttt{disparar()}: Simula el disparo de una flecha y muestra la cantidad restante.
+\end{itemize}
+
+\subsection{Clase \texttt{Caballero}}
+
+La clase \texttt{Caballero} hereda de \texttt{Soldado} e introduce el concepto de armas y estados. Aquí hay un resumen de sus principales métodos y atributos:
+
+\textbf{Atributos Adicionales:}
+\begin{itemize}
+    \item \texttt{armaActual}: Tipo de arma actual (lanza o espada).
+    \item \texttt{state}: Estado actual del caballero (montado o desmontado).
+\end{itemize}
+
+\textbf{Constructor:}
+\begin{itemize}
+    \item \texttt{Caballero(int nivelVida, String team)}: Llama al constructor de \texttt{Soldado} y establece la arma y estado.
+\end{itemize}
+
+\textbf{Métodos de Cambio de Estado y Ataque:}
+\begin{itemize}
+    \item \texttt{desmontar(), emvestir()}: Cambian el estado y simulan un ataque según el estado.
+\end{itemize}
+
+\textbf{Métodos de Obtención de Estado y Arma:}
+\begin{itemize}
+    \item \texttt{getState(), getArmaActual()}: Obtienen el estado y el tipo de arma actual.
+\end{itemize}
+
+\subsection{Clase \texttt{Espadachin}}
+
+La clase \texttt{Espadachin} hereda de \texttt{Soldado} e introduce el concepto de longitud de espada y la capacidad de crear un muro. Aquí hay un resumen de sus principales métodos y atributos:
+
+\textbf{Atributos Adicionales:}
+\begin{itemize}
+    \item \texttt{logitudEspada}: Longitud de la espada del espadachín.
+\end{itemize}
+
+\textbf{Constructor:}
+\begin{itemize}
+    \item \texttt{Espadachin(int nivelVida, String team, int lEspada)}: Llama al constructor de \texttt{Soldado} y establece la longitud de la espada.
+\end{itemize}
+
+\textbf{Métodos Adicionales:}
+\begin{itemize}
+    \item \texttt{crearMuro()}: Simula la creación de un muro de escudos.
+\end{itemize}
+
+\subsection{Clase \texttt{Lancero}}
+
+La clase \texttt{Lancero} hereda de \texttt{Soldado} e introduce el concepto de longitud de lanza y la capacidad de formar un schiltrom. Aquí hay un resumen de sus principales métodos y atributos:
+
+\textbf{Atributos Adicionales:}
+\begin{itemize}
+    \item \texttt{logitudLanza}: Longitud de la lanza del lancero.
+\end{itemize}
+
+\textbf{Constructor:}
+\begin{itemize}
+    \item \texttt{Lancero(int nivelVida, String team, int lLanza)}: Llama al constructor de \texttt{Soldado} y establece la longitud de la lanza.
+\end{itemize}
+
+\textbf{Métodos Adicionales:}
+\begin{itemize}
+    \item \texttt{schiltrom()}: Simula la formación de un schiltrom.
+\end{itemize}
+
+\textbf{Observaciones Generales:}
+\begin{itemize}
+    \item La clase \texttt{Soldado} proporciona funcionalidades esenciales y se utiliza como base para los diferentes tipos de soldados.
+    \item Las clases heredadas (\texttt{Arquero}, \texttt{Caballero}, \texttt{Espadachin}, \texttt{Lancero}) extienden las funcionalidades de \texttt{Soldado} y agregan comportamientos específicos para cada tipo de soldado.
+    \item Los métodos adicionales en las clases heredadas permiten simular acciones específicas de cada tipo de soldado, como disparar flechas, cambiar de arma o formar formaciones defensivas.
+\end{itemize}
