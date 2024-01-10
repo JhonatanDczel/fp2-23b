@@ -1,79 +1,56 @@
-\section{Juego Rapido}
+\section{Clase Mapa}
 
-El método \texttt{juegoRapido()} representa la implementación de un juego estratégico entre dos ejércitos de soldados dispuestos en una matriz bidimensional. A continuación, se proporciona una explicación detallada del código:
+La clase \texttt{Mapa} se encarga de representar el terreno y la disposición de los ejércitos en un tablero. Aquí hay un análisis detallado de la clase:
 
-\subsection{Configuración Inicial}
-La función comienza solicitando al usuario ingresar 'S' si desea salir de la partida.
-Si se ingresa 'S', la función termina inmediatamente. En caso contrario, se procede a la configuración inicial del juego.
-\begin{lstlisting}
-Scanner sc = new Scanner(System.in);
-System.out.println("Para salir de la partida ingresa 'S'");
-String salir = sc.next();
-if (salir.toLowerCase().charAt(0) == 's') return;
+\begin{lstlisting}[language=Java]
+public class Mapa {
+  final private String[] TERRENOS = {"bosque", "campo", "montaña", "desierto", "playa"};
+  private Ejercito[][] table = new Ejercito[10][10];
+  private String terreno = TERRENOS[random(5)];
 \end{lstlisting}
 
-\subsection{Inicialización de Variables}
-Se crea una matriz table de dimensiones 10x10 para representar el campo de batalla,
-y dos listas (ejercito1 y ejercito2) que contendrán instancias de la clase Soldado.
-La función fillTable() se llama para inicializar la matriz y las listas.
-\begin{lstlisting}
-Soldado[][] table = new Soldado[10][10];
-ArrayList<Soldado> ejercito1 = new ArrayList<Soldado>();
-ArrayList<Soldado> ejercito2 = new ArrayList<Soldado>();
-fillTable(table, ejercito1, ejercito2);
-\end{lstlisting}
+\textbf{Atributos:}
+\begin{itemize}
+  \item \texttt{TERRENOS}: Un array de strings que representa los tipos de terrenos posibles.
+  \item \texttt{table}: Una matriz de objetos \texttt{Ejercito} que representa la disposición de los ejércitos en el mapa.
+  \item \texttt{terreno}: Una cadena que representa el tipo de terreno del mapa.
+\end{itemize}
 
-\subsection{Impresión de Información Inicial}
-Se imprime en consola el soldado con mayor nivel en cada ejército y,
-posteriormente, se muestra el promedio de puntos de ambos ejércitos.
-\begin{lstlisting}
-printMayorNivel(table, ejercito1, ejercito2);
-System.out.println("___________________________________");
-System.out.println("IMPRIMIR PROMEDIO DE PUNTOS");
-printPromedioPuntos(table, ejercito1, ejercito2);
-System.out.println("___________________________________");
-\end{lstlisting}
+\textbf{Constructor:}
+\begin{itemize}
+  \item No hay un constructor explícito en la clase. La elección del tipo de terreno se realiza automáticamente al instanciar un objeto de la clase.
+\end{itemize}
 
-\subsection{Ordenamiento y Ranking}
-Se imprime la lista de soldados ordenada por algún criterio no especificado
-y se muestra el ranking de puntos de ambos ejércitos, utilizando algoritmos de ordenamiento Bubble Sort y Select Sort, respectivamente.
-\begin{lstlisting}
-System.out.println("___________________________________");
-System.out.println("SOLDADOS ORDENADOS");
-printSoladosOrdenados(table, ejercito1, ejercito2);
-System.out.println("___________________________________");
-System.out.println("RANKING DE PUNTOS EJERCITO1 POR BUBBLE SORT");
-printRankingPointsBubble(table, ejercito1);
-System.out.println("___________________________________");
-System.out.println("RANKING DE PUNTOS EJERCITO2 POR SELECT SORT");
-printRankingPointsSelect(table, ejercito2);
-\end{lstlisting}
+\textbf{Métodos:}
+\begin{itemize}
+  \item \texttt{getTable()}: Retorna la matriz de ejércitos (\texttt{table}).
+  \item \texttt{getTerreno()}: Retorna el tipo de terreno actual.
+\end{itemize}
 
-\subsection{Desarrollo del Juego}
-Se inicia un bucle que representa los turnos del juego.
-En cada turno, se muestra el estado actual del campo de batalla (printTable(table))
-y se realiza un movimiento de los soldados. Se alterna entre los dos ejércitos en cada turno.
-\begin{lstlisting}
-int turno = 1;
-while (true) {
-  printTable(table);
-  mover(table, ejercito1, ejercito2, turno);
-
-  turno = turno == 1 ? 2 : 1;
-
-  String winner = getWinner(ejercito1, ejercito2);
-
-  if (winner != null) {
-    System.out.println("###########################");
-    System.out.println("GANA EL EQUIPO " + winner);
-    System.out.println("###########################");
-    break;
+\begin{lstlisting}[language=Java]
+  private int random(int n) {
+    return (int) (Math.random() * n);
   }
-}
 \end{lstlisting}
 
-\subsection{Conclusión del Juego}
-Cuando se determina un ganador (mediante la función getWinner()),
-se imprime el equipo ganador y se finaliza el juego.
+\textbf{Método Auxiliar:}
+\begin{itemize}
+  \item \texttt{random(int n)}: Un método auxiliar privado que genera un número aleatorio entre 0 (inclusive) y \texttt{n} (exclusive).
+\end{itemize}
 
-Entonces, el método \texttt{juegoRapido()} encapsula la lógica de un juego estratégico entre dos ejércitos de soldados, proporcionando información inicial, estadísticas y una interfaz para que los usuarios participen en turnos alternativos hasta que se determine un ganador.
+\textbf{Observaciones:}
+\begin{itemize}
+  \item La clase \texttt{Mapa} encapsula la información sobre el terreno y la disposición de los ejércitos en un tablero bidimensional.
+  \item La elección del tipo de terreno se realiza automáticamente al crear un objeto de la clase, utilizando el método \texttt{random} para seleccionar un índice aleatorio del array \texttt{TERRENOS}.
+  \item La matriz \texttt{table} tiene un tamaño fijo de 10x10, y cada celda puede contener un objeto \texttt{Ejercito} o ser \texttt{null} si no hay ningún ejército en esa posición.
+  \item Los métodos \texttt{getTable} y \texttt{getTerreno} permiten acceder a la información del mapa desde otras clases.
+\end{itemize}
+
+\textbf{Ejemplo de Uso:}
+\begin{lstlisting}[language=Java]
+Mapa miMapa = new Mapa();
+Ejercito[][] matrizEjercitos = miMapa.getTable();
+String tipoTerreno = miMapa.getTerreno();
+\end{lstlisting}
+
+En este ejemplo, se crea un objeto \texttt{Mapa} que automáticamente selecciona un tipo de terreno. Luego, se puede acceder a la matriz de ejércitos y al tipo de terreno utilizando los métodos proporcionados.
