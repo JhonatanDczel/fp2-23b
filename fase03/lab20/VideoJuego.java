@@ -1,5 +1,3 @@
-package lab.lab20;
-
 import java.util.*;
 
 public class VideoJuego {

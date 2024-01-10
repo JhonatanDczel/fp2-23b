@@ -1,4 +1,3 @@
-package lab.lab20;
 
 public class Mapa {
   final private String[] TERRENOS = {"bosque", "campo", "montaña", "desierto", "playa"};

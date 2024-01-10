@@ -1,4 +1,3 @@
-package lab.lab20;
 
 public class Lancero extends Soldado {
   private int logitudLanza;

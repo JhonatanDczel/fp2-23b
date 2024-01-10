@@ -1,5 +1,3 @@
-package lab.lab20;
-
 public class Arquero extends Soldado {
   private int numFlechas = random(20);
 

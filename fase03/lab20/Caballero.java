@@ -1,4 +1,3 @@
-package lab.lab20;
 
 public class Caballero extends Soldado {
   private char armaActual = 'l';

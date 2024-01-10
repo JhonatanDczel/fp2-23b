@@ -1,4 +1,3 @@
-package lab.lab20;
 
 public class Soldado {
   private String nombre;

@@ -1,5 +1,3 @@
-package lab.lab20;
-
 public class Espadachin extends Soldado {
   private int logitudEspada;
 
