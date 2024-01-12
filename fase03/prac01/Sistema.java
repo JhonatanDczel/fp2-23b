@@ -11,8 +11,16 @@ public class Sistema {
     getCuentas();
     System.out.println("Sistema de Biblioteca EPIS");
     user = getLogin();
-
+    menu();
   }
+
+  public void menu(){
+    System.out.println("====== Menu principal ======");
+    System.out.println("1. Pedir prestado libro");
+    System.out.println("2. Devolver libro");
+    System.out.println("3. Salir");
+  }
+
 
   public Usuario getLogin() {
     Scanner sc = new Scanner(System.in);
