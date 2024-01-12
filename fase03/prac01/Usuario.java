@@ -36,8 +36,8 @@ public class Usuario {
     public Usuario() {
     }
 
-    public void pedirLibro(String iD, String name) {
-        Ficha f = new Ficha(iD, name);
+    public void pedirLibro(String iD) {
+        Ficha f = new Ficha(iD, usuario);
     }
 }
 /*
