@@ -4,9 +4,34 @@ import java.io.*;
 import prac01.almacen.*;
 public class Biblioteca {
   private String nombre;
+  private Usuario[] cuentas;
+  private Map<String, Usuario> usuarios = new HashMap<>();
+
 
   public Biblioteca(String n) {
     nombre = n;
+
+
+    //Provisional mientras no se cree el metodo para registrar usuarios
+
+    String rutaArchivo = "./almacen/cuentas.csv";
+
+    try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+      String linea;
+
+      while ((linea = br.readLine()) != null) {
+        String[] campos = linea.split(",");
+
+        String usuario = campos[0].trim();
+        String contrasena = campos[1].trim();
+        Usuario user = new Usuario(usuario, contrasena);
+
+        usuarios.put(usuario, user);
+      }
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public void RegistrarNuevoLibro() {
