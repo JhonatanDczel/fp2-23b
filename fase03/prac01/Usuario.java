@@ -48,10 +48,11 @@ public class Usuario {
     public void pedirLibro(String iD) {
         Ficha f = new Ficha(iD, usuario);
         librosGuardados.put(iD, f);
+        biblio.entregarLibro(iD);
     }
 
     public void devolverLibro(String iD) {
-        recibirLibro(iD);
+        biblio.recibirLibro(iD);
     }
 
     public void imprimirLibrosGuardados() {
