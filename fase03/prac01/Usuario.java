@@ -1,7 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Usuario {
     private String iD;
     private String usuario;
     private String password;
+    private Map<String, Ficha> librosGuardados = new HashMap<>();
+    private Biblioteca biblio;
+
+    public void setBiblioteca(Biblioteca biblio){
+        this.biblio = biblio;
+    }
 
     public String getID() {
         return iD;
@@ -38,10 +47,18 @@ public class Usuario {
 
     public void pedirLibro(String iD) {
         Ficha f = new Ficha(iD, usuario);
+        librosGuardados.put(iD, f);
     }
 
-    public void devolverLibro(String iD){
+    public void devolverLibro(String iD) {
         recibirLibro(iD);
+    }
+
+    public void imprimirLibrosGuardados() {
+        System.out.println("Libros guardados por el usuario " + usuario + ":");
+        for (String libroID : librosGuardados.keySet()) {
+            System.out.println(libroID);
+        }
     }
 }
 /*
