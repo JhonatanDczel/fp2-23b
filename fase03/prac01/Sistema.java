@@ -1,30 +1,29 @@
-package prac01;
 import java.io.*;
 import java.util.*;
 
 public class Sistema {
   Map<String, String> cuentas = new HashMap<>();
-  static private  Biblioteca biblioteca = new Biblioteca("juan");
-  static Usuario user;
+  private Biblioteca biblioteca = new Biblioteca("juan");
+  private Usuario user;
 
   public static void main(String[] args) {
-    getCuentas();
+    Sistema sistema = new Sistema();
+    sistema.getCuentas();
     System.out.println("Sistema de Biblioteca EPIS");
-   user = getLogin();
-   user.setBiblioteca(biblioteca);
-    menu();
+    sistema.user = sistema.getLogin();
+    sistema.user.setBiblioteca(sistema.biblioteca);
+    sistema.menu();
   }
 
-  public static void menu(){
+  public void menu() {
     System.out.println("====== Menu principal ======");
     System.out.println("1. Pedir prestado libro");
-
     System.out.println("2. Devolver libro");
     System.out.println("3. Salir");
     System.out.println();
 
     Scanner sc = new Scanner(System.in);
-    int op = sc.next();
+    int op = sc.nextInt();
 
     switch (op) {
       case 1:
@@ -37,13 +36,13 @@ public class Sistema {
         System.out.println("Cerrando sesion...");
         return;
       default:
-        return;
+        System.out.println("Opción no válida");
         break;
     }
     menu();
   }
 
-  public static void devolverLibro() {
+  public void devolverLibro() {
     System.out.println();
     user.mostrarLibros();
     System.out.print("Ingrese el ID del libro a devolver: ");
@@ -52,7 +51,7 @@ public class Sistema {
     user.devolverLibro(id);
   }
 
-  public static void pedirLibro() {
+  public void pedirLibro() {
     System.out.println("====== Libros en almacen ======");
     mostrarLibros();
     System.out.print("Ingrese el ID: ");
@@ -62,7 +61,7 @@ public class Sistema {
     user.pedirLibro(id);
   }
 
-  public static void mostrarLibros() {
+  public void mostrarLibros() {
     try (BufferedReader br = new BufferedReader(new FileReader("./almacen/cuentas.csv"))) {
       String linea;
 
@@ -88,7 +87,7 @@ public class Sistema {
     }
   }
 
-  public static Usuario getLogin() {
+  public Usuario getLogin() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Iniciar sesión:");
     System.out.println("Usuario:");
@@ -96,13 +95,14 @@ public class Sistema {
     System.out.println("Password:");
     String pwd = sc.nextLine();
 
-    if(pwd == cuentas.get(user)){
+    if (cuentas.containsKey(user) && pwd.equals(cuentas.get(user))) {
       return biblioteca.getUser(user);
     }
+    System.out.println("Credenciales incorrectas. Intente de nuevo.");
     return getLogin();
   }
 
-  public static void getCuentas(){
+  public void getCuentas() {
     String ruta = "./almacen/cuentas.csv";
 
     try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
@@ -121,4 +121,3 @@ public class Sistema {
     }
   }
 }
-

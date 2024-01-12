@@ -8,7 +8,7 @@ public class Usuario {
     private Map<String, Ficha> librosGuardados = new HashMap<>();
     private Biblioteca biblio;
 
-    public void setBiblioteca(Biblioteca biblio){
+    public void setBiblioteca(Biblioteca biblio) {
         this.biblio = biblio;
     }
 
