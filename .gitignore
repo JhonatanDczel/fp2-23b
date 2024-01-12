@@ -1,4 +1,4 @@
-#ignorar los archivos .class y .jar
+#Ignorar los archivos .class y .jar
 /main/*
 Enunciado*.pdf
 *.class 
