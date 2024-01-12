@@ -4,15 +4,15 @@ import java.util.*;
 
 public class Sistema {
   Map<String, String> cuentas = new HashMap<>();
-  private Biblioteca biblioteca = new Biblioteca("juan");
-  Usuario user;
+  static private  Biblioteca biblioteca = new Biblioteca("juan");
+  static Usuario user;
 
   public static void main(String[] args) {
-    //getCuentas();
+    getCuentas();
     System.out.println("Sistema de Biblioteca EPIS");
-   // user = getLogin();
+   user = getLogin();
    user.setBiblioteca(biblioteca);
- //   menu();
+    menu();
   }
 
   public static void menu(){
@@ -24,7 +24,7 @@ public class Sistema {
     System.out.println();
 
     Scanner sc = new Scanner(System.in);
-    String op = sc.nextLine();
+    int op = sc.next();
 
     switch (op) {
       case 1:
