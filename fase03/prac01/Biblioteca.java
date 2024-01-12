@@ -1,5 +1,6 @@
 package prac01;
 import java.util.*;
+import java.io.*;
 import prac01.almacen.*;
 public class Biblioteca {
   private String nombre;
@@ -24,12 +25,35 @@ public class Biblioteca {
     while (doc == null) {
       tipo = sc.nextLine().toUpperCase();
       if (tipo.equals("ARTICULO")) 
-        doc = new Articulo ( id,  titulo,  ubicacion,  autor); 
+        doc = new Articulo ( id,  titulo,  ubicacion,  autor, ""); 
       else if (tipo.equals("LIBRO"))
-        doc = new Libro ( id,  titulo,  ubicacion,  autor); 
+        doc = new Libro ( id,  titulo,  ubicacion,  autor, ""); 
       else 
-        doc = new Tesis ( id,  titulo,  ubicacion,  autor); 
+        doc = new Tesis ( id,  titulo,  ubicacion,  autor, ""); 
     }
 
+  }
+  public static void main(String[] args) {
+    // Especifica la ruta del archivo CSV
+    String rutaArchivo = "./prac01/almacen/registroDeLibros.csv";
+
+//    try {
+//      // Abre el archivo en modo de escritura (true indica que se añadirán datos al final)
+//      FileWriter fileWriter = new FileWriter(rutaArchivo, true);
+//      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//
+//      // Agrega una nueva línea al final del archivo CSV
+//      String nuevaLinea = "NuevoLibro,2024,AutorNuevo,OtraUbicacion";
+//      bufferedWriter.write(nuevaLinea);
+//      bufferedWriter.newLine();  // Agrega un salto de línea
+//
+//      // Cierra el BufferedWriter
+//      bufferedWriter.close();
+//
+//      System.out.println("Datos agregados al archivo CSV correctamente.");
+//    } catch (IOException e) {
+//      // Manejo de excepciones en caso de error de escritura
+//      System.err.println("Error al escribir en el archivo: " + e.getMessage());
+//    }
   }
 }
