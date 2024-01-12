@@ -1,5 +1,6 @@
 package prac01;
 import java.util.*;
+import prac01.almacen.*;
 public class Biblioteca {
   private String nombre;
 
@@ -19,9 +20,9 @@ public class Biblioteca {
     String ubicacion = sc.nextLine();
     System.out.print("Ingrese qué tipo de documento es: ");
     String tipo;
-    Documento doc;
+    Documento doc = null;
     while (doc == null) {
-      tipo = sc.nextLine.toUpperCase();
+      tipo = sc.nextLine().toUpperCase();
       if (tipo.equals("ARTICULO")) 
         doc = new Articulo ( id,  titulo,  ubicacion,  autor); 
       else if (tipo.equals("LIBRO"))
