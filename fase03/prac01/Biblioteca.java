@@ -32,8 +32,6 @@ public class Biblioteca {
         doc = new Tesis ( id,  titulo,  ubicacion,  autor, ""); 
     }
 
-  }
-  public static void main(String[] args) {
     // Especifica la ruta del archivo CSV
     String registro = "./prac01/almacen/registroDeLibros.csv";
 
@@ -43,8 +41,7 @@ public class Biblioteca {
       BufferedWriter bufferedWriter = new BufferedWriter(escritor);
 
       // Agrega una nueva línea al final del archivo CSV
-      String nuevaLinea = "NuevoLibro,2024,AutorNuevo,OtraUbicacion";
-      bufferedWriter.write(nuevaLinea);
+      bufferedWriter.write(doc.datosFormatoCSV());
       bufferedWriter.newLine();  // Agrega un salto de línea
 
       // Cierra el BufferedWriter
