@@ -1,18 +1,24 @@
 package prac01;
+
 import java.util.*;
+
+import almacen.Articulo;
+import almacen.Documento;
+import almacen.Libro;
+import almacen.Tesis;
+
 import java.io.*;
 import prac01.almacen.*;
+
 public class Biblioteca {
   private String nombre;
   private Usuario[] cuentas;
   private Map<String, Usuario> usuarios = new HashMap<>();
 
-
   public Biblioteca(String n) {
     nombre = n;
 
-
-    //Provisional mientras no se cree el metodo para registrar usuarios
+    // Provisional mientras no se cree el metodo para registrar usuarios
 
     String rutaArchivo = "./almacen/cuentas.csv";
 
@@ -34,6 +40,10 @@ public class Biblioteca {
     }
   }
 
+  public Usuario getUser(String nombreUsuario) {
+    Usuario usuario = usuarios.get(nombreUsuario);
+  }
+
   public void RegistrarNuevoLibro() {
     Scanner sc = new Scanner(System.in);
     System.out.print("Ingrese el id: ");
@@ -49,25 +59,26 @@ public class Biblioteca {
     Documento doc = null;
     while (doc == null) {
       tipo = sc.nextLine().toUpperCase();
-      if (tipo.equals("ARTICULO")) 
-        doc = new Articulo ( id,  titulo,  ubicacion,  autor, ""); 
+      if (tipo.equals("ARTICULO"))
+        doc = new Articulo(id, titulo, ubicacion, autor, "");
       else if (tipo.equals("LIBRO"))
-        doc = new Libro ( id,  titulo,  ubicacion,  autor, ""); 
-      else 
-        doc = new Tesis ( id,  titulo,  ubicacion,  autor, ""); 
+        doc = new Libro(id, titulo, ubicacion, autor, "");
+      else
+        doc = new Tesis(id, titulo, ubicacion, autor, "");
     }
 
     // Especifica la ruta del archivo CSV
     String registro = "./prac01/almacen/registroDeLibros.csv";
 
     try {
-      // Abre el archivo en modo de escritura (true indica que se añadirán datos al final)
+      // Abre el archivo en modo de escritura (true indica que se añadirán datos al
+      // final)
       FileWriter escritor = new FileWriter(registro, true);
       BufferedWriter bufferedWriter = new BufferedWriter(escritor);
 
       // Agrega una nueva línea al final del archivo CSV
       bufferedWriter.write(doc.datosFormatoCSV());
-      bufferedWriter.newLine();  // Agrega un salto de línea
+      bufferedWriter.newLine(); // Agrega un salto de línea
 
       // Cierra el BufferedWriter
       bufferedWriter.close();
