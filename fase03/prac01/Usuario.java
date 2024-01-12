@@ -39,6 +39,10 @@ public class Usuario {
     public void pedirLibro(String iD) {
         Ficha f = new Ficha(iD, usuario);
     }
+
+    public void devolverLibro(String iD){
+        recibirLibro(iD);
+    }
 }
 /*
  * Pedir libro(ID){
