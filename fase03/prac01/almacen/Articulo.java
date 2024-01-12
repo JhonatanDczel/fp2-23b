@@ -6,7 +6,7 @@ public class Articulo extends Documento {
     tipo = "artículo";
   }
   public static void main(String args []) {
-    Articulo a = new Articulo("1", "Hola Mundo", "A1", "Jorge" );
+    Articulo a = new Articulo("1", "Hola Mundo", "A1", "Jorge", "123");
     Documento.imprimirAtributos(a);
   }
 }
