@@ -14,9 +14,9 @@ public class Biblioteca {
     String id = sc.nextLine();
     System.out.print("Ingrese el título:");
     String titulo = sc.nextLine();
-    System.out.print("Ingrese autor");
+    System.out.print("Ingrese autor: ");
     String autor = sc.nextLine();
-    System.out.print("Ingrese la ubicación");
+    System.out.print("Ingrese la ubicación: ");
     String ubicacion = sc.nextLine();
     System.out.print("Ingrese qué tipo de documento es: ");
     String tipo;
