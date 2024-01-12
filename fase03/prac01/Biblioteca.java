@@ -35,25 +35,25 @@ public class Biblioteca {
   }
   public static void main(String[] args) {
     // Especifica la ruta del archivo CSV
-    String rutaArchivo = "./prac01/almacen/registroDeLibros.csv";
+    String registro = "./prac01/almacen/registroDeLibros.csv";
 
-//    try {
-//      // Abre el archivo en modo de escritura (true indica que se añadirán datos al final)
-//      FileWriter fileWriter = new FileWriter(rutaArchivo, true);
-//      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//
-//      // Agrega una nueva línea al final del archivo CSV
-//      String nuevaLinea = "NuevoLibro,2024,AutorNuevo,OtraUbicacion";
-//      bufferedWriter.write(nuevaLinea);
-//      bufferedWriter.newLine();  // Agrega un salto de línea
-//
-//      // Cierra el BufferedWriter
-//      bufferedWriter.close();
-//
-//      System.out.println("Datos agregados al archivo CSV correctamente.");
-//    } catch (IOException e) {
-//      // Manejo de excepciones en caso de error de escritura
-//      System.err.println("Error al escribir en el archivo: " + e.getMessage());
-//    }
+    try {
+      // Abre el archivo en modo de escritura (true indica que se añadirán datos al final)
+      FileWriter escritor = new FileWriter(registro, true);
+      BufferedWriter bufferedWriter = new BufferedWriter(escritor);
+
+      // Agrega una nueva línea al final del archivo CSV
+      String nuevaLinea = "NuevoLibro,2024,AutorNuevo,OtraUbicacion";
+      bufferedWriter.write(nuevaLinea);
+      bufferedWriter.newLine();  // Agrega un salto de línea
+
+      // Cierra el BufferedWriter
+      bufferedWriter.close();
+
+      System.out.println("Datos agregados al archivo CSV correctamente.");
+    } catch (IOException e) {
+      // Manejo de excepciones en caso de error de escritura
+      System.err.println("Error al escribir en el archivo: " + e.getMessage());
+    }
   }
 }

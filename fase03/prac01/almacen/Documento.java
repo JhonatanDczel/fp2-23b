@@ -46,6 +46,15 @@ public abstract class Documento {
       clase = clase.getSuperclass(); // Moverse a la clase base
     }
   }
+  public String datosFormatoCSV() {
+    return (id +","+
+      titulo +","
+      + tipo + ","
+      + autor + ","
+      + ubicacion + ","
+      + disponible + ","
+      + idLector);
+  }
   public String toString() {
     return titulo;
   }
