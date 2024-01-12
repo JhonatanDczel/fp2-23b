@@ -15,7 +15,7 @@ public class Sistema {
  //   menu();
   }
 
-  public void menu(){
+  public static void menu(){
     System.out.println("====== Menu principal ======");
     System.out.println("1. Pedir prestado libro");
 
@@ -43,7 +43,7 @@ public class Sistema {
     menu();
   }
 
-  public void devolverLibro() {
+  public static void devolverLibro() {
     System.out.println();
     user.mostrarLibros();
     System.out.print("Ingrese el ID del libro a devolver: ");
@@ -52,7 +52,7 @@ public class Sistema {
     user.devolverLibro(id);
   }
 
-  public void pedirLibro() {
+  public static void pedirLibro() {
     System.out.println("====== Libros en almacen ======");
     mostrarLibros();
     System.out.print("Ingrese el ID: ");
@@ -88,7 +88,7 @@ public class Sistema {
     }
   }
 
-  public Usuario getLogin() {
+  public static Usuario getLogin() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Iniciar sesión:");
     System.out.println("Usuario:");
@@ -102,7 +102,7 @@ public class Sistema {
     return getLogin();
   }
 
-  public void getCuentas(){
+  public static void getCuentas(){
     String ruta = "./almacen/cuentas.csv";
 
     try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
