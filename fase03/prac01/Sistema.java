@@ -4,10 +4,14 @@ import java.util.*;
 
 public class Sistema {
   Map<String, String> cuentas = new HashMap<>();
+  private Biblioteca biblioteca = new Biblioteca();
+  Usuario user;
 
   public static void main(String[] args) {
-   Biblioteca biblioteca = new Biblioteca();
-   System.out.println("Sistema de Biblioteca EPIS");
+    getCuentas();
+    System.out.println("Sistema de Biblioteca EPIS");
+    user = getLogin();
+
   }
 
   public Usuario getLogin() {
@@ -19,16 +23,9 @@ public class Sistema {
     String pwd = sc.nextLine();
 
     if(pwd == cuentas.get(user)){
-      return 
+      return biblioteca.get(user);
     }
     return getLogin();
-  }
-
-  public void signUp() {
-
-  }
-  public void operacion() {
-
   }
 
   public void getCuentas(){
