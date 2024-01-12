@@ -11,16 +11,82 @@ public class Sistema {
     getCuentas();
     System.out.println("Sistema de Biblioteca EPIS");
     user = getLogin();
+    user.setBiblioteca(biblioteca);
     menu();
   }
 
   public void menu(){
     System.out.println("====== Menu principal ======");
     System.out.println("1. Pedir prestado libro");
+
     System.out.println("2. Devolver libro");
     System.out.println("3. Salir");
+    System.out.println();
+
+    Scanner sc = new Scanner(System.in);
+    String op = sc.nextLine();
+
+    switch (op) {
+      case 1:
+        pedirLibro();
+        break;
+      case 2:
+        devolverLibro();
+        break;
+      case 3:
+        System.out.println("Cerrando sesion...");
+        return;
+      default:
+        return;
+        break;
+    }
+    menu();
   }
 
+  public void devolverLibro() {
+    System.out.println();
+    user.mostrarLibros();
+    System.out.print("Ingrese el ID del libro a devolver: ");
+    Scanner sc = new Scanner(System.in);
+    String id = sc.nextLine();
+    user.devolver(id);
+  }
+
+  public void pedirLibro() {
+    System.out.println("====== Libros en almacen ======");
+    mostrarLibros();
+    System.out.print("Ingrese el ID: ");
+    Scanner sc = new Scanner(System.in);
+    String id = sc.nextLine();
+
+    user.pedirLibro(id);
+  }
+
+  public static void mostrarLibros() {
+    try (BufferedReader br = new BufferedReader(new FileReader("./almacen/cuentas.csv"))) {
+      String linea;
+
+      System.out.println("Listado de libros:");
+
+      while ((linea = br.readLine()) != null) {
+        String[] campos = linea.split(",");
+
+        if (campos.length >= 7) {
+          System.out.println("ID: " + campos[0].trim());
+          System.out.println("TITULO: " + campos[1].trim());
+          System.out.println("TIPO: " + campos[2].trim());
+          System.out.println("AUTOR: " + campos[3].trim());
+          System.out.println("UBICACION: " + campos[4].trim());
+          System.out.println("DISPONIBLE: " + campos[5].trim());
+          System.out.println("IDLECTOR: " + campos[6].trim());
+          System.out.println("------");
+        }
+      }
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 
   public Usuario getLogin() {
     Scanner sc = new Scanner(System.in);
@@ -31,7 +97,7 @@ public class Sistema {
     String pwd = sc.nextLine();
 
     if(pwd == cuentas.get(user)){
-      return biblioteca.get(user);
+      return biblioteca.getUser(user);
     }
     return getLogin();
   }
