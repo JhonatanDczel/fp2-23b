@@ -55,7 +55,7 @@ public class Usuario {
         biblio.recibirLibro(iD);
     }
 
-    public void mostrarLibrosGuardados() {
+    public void mostrarLibros() {
         System.out.println("Libros guardados por el usuario " + usuario + ":");
         for (String libroID : librosGuardados.keySet()) {
             System.out.println(libroID);
