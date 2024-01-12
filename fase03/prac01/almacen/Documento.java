@@ -6,8 +6,8 @@ public abstract class Documento {
   protected String id;
   protected String titulo;
   protected String tipo; //no tiene setter
-  protected String ubicacion; //que sea una letra y un número: A11
   protected String autor;
+  protected String ubicacion; //que sea una letra y un número: A11
   protected boolean disponible;
 
   //getters
