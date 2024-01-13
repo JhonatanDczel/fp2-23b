@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class Usuario {
     }
 
     public void pedirLibro(String iD) {
-        Ficha f = new Ficha(iD, usuario);
+        Ficha f = new Ficha(usuario, iD);  // Intercambié los argumentos para que sea (usuario, iD)
         librosGuardados.put(iD, f);
         biblio.entregarLibro(iD);
     }
@@ -62,10 +63,3 @@ public class Usuario {
         }
     }
 }
-/*
- * Pedir libro(ID){
- * crear ficha
- * ID
- * //prestar libro
- * }
- */

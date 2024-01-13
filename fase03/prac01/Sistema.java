@@ -1,123 +1,124 @@
+
 import java.io.*;
 import java.util.*;
 
 public class Sistema {
-  Map<String, String> cuentas = new HashMap<>();
-  private Biblioteca biblioteca = new Biblioteca("juan");
-  private Usuario user;
+    Map<String, String> cuentas = new HashMap<>();
+    private Biblioteca biblioteca = new Biblioteca("juan");
+    private Usuario user;
 
-  public static void main(String[] args) {
-    Sistema sistema = new Sistema();
-    sistema.getCuentas();
-    System.out.println("Sistema de Biblioteca EPIS");
-    sistema.user = sistema.getLogin();
-    sistema.user.setBiblioteca(sistema.biblioteca);
-    sistema.menu();
-  }
-
-  public void menu() {
-    System.out.println("====== Menu principal ======");
-    System.out.println("1. Pedir prestado libro");
-    System.out.println("2. Devolver libro");
-    System.out.println("3. Salir");
-    System.out.println();
-
-    Scanner sc = new Scanner(System.in);
-    int op = sc.nextInt();
-
-    switch (op) {
-      case 1:
-        pedirLibro();
-        break;
-      case 2:
-        devolverLibro();
-        break;
-      case 3:
-        System.out.println("Cerrando sesion...");
-        return;
-      default:
-        System.out.println("Opción no válida");
-        break;
+    public static void main(String[] args) {
+        Sistema sistema = new Sistema();
+        sistema.getCuentas();
+        System.out.println("Sistema de Biblioteca EPIS");
+        sistema.user = sistema.getLogin();
+        sistema.user.setBiblioteca(sistema.biblioteca);
+        sistema.menu();
     }
-    menu();
-  }
 
-  public void devolverLibro() {
-    System.out.println();
-    user.mostrarLibros();
-    System.out.print("Ingrese el ID del libro a devolver: ");
-    Scanner sc = new Scanner(System.in);
-    String id = sc.nextLine();
-    user.devolverLibro(id);
-  }
+    public void menu() {
+        System.out.println("====== Menu principal ======");
+        System.out.println("1. Pedir prestado libro");
+        System.out.println("2. Devolver libro");
+        System.out.println("3. Salir");
+        System.out.println();
 
-  public void pedirLibro() {
-    System.out.println("====== Libros en almacen ======");
-    mostrarLibros();
-    System.out.print("Ingrese el ID: ");
-    Scanner sc = new Scanner(System.in);
-    String id = sc.nextLine();
+        Scanner sc = new Scanner(System.in);
+        int op = sc.nextInt();
 
-    user.pedirLibro(id);
-  }
-
-  public void mostrarLibros() {
-    try (BufferedReader br = new BufferedReader(new FileReader("./almacen/cuentas.csv"))) {
-      String linea;
-
-      System.out.println("Listado de libros:");
-
-      while ((linea = br.readLine()) != null) {
-        String[] campos = linea.split(",");
-
-        if (campos.length >= 7) {
-          System.out.println("ID: " + campos[0].trim());
-          System.out.println("TITULO: " + campos[1].trim());
-          System.out.println("TIPO: " + campos[2].trim());
-          System.out.println("AUTOR: " + campos[3].trim());
-          System.out.println("UBICACION: " + campos[4].trim());
-          System.out.println("DISPONIBLE: " + campos[5].trim());
-          System.out.println("IDLECTOR: " + campos[6].trim());
-          System.out.println("------");
+        switch (op) {
+            case 1:
+                pedirLibro();
+                break;
+            case 2:
+                devolverLibro();
+                break;
+            case 3:
+                System.out.println("Cerrando sesion...");
+                return;
+            default:
+                System.out.println("Opción no válida");
+                break;
         }
-      }
-
-    } catch (IOException e) {
-      e.printStackTrace();
+        menu();
     }
-  }
 
-  public Usuario getLogin() {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Iniciar sesión:");
-    System.out.println("Usuario:");
-    String user = sc.nextLine();
-    System.out.println("Password:");
-    String pwd = sc.nextLine();
-
-    if (cuentas.containsKey(user) && pwd.equals(cuentas.get(user))) {
-      return biblioteca.getUser(user);
+    public void devolverLibro() {
+        System.out.println();
+        user.mostrarLibros();
+        System.out.print("Ingrese el ID del libro a devolver: ");
+        Scanner sc = new Scanner(System.in);
+        String id = sc.nextLine();
+        user.devolverLibro(id);
     }
-    System.out.println("Credenciales incorrectas. Intente de nuevo.");
-    return getLogin();
-  }
 
-  public void getCuentas() {
-    String ruta = "./almacen/cuentas.csv";
+    public void pedirLibro() {
+        System.out.println("====== Libros en almacen ======");
+        mostrarLibros();
+        System.out.print("Ingrese el ID: ");
+        Scanner sc = new Scanner(System.in);
+        String id = sc.nextLine();
 
-    try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
-      String linea;
-
-      while ((linea = br.readLine()) != null) {
-        String[] campos = linea.split(",");
-
-        String usuario = campos[0].trim();
-        String contrasena = campos[1].trim();
-
-        cuentas.put(usuario, contrasena);
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
+        user.pedirLibro(id);
     }
-  }
+
+    public void mostrarLibros() {
+        try (BufferedReader br = new BufferedReader(new FileReader("./almacen/cuentas.csv"))) {
+            String linea;
+
+            System.out.println("Listado de libros:");
+
+            while ((linea = br.readLine()) != null) {
+                String[] campos = linea.split(",");
+
+                if (campos.length >= 7) {
+                    System.out.println("ID: " + campos[0].trim());
+                    System.out.println("TITULO: " + campos[1].trim());
+                    System.out.println("TIPO: " + campos[2].trim());
+                    System.out.println("AUTOR: " + campos[3].trim());
+                    System.out.println("UBICACION: " + campos[4].trim());
+                    System.out.println("DISPONIBLE: " + campos[5].trim());
+                    System.out.println("IDLECTOR: " + campos[6].trim());
+                    System.out.println("------");
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Usuario getLogin() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Iniciar sesión:");
+        System.out.println("Usuario:");
+        String user = sc.nextLine();
+        System.out.println("Password:");
+        String pwd = sc.nextLine();
+
+        if (cuentas.containsKey(user) && pwd.equals(cuentas.get(user))) {
+            return biblioteca.getUsuario(user);
+        }
+        System.out.println("Credenciales incorrectas. Intente de nuevo.");
+        return getLogin();
+    }
+
+    public void getCuentas() {
+        String ruta = "./almacen/cuentas.csv";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                String[] campos = linea.split(",");
+
+                String usuario = campos[0].trim();
+                String contrasena = campos[1].trim();
+
+                cuentas.put(usuario, contrasena);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
