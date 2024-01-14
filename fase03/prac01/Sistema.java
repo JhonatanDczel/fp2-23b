@@ -53,7 +53,7 @@ public class Sistema {
   public static void pedirLibro() {
     System.out.println("\n====== Libros en almacen ======");
     mostrarLibros();
-    System.out.print("Ingrese el ID: ");
+    System.out.print("Ingrese el ID del libro: ");
     Scanner sc = new Scanner(System.in);
     String id = sc.nextLine();
 

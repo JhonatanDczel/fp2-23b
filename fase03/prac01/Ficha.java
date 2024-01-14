@@ -15,6 +15,21 @@ public class Ficha {
 
     startDate = LocalDate.now();
     returnDate = startDate.plusDays(7);
-    System.out.println("starts in: " + startDate + "\n" + "returns in: " + returnDate);
   } 
+
+  public String getUser(){
+    return this.userName;
+  }
+
+  public String getBookID(){
+    return this.bookID;
+  }
+
+  public String getStart(){
+    return startDate.toString();
+  }
+
+  public String getEnd(){
+    return returnDate.toString();
+  }
 }

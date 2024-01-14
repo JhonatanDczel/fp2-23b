@@ -7,11 +7,47 @@ import java.io.*;
 
 public class Biblioteca {
   private Map<String, Usuario> usuarios = new HashMap<>();
+  private Map<String, Documento> almacen = new HashMap<>();
+  private String rutaLibros = "./almacen/registroDeLibros.csv";
+  private String rutaCuentas = "./almacen/cuentas.csv";
 
   public Biblioteca() {
-    String rutaArchivo = "./almacen/cuentas.csv";
+    logAcoounts();
+    logBooks();
+  }
 
-    try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+  public void logBooks(){
+    try (BufferedReader br = new BufferedReader(new FileReader(rutaLibros))) {
+      String linea;
+
+      while ((linea = br.readLine()) != null) {
+        String[] campos = linea.split(",");
+        String ID = campos[0];
+        String title = campos[1];
+        String type = campos[2];
+        String autor = campos[3];
+        String ubicacion = campos[4];
+        String lector = campos[6];
+
+        Documento doc = null;
+        if (type.equals("Articulo"))
+          doc = new Articulo(ID, title, autor, ubicacion, lector);
+        else if (type.equals("Libro"))
+          doc = new Libro(ID, title, autor, ubicacion, lector);
+        else
+          doc = new Tesis(ID, title, autor, ubicacion, lector);
+
+        almacen.put(ID, doc);
+      }
+
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.out.println("Error al leer los documentos");
+    }
+  }
+
+  public void logAcoounts(){
+    try (BufferedReader br = new BufferedReader(new FileReader(rutaCuentas))) {
       String linea;
 
       while ((linea = br.readLine()) != null) {
@@ -34,11 +70,22 @@ public class Biblioteca {
     return usuarios.get(user);
   }
 
-  public void entregarLibro(String ID){
+  public String entregarLibro(Ficha ficha){
+    String bookID = ficha.getBookID();
+    Documento book = almacen.get(bookID);
+    if (!book.disponible || book == null) {
+      return "fallo";
+    }
+    book.disponible = false;
+    book.idLector = ficha.getUser();
 
+    System.out.println("\n" + book.tipo + " \"" + book.titulo + "\" entregado exitosamente");
+    System.out.println("Fecha del prestamo: " + ficha.getStart());
+    System.out.println("Fecha de devolucion: " + ficha.getEnd() + "\n");
+    return "exitoso";
   }
 
-  public void recibirLibro(String ID){
+  public void recibirLibro(Ficha ficha){
 
   }
 

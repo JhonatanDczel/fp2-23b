@@ -38,12 +38,17 @@ public class Usuario {
 
     public void pedirLibro(String ID) {
         Ficha f = new Ficha(usuario, ID);
+        String peticion = biblio.entregarLibro(f);
+        if (peticion.equals("fallo")) {
+          System.out.println("El libro no esta disponible o no existe");
+          return;
+        }
         librosGuardados.put(ID, f);
-        biblio.entregarLibro(ID);
     }
 
     public void devolverLibro(String ID) {
-        biblio.recibirLibro(ID);
+      Ficha ficha = librosGuardados.get(ID);
+        biblio.recibirLibro(ficha);
     }
 
     public void mostrarLibros() {
