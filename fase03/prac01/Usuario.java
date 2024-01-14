@@ -40,7 +40,8 @@ public class Usuario {
         Ficha f = new Ficha(usuario, ID);
         String peticion = biblio.entregarLibro(f);
         if (peticion.equals("fallo")) {
-          System.out.println("El libro no esta disponible o no existe");
+          Sistema.sleep(400);
+          System.out.println("\nEl libro no esta disponible o no existe");
           return;
         }
         librosGuardados.put(ID, f);
@@ -49,7 +50,7 @@ public class Usuario {
     public void devolverLibro(String ID) {
       Ficha ficha = librosGuardados.get(ID);
       if (ficha == null) {
-        System.out.println("No tienes el libro en tu posesión");
+        System.out.println("\nNo tienes el libro en tu posesión");
         return;
       }
       biblio.recibirLibro(ficha);
@@ -57,7 +58,6 @@ public class Usuario {
     }
 
     public void mostrarLibros() {
-        System.out.println("\nLibros guardados por el usuario " + usuario + ":");
         for (String libroID : librosGuardados.keySet()) {
           biblio.imprimirLibro(libroID);
           System.out.println("Fecha de devolucion: " + librosGuardados.get(libroID).getEnd());

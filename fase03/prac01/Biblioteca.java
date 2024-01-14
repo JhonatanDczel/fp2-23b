@@ -100,6 +100,7 @@ public class Biblioteca {
   public void imprimirLibro(String ID){
     Documento doc = almacen.get(ID);
     System.out.println();
+    Sistema.sleep(200);
     System.out.println("- " + doc.tipo.toUpperCase());
     System.out.println("Titulo:\t\t" + doc.titulo);
     System.out.println("Autor:\t\t" + doc.autor);
