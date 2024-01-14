@@ -1,9 +1,21 @@
-# Sistema de biblioteca CEDIS
+# Sistema de Biblioteca CEDIS
 
-## Como ejecutar el proyecto: 
-Situarse en el directorio `prac01` y ejecutar el siguiente comando para compilar:
-`javac ./*.java ./almacen/*.java`
+## Instrucciones de Compilación
 
-A continuacion, ejecute el siguiente comando para ejecutar:
-`java -cp .. prac01.Sistema`
+Para compilar el proyecto, sigue estos pasos:
+
+1. Sitúate en el directorio `prac01`.
+2. Ejecuta el siguiente comando para compilar:
+
+    ```bash
+    javac ./*.java ./almacen/*.java
+    ```
+
+## Instrucciones de Ejecución
+
+Después de compilar, puedes ejecutar la aplicación con el siguiente comando:
+
+```bash
+java -cp .. prac01.Sistema
+```
 
