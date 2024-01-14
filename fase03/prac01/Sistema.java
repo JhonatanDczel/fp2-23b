@@ -51,7 +51,7 @@ public class Sistema {
   }
 
   public static void pedirLibro() {
-    System.out.println("====== Libros en almacen ======");
+    System.out.println("\n====== Libros en almacen ======");
     mostrarLibros();
     System.out.print("Ingrese el ID: ");
     Scanner sc = new Scanner(System.in);
@@ -61,7 +61,7 @@ public class Sistema {
   }
 
   public static void mostrarLibros() {
-    try (BufferedReader br = new BufferedReader(new FileReader("./almacen/cuentas.csv"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("./almacen/registroDeLibros.csv"))) {
       String linea;
 
       System.out.println("Listado de libros:");
