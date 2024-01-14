@@ -1,19 +1,20 @@
+package prac01;
+
 import java.time.*;
 
 public class Ficha {
-  private String name, surname;
-  private int id;
-  private LocalDate startDate, returnDate; 
+  private String userName;
+  private String bookID;
+
+  private LocalDate startDate; 
+  private LocalDate returnDate; 
   
-  public Ficha(int id, String name) {
-    this.name = name;
-    this.id = id;
+  public Ficha(String userName, String bookID) {
+    this.userName = userName;
+    this.bookID = bookID;
+
     startDate = LocalDate.now();
     returnDate = startDate.plusDays(7);
-    System.out.println(startDate + ":" + returnDate);
+    System.out.println("starts in: " + startDate + "\n" + "returns in: " + returnDate);
   } 
-
-  public static void main(String[] args) {
-    Ficha one = new Ficha("Jorge", "Mamani", 1829894);
-  }
 }

@@ -1,8 +1,8 @@
+package prac01;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Usuario {
-    private String iD;
     private String usuario;
     private String password;
     private Map<String, Ficha> librosGuardados = new HashMap<>();
@@ -10,14 +10,6 @@ public class Usuario {
 
     public void setBiblioteca(Biblioteca biblio){
         this.biblio = biblio;
-    }
-
-    public String getID() {
-        return iD;
-    }
-
-    public void setID(String iD) {
-        this.iD = iD;
     }
 
     public String getUsuario() {
@@ -36,8 +28,7 @@ public class Usuario {
         this.password = password;
     }
 
-    public Usuario(String iD, String usuario, String password) {
-        this.iD = iD;
+    public Usuario(String usuario, String password) {
         this.usuario = usuario;
         this.password = password;
     }
@@ -45,14 +36,14 @@ public class Usuario {
     public Usuario() {
     }
 
-    public void pedirLibro(String iD) {
-        Ficha f = new Ficha(iD, usuario);
-        librosGuardados.put(iD, f);
-        biblio.entregarLibro(iD);
+    public void pedirLibro(String ID) {
+        Ficha f = new Ficha(usuario, ID);
+        librosGuardados.put(ID, f);
+        biblio.entregarLibro(ID);
     }
 
-    public void devolverLibro(String iD) {
-        biblio.recibirLibro(iD);
+    public void devolverLibro(String ID) {
+        biblio.recibirLibro(ID);
     }
 
     public void mostrarLibros() {
@@ -62,10 +53,3 @@ public class Usuario {
         }
     }
 }
-/*
- * Pedir libro(ID){
- * crear ficha
- * ID
- * //prestar libro
- * }
- */

@@ -15,6 +15,7 @@ public abstract class Documento {
   public String getTitulo() {
     return titulo;
   }
+
   //Cosntructor
   public Documento (String id, String titulo, String ubicacion, String autor, String idLector){
     this.id = id;    

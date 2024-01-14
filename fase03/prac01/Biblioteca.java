@@ -1,25 +1,14 @@
 package prac01;
 
-import java.util.*;
-
-import almacen.Articulo;
-import almacen.Documento;
-import almacen.Libro;
-import almacen.Tesis;
-
-import java.io.*;
 import prac01.almacen.*;
 
+import java.util.*;
+import java.io.*;
+
 public class Biblioteca {
-  private String nombre;
-  private Usuario[] cuentas;
   private Map<String, Usuario> usuarios = new HashMap<>();
 
-  public Biblioteca(String n) {
-    nombre = n;
-
-    // Provisional mientras no se cree el metodo para registrar usuarios
-
+  public Biblioteca() {
     String rutaArchivo = "./almacen/cuentas.csv";
 
     try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
@@ -37,11 +26,20 @@ public class Biblioteca {
 
     } catch (IOException e) {
       e.printStackTrace();
+      System.out.println("Error al leer los usuarios");
     }
   }
 
-  public Usuario getUser(String nombreUsuario) {
-    Usuario usuario = usuarios.get(nombreUsuario);
+  public Usuario getUser(String user) {
+    return usuarios.get(user);
+  }
+
+  public void entregarLibro(String ID){
+
+  }
+
+  public void recibirLibro(String ID){
+
   }
 
   public void RegistrarNuevoLibro() {

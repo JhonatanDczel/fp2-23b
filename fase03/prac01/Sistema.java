@@ -1,17 +1,18 @@
 package prac01;
+
 import java.io.*;
 import java.util.*;
 
 public class Sistema {
-  Map<String, String> cuentas = new HashMap<>();
-  static private  Biblioteca biblioteca = new Biblioteca("juan");
-  static Usuario user;
+  private static Map<String, String> cuentas = new HashMap<>();
+  private static Biblioteca biblioteca = new Biblioteca();
+  private static Usuario user;
 
   public static void main(String[] args) {
     getCuentas();
     System.out.println("Sistema de Biblioteca EPIS");
-   user = getLogin();
-   user.setBiblioteca(biblioteca);
+    user = getLogin();
+    user.setBiblioteca(biblioteca);
     menu();
   }
 
@@ -24,7 +25,7 @@ public class Sistema {
     System.out.println();
 
     Scanner sc = new Scanner(System.in);
-    int op = sc.next();
+    int op = sc.nextInt();
 
     switch (op) {
       case 1:
@@ -36,9 +37,6 @@ public class Sistema {
       case 3:
         System.out.println("Cerrando sesion...");
         return;
-      default:
-        return;
-        break;
     }
     menu();
   }
@@ -96,7 +94,7 @@ public class Sistema {
     System.out.println("Password:");
     String pwd = sc.nextLine();
 
-    if(pwd == cuentas.get(user)){
+    if(pwd.equals(cuentas.get(user))){
       return biblioteca.getUser(user);
     }
     return getLogin();
