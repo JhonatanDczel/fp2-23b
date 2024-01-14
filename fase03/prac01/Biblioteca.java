@@ -86,7 +86,14 @@ public class Biblioteca {
   }
 
   public void recibirLibro(Ficha ficha){
+    String bookID = ficha.getBookID();
+    Documento doc = almacen.get(bookID);
+    doc.disponible = true;
+    doc.idLector = "none";
 
+    System.out.println("\nEl libro fue entredado exitosamente");
+    System.out.println("Fecha del prestamo: " + ficha.getStart());
+    System.out.println("Fecha de devolucion: " + ficha.getEnd() + "\n");
   }
 
   public void RegistrarNuevoLibro() {
