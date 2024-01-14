@@ -17,12 +17,14 @@ public class Sistema {
   }
 
   public static void menu(){
-    System.out.println("====== Menu principal ======");
+    System.out.println("\n====== Menu principal ======");
     System.out.println("1. Pedir prestado libro");
 
     System.out.println("2. Devolver libro");
     System.out.println("3. Salir");
     System.out.println();
+
+    System.out.println("> Elige una opcion: ");
 
     Scanner sc = new Scanner(System.in);
     int op = sc.nextInt();
@@ -44,7 +46,7 @@ public class Sistema {
   public static void devolverLibro() {
     System.out.println();
     user.mostrarLibros();
-    System.out.print("Ingrese el ID del libro a devolver: ");
+    System.out.print("\n> Ingrese el ID del libro a devolver: ");
     Scanner sc = new Scanner(System.in);
     String id = sc.nextLine();
     user.devolverLibro(id);
@@ -53,7 +55,7 @@ public class Sistema {
   public static void pedirLibro() {
     System.out.println("\n====== Libros en almacen ======");
     mostrarLibros();
-    System.out.print("Ingrese el ID del libro: ");
+    System.out.print("> Ingrese el ID del libro: ");
     Scanner sc = new Scanner(System.in);
     String id = sc.nextLine();
 
@@ -61,34 +63,12 @@ public class Sistema {
   }
 
   public static void mostrarLibros() {
-    try (BufferedReader br = new BufferedReader(new FileReader("./almacen/registroDeLibros.csv"))) {
-      String linea;
-
-      System.out.println("Listado de libros:");
-
-      while ((linea = br.readLine()) != null) {
-        String[] campos = linea.split(",");
-
-        if (campos.length >= 7) {
-          System.out.println("ID: " + campos[0].trim());
-          System.out.println("TITULO: " + campos[1].trim());
-          System.out.println("TIPO: " + campos[2].trim());
-          System.out.println("AUTOR: " + campos[3].trim());
-          System.out.println("UBICACION: " + campos[4].trim());
-          System.out.println("DISPONIBLE: " + campos[5].trim());
-          System.out.println("IDLECTOR: " + campos[6].trim());
-          System.out.println("------");
-        }
-      }
-
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    biblioteca.mostrarStock();
   }
 
   public static Usuario getLogin() {
     Scanner sc = new Scanner(System.in);
-    System.out.println("Iniciar sesión:");
+    System.out.println("\nIniciar sesión:");
     System.out.println("Usuario:");
     String user = sc.nextLine();
     System.out.println("Password:");
@@ -97,6 +77,8 @@ public class Sistema {
     if(pwd.equals(cuentas.get(user))){
       return biblioteca.getUser(user);
     }
+
+    System.out.println("\nUsuario o contraseña incorrectos\nIntente de nuevo...");
     return getLogin();
   }
 

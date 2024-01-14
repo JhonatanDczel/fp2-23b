@@ -79,7 +79,8 @@ public class Biblioteca {
     book.disponible = false;
     book.idLector = ficha.getUser();
 
-    System.out.println("\n" + book.tipo + " \"" + book.titulo + "\" entregado exitosamente");
+    String t = book.tipo.substring(0, 1).toUpperCase() + book.tipo.substring(1).toLowerCase();
+    System.out.println("\n" + t + " \"" + book.titulo + "\" entregado exitosamente");
     System.out.println("Fecha del prestamo: " + ficha.getStart());
     System.out.println("Fecha de devolucion: " + ficha.getEnd() + "\n");
     return "exitoso";
@@ -94,6 +95,24 @@ public class Biblioteca {
     System.out.println("\nEl libro fue entredado exitosamente");
     System.out.println("Fecha del prestamo: " + ficha.getStart());
     System.out.println("Fecha de devolucion: " + ficha.getEnd() + "\n");
+  }
+
+  public void imprimirLibro(String ID){
+    Documento doc = almacen.get(ID);
+    System.out.println();
+    System.out.println("- " + doc.tipo.toUpperCase());
+    System.out.println("Titulo:\t\t" + doc.titulo);
+    System.out.println("Autor:\t\t" + doc.autor);
+    System.out.println("Ubicacion:\t" + doc.ubicacion);
+    System.out.println("Disponible:\t" + (doc.disponible ? "Si" : "No"));
+    System.out.println("ID:\t\t" + doc.id);
+  }
+
+  public void mostrarStock(){
+    System.out.println("Listado de libros en Biblioteca:");
+    for (String bookID : almacen.keySet()) {
+      imprimirLibro(bookID);
+    }
   }
 
   public void RegistrarNuevoLibro() {

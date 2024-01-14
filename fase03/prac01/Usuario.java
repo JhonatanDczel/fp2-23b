@@ -50,15 +50,17 @@ public class Usuario {
       Ficha ficha = librosGuardados.get(ID);
       if (ficha == null) {
         System.out.println("No tienes el libro en tu posesión");
+        return;
       }
       biblio.recibirLibro(ficha);
       librosGuardados.remove(ID);
     }
 
     public void mostrarLibros() {
-        System.out.println("Libros guardados por el usuario " + usuario + ":");
+        System.out.println("\nLibros guardados por el usuario " + usuario + ":");
         for (String libroID : librosGuardados.keySet()) {
-            System.out.println(libroID);
+          biblio.imprimirLibro(libroID);
+          System.out.println("Fecha de devolucion: " + librosGuardados.get(libroID).getEnd());
         }
     }
 }
