@@ -73,7 +73,7 @@ public class Biblioteca {
   public String entregarLibro(Ficha ficha){
     String bookID = ficha.getBookID();
     Documento book = almacen.get(bookID);
-    if (!book.disponible || book == null) {
+    if (book == null || !book.disponible) {
       return "fallo";
     }
     book.disponible = false;
