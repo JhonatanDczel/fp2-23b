@@ -48,7 +48,11 @@ public class Usuario {
 
     public void devolverLibro(String ID) {
       Ficha ficha = librosGuardados.get(ID);
-        biblio.recibirLibro(ficha);
+      if (ficha == null) {
+        System.out.println("No tienes el libro en tu posesión");
+      }
+      biblio.recibirLibro(ficha);
+      librosGuardados.remove(ID);
     }
 
     public void mostrarLibros() {
