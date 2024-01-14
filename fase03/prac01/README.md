@@ -19,3 +19,7 @@ Después de compilar, puedes ejecutar la aplicación con el siguiente comando:
 java -cp .. prac01.Sistema
 ```
 
+> [!IMPORTANT]
+> Credenciales para iniciar sesion de prueba:
+> `Usuario:   user`
+> `Contraseña: contra`

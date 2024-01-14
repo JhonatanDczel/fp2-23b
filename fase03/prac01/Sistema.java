@@ -12,6 +12,10 @@ public class Sistema {
     getCuentas();
     System.out.println("+--------------------------------+");
     System.out.println("|   Sistema de Biblioteca EPIS   |");
+    System.out.println("+--------------------------------+");
+    System.out.println("|     Credenciales de prueba     |");
+    System.out.println("|         Usuario: user          |");
+    System.out.println("|       contraseña: contra       |");
     user = getLogin();
     user.setBiblioteca(biblioteca);
     menu();
