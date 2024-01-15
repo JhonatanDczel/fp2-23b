@@ -9,4 +9,24 @@ public class Videojuego {
   public static void main(String[] args) {
     // Metodo principal de la clase
   }
+
+  public static ArrayList<Ejercito> crearReino(Mapa mapa, String n, String reinoN){
+    Random random=new Random();
+    ArrayList<Ejercito> reino=new ArrayList<>();
+    int fila, columna;
+    for(int i=0; i<1; i++ ){
+      do{
+        fila=random.nextInt(10);
+        columna=random.nextInt(10);
+      }while(mapa.tablero()[fila][columna]!= null);
+      reino.add(i, new Ejercito(n));
+      reino.get(i).setFilaEjercito(fila);
+      reino.get(i).setColumnaEjercito(columna);
+      reino.get(i).setNombreEjercito(n+i);  
+      reino.get(i).setReino(reinoN);
+      reino.get(i).unidadesEspeciales(n);
+      mapa.agregarEjercito(fila, columna, reino.get(i), reino.get(i).vidaTotalEjercito());
+    }
+    return reino;
+  }
 }
