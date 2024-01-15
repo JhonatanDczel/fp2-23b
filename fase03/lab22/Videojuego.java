@@ -29,4 +29,18 @@ public class Videojuego {
     }
     return reino;
   }
+
+  public static void preTablero(Ejercito ejercito, Soldado[][] tablero){
+    Random random=new Random();
+    int fila, columna;
+    for(Soldado s: ejercito.iterar()){
+      do{
+        fila=random.nextInt(10);
+        columna=random.nextInt(10);
+      }while(tablero[fila][columna]!= null);
+      s.setFila(fila);
+      s.setColumna(columna);
+      tablero[fila][columna]=s;
+    }
+  }
 }
