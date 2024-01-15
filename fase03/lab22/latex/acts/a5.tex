@@ -1,0 +1,99 @@
+\section{Clase VideoJuego}
+La clase \texttt{VideoJuego} es la clase principal que ejecuta el programa del videojuego. Aquí se analiza cada parte del código considerando los requisitos del enunciado:
+
+\begin{lstlisting}[language=Java]
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  while (true) {
+    // ... (declaración de variables y configuración inicial)
+    play(table, reino1, reino2);
+  }
+}
+\end{lstlisting}
+
+\textbf{Ciclo Principal:} La ejecución del juego está envuelta en un bucle infinito, que representa el ciclo principal del videojuego. Esto permite que el juego continúe ejecutándose indefinidamente hasta que sea interrumpido.
+
+\textbf{Selección de Reinos:} Se generan dos reinos aleatorios y se asegura que no sean el mismo, garantizando que no haya "guerra civil".
+
+\textbf{Creación del Mapa:} Se instancia un objeto de la clase \texttt{Mapa} llamado \texttt{table}, que representa el mapa del juego.
+
+\textbf{Generación de Ejércitos:} Se generan ejércitos para cada reino con un número aleatorio de soldados (entre 1 y 10). Se utiliza el método \texttt{addEjercito} para agregar soldados al mapa y a las listas de ejércitos.
+
+\textbf{Inicio del Juego:} Se inicia el juego llamando al método \texttt{play} y pasando como argumentos el mapa y las listas de ejércitos.
+
+\begin{lstlisting}[language=Java]
+public static void play(Mapa table, ArrayList<Ejercito> reino1, ArrayList<Ejercito> reino2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    printTable(table);
+    mover(table, reino1, reino2, turno);
+    turno = turno == 1 ? 2 : 1;
+  } 
+}
+\end{lstlisting}
+
+\textbf{Ciclo del Juego:} Este método maneja el flujo del juego en un bucle infinito. Dentro del bucle, se imprime el estado actual del tablero, se realiza un movimiento y se alterna el turno entre los dos reinos.
+
+\textbf{Impresión del Tablero:} Se utiliza el método \texttt{printTable} para mostrar visualmente el estado actual del tablero, incluyendo la ubicación de los ejércitos y sus estadísticas.
+
+\textbf{Movimiento de Ejércitos:} Se llama al método \texttt{mover} para que los jugadores realicen sus movimientos, lo que implica seleccionar un soldado y moverlo a una nueva posición en el tablero.
+
+\begin{lstlisting}[language=Java]
+public static void addEjercito(Mapa t, ArrayList<Ejercito> r, String equipo, int i, String reino) {
+  // ... (declaración de variables y configuración inicial)
+  Ejercito ejercito = new Ejercito(equipo);
+  // ... (configuración del ejército, asignación de posición y adición al tablero y la lista del reino)
+}
+\end{lstlisting}
+
+\textbf{Generación de Ejércitos:} Este método se encarga de añadir un ejército al tablero y a la lista correspondiente a un reino específico. Se asegura de que no haya soldados en la misma posición y asigna atributos aleatorios a cada soldado.
+
+\begin{lstlisting}[language=Java]
+public static void printTable(Mapa t) {
+  // ... (impresión visual del tablero, mostrando la posición y estadísticas de los soldados)
+}
+\end{lstlisting}
+
+\textbf{Impresión del Tablero:} Este método muestra visualmente el estado actual del tablero, representando la posición de los soldados, sus equipos y estadísticas en cada celda.
+
+\begin{lstlisting}[language=Java]
+public static void mover(Mapa t, ArrayList<Ejercito> e1, ArrayList<Ejercito> e2, int turno) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (solicitud de entrada del jugador y manejo de movimientos)
+  }
+}
+\end{lstlisting}
+
+\textbf{Movimiento de Soldados:} Este método permite a los jugadores mover sus soldados en el tablero. Se solicita la posición actual y la nueva posición deseada. Se valida que el movimiento sea legal antes de realizarlo.
+
+\begin{lstlisting}[language=Java]
+public static void atacarEjercito(Ejercito e1, Ejercito e2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (generación y visualización del mapa de la batalla)
+    moverSoldados(mapa, e1, e2, turno);
+    turno = turno == 1 ? 2 : 1;
+    sum1 = 0;
+    sum2 = 0;
+  }
+}
+\end{lstlisting}
+
+\textbf{Ataque a Ejército:} Este método simula un enfrentamiento entre dos ejércitos. Se generan las posiciones y se muestran visualmente los movimientos en el mapa de la batalla. Luego, los soldados atacan hasta que se decide un ganador.
+
+\begin{lstlisting}[language=Java]
+public static void atacarSoldados(Soldado[][] m, Soldado s1, Soldado s2) {
+  // ... (declaración de variables y configuración inicial)
+  while (true) {
+    // ... (simulación y visualización del combate entre dos soldados)
+  }
+}
+\end{lstlisting}
+
+\textbf{Ataque a Soldados:} Este método simula un combate entre dos soldados en el mapa de la batalla. Se evalúa la probabilidad de victoria y se realiza el combate.
+
+\textbf{Conclusiones:}
+La clase \texttt{VideoJuego} implementa de manera completa la lógica central del juego, incluyendo la generación de ejércitos, el manejo de movimientos en el tablero, la simulación de batallas y la presentación visual del estado actual del juego. La estructura modular del código permite una fácil comprensión y mantenimiento.
+
+Se ha logrado cumplir con los requisitos del enunciado, y la implementación proporciona una experiencia de juego iterativa que se ajusta a las reglas y características establecidas.

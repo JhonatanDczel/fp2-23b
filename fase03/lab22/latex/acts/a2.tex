@@ -1,0 +1,50 @@
+\section*{Resumen de clases}
+
+El enfoque de clases sigue la siguiente estructura: 
+
+\textbf{Soldado:}
+\begin{lstlisting}[language=Java]
+Atributos: nombre, fila, columna, nivelVida, vidaActual, actitud, vive, team.
+Métodos: atacar(), defender(), serAtacado(), morir(), getTeam(), setNombre(), setFila(), setColumna(), setNivelVida(), getNombre(), getFila(), getColumna(), getNivelVida(), isLive(), toString(), random(), sumar(), getNumSoldados(), getNumTeam1(), getNumTeam2().
+\end{lstlisting}
+
+\textbf{Arquero (hereda de Soldado):}
+\begin{lstlisting}[language=Java]
+Atributo adicional: numFlechas.
+Método adicional: disparar().
+\end{lstlisting}
+
+\textbf{Caballero (hereda de Soldado):}
+\begin{lstlisting}[language=Java]
+Atributos adicionales: armaActual, state.
+Métodos adicionales: desmontar(), emvestir(), getArmaActual(), getState().
+\end{lstlisting}
+
+\textbf{Espadachin (hereda de Soldado):}
+\begin{lstlisting}[language=Java]
+Atributo adicional: longitudEspada.
+Método adicional: crearMuro().
+\end{lstlisting}
+
+\textbf{Lancero (hereda de Soldado):}
+\begin{lstlisting}[language=Java]
+Atributo adicional: longitudLanza.
+Método adicional: schiltrom().
+\end{lstlisting}
+
+\textbf{Ejercito:}
+\begin{lstlisting}[language=Java]
+Atributos: misEspadachines, misCaballero, misArqueros, misLanceros, team, columna, fila, nombre, reino.
+Métodos: setFila(), setColumna(), setNombre(), setReino(), getColumna(), getFila(), getNombre(), getTeam(), getReino(), getMisArqueros(), getMisCaballeros(), getMisEspadachines(), getMisLanceros(), constructor con varias sobrecargas, addSoldados(), random(), toString().
+\end{lstlisting}
+
+\textbf{Mapa:}
+\begin{lstlisting}[language=Java]
+Atributos: TERRENOS, table, terreno.
+Métodos: getTable(), getTerreno(), random().
+\end{lstlisting}
+
+\textbf{VideoJuego:}
+\begin{lstlisting}[language=Java]
+Métodos: main(), play(), addEjercito(), printTable(), random(), mover(), atacarEjercito(), atacar(), moverSoldados(), atacarSoldados().
+\end{lstlisting}

@@ -1,0 +1,56 @@
+\section{Clase Mapa}
+
+La clase \texttt{Mapa} se encarga de representar el terreno y la disposición de los ejércitos en un tablero. Aquí hay un análisis detallado de la clase:
+
+\begin{lstlisting}[language=Java]
+public class Mapa {
+  final private String[] TERRENOS = {"bosque", "campo", "montaña", "desierto", "playa"};
+  private Ejercito[][] table = new Ejercito[10][10];
+  private String terreno = TERRENOS[random(5)];
+\end{lstlisting}
+
+\textbf{Atributos:}
+\begin{itemize}
+  \item \texttt{TERRENOS}: Un array de strings que representa los tipos de terrenos posibles.
+  \item \texttt{table}: Una matriz de objetos \texttt{Ejercito} que representa la disposición de los ejércitos en el mapa.
+  \item \texttt{terreno}: Una cadena que representa el tipo de terreno del mapa.
+\end{itemize}
+
+\textbf{Constructor:}
+\begin{itemize}
+  \item No hay un constructor explícito en la clase. La elección del tipo de terreno se realiza automáticamente al instanciar un objeto de la clase.
+\end{itemize}
+
+\textbf{Métodos:}
+\begin{itemize}
+  \item \texttt{getTable()}: Retorna la matriz de ejércitos (\texttt{table}).
+  \item \texttt{getTerreno()}: Retorna el tipo de terreno actual.
+\end{itemize}
+
+\begin{lstlisting}[language=Java]
+  private int random(int n) {
+    return (int) (Math.random() * n);
+  }
+\end{lstlisting}
+
+\textbf{Método Auxiliar:}
+\begin{itemize}
+  \item \texttt{random(int n)}: Un método auxiliar privado que genera un número aleatorio entre 0 (inclusive) y \texttt{n} (exclusive).
+\end{itemize}
+
+\textbf{Observaciones:}
+\begin{itemize}
+  \item La clase \texttt{Mapa} encapsula la información sobre el terreno y la disposición de los ejércitos en un tablero bidimensional.
+  \item La elección del tipo de terreno se realiza automáticamente al crear un objeto de la clase, utilizando el método \texttt{random} para seleccionar un índice aleatorio del array \texttt{TERRENOS}.
+  \item La matriz \texttt{table} tiene un tamaño fijo de 10x10, y cada celda puede contener un objeto \texttt{Ejercito} o ser \texttt{null} si no hay ningún ejército en esa posición.
+  \item Los métodos \texttt{getTable} y \texttt{getTerreno} permiten acceder a la información del mapa desde otras clases.
+\end{itemize}
+
+\textbf{Ejemplo de Uso:}
+\begin{lstlisting}[language=Java]
+Mapa miMapa = new Mapa();
+Ejercito[][] matrizEjercitos = miMapa.getTable();
+String tipoTerreno = miMapa.getTerreno();
+\end{lstlisting}
+
+En este ejemplo, se crea un objeto \texttt{Mapa} que automáticamente selecciona un tipo de terreno. Luego, se puede acceder a la matriz de ejércitos y al tipo de terreno utilizando los métodos proporcionados.
