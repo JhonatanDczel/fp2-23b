@@ -6,8 +6,67 @@ import javax.swing.SwingUtilities;
 
 
 public class Videojuego {
-  public static void main(String[] args) {
-    // Metodo principal de la clase
+  private static final int MAX_SOLDADOS=10;
+  private static final String SIMBOL_EJERCITO1="Z";
+  private static final String SIMBOL_EJERCITO2="X";
+
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    Random random=new Random();
+    boolean jugar=true;
+
+    while(jugar){
+      System.out.println("\n----------BIENVENIDO A WARZONE----------");
+      
+      String[] nombresReinos={"Inglaterra", "Francia", "Sacro Imperio", "Castilla-Aragon", "Moros"};      
+      System.out.println("Jugador 1 y 2, escojan un reino(diferentes):\n(1)Inglaterra\n(2)Francia\n(3)Sacro Imperio\n(4)Castilla-Aragon\n(5)Moros");
+      int select1=sc.nextInt()-1;
+      int select2=sc.nextInt()-1;
+      String reinoJugador1=nombresReinos[select1];
+      String reinoJugador2=nombresReinos[select2];
+      Mapa mapa=new Mapa(random.nextInt(4));
+
+      Soldado[][] tablero=new Soldado[MAX_SOLDADOS][MAX_SOLDADOS];
+      ArrayList<Ejercito> reino1=crearReino(mapa, SIMBOL_EJERCITO1, reinoJugador1);
+      ArrayList<Ejercito> reino2=crearReino(mapa, SIMBOL_EJERCITO2, reinoJugador2);
+
+      Soldado s1=reino1.get(0).soldadoMasFuerte();
+      Soldado s2=reino2.get(0).soldadoMasFuerte();
+
+      preTablero(reino1.get(0), tablero);
+      preTablero(reino2.get(0), tablero);
+      mapa.mostrarTableroSoldados(tablero);
+      reino1.get(0).mostrarSoldados();
+      reino2.get(0).mostrarSoldados();
+      SwingUtilities.invokeLater(() -> {
+        new TableroGUI(tablero);
+      });
+      System.out.println("\n-----Ejercito Nro1(Z)----");
+      System.out.println("Soldado con mayor nivel de vida: ");
+      System.out.printf("%-12s | Vida:%d | Fila:%d | Columna:%d | Atq:%d | Def:%d\n", s1.getNombre(),s1.getNivelVida(), s1.getFila(), s1.getColumna(), s1.getNivelAtaque(), s1.getNivelDefensa());
+      System.out.printf("Promedio de nivel de vida: %.2f", promedioVida(reino1.get(0)));
+      reino1.get(0).mostrarSoldados();
+      System.out.print("\nRANKING DE PODER");
+      reino1.get(0).mostrarRankingPorSeleccion();
+      
+      System.out.println("\n-----Ejercito Nro2(X)----");
+      System.out.println("Soldado con mayor nivel de vida: ");
+      System.out.printf("%-12s | Vida:%d | Fila:%d | Columna:%d | Atq:%d | Def:%d\n", s2.getNombre(),s2.getNivelVida(), s2.getFila(), s2.getColumna(), s2.getNivelAtaque(), s2.getNivelDefensa());
+      System.out.printf("Promedio de nivel de vida: %.2f", promedioVida(reino2.get(0)));
+      reino2.get(0).mostrarSoldados();
+      System.out.print("\nRANKING DE PODER");
+      reino2.get(0).mostrarRankingPorSeleccion();
+
+      reino1.get(0).resumenEjercito(reinoJugador1);
+      reino2.get(0).resumenEjercito(reinoJugador2);
+      determinarGanador(reino1.get(0), reino2.get(0), reinoJugador1, reinoJugador2);
+
+      System.out.println("Quieres seguir jugando?(true/false) ");
+      boolean seguirJugando=sc.nextBoolean();
+      if(seguirJugando==false)
+        jugar=false;
+    }
+    sc.close();
   }
 
   public static ArrayList<Ejercito> crearReino(Mapa mapa, String n, String reinoN){
