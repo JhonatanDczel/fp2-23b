@@ -1,99 +1,75 @@
-\section{Clase VideoJuego}
-La clase \texttt{VideoJuego} es la clase principal que ejecuta el programa del videojuego. Aquí se analiza cada parte del código considerando los requisitos del enunciado:
 
+\section{Informe sobre la Clase \texttt{TableroGUI}}
+
+La clase \texttt{TableroGUI} se encarga de crear una interfaz gráfica para visualizar el tablero de soldados en el juego. A continuación, se presenta un análisis detallado de su estructura y funcionalidades, así como ejemplos de cómo interactúa con otras clases.
+
+\subsection{Características Principales}
+
+\subsubsection{Herencia de \texttt{JFrame}}
 \begin{lstlisting}[language=Java]
-public static void main(String[] args) {
-  Scanner sc = new Scanner(System.in);
-  while (true) {
-    // ... (declaración de variables y configuración inicial)
-    play(table, reino1, reino2);
-  }
+public class TableroGUI extends JFrame
+\end{lstlisting}
+La clase \texttt{TableroGUI} hereda de \texttt{JFrame}, la cual es una clase que proporciona una ventana contenedora para la interfaz gráfica.
+
+\subsubsection{Atributos}
+\begin{lstlisting}[language=Java]
+private Soldado[][] tablero;
+\end{lstlisting}
+\texttt{tablero}: Almacena la información del tablero de soldados que se mostrará en la interfaz.
+
+\subsubsection{Constructor}
+\begin{lstlisting}[language=Java]
+public TableroGUI(Soldado[][] tablero)
+\end{lstlisting}
+Este constructor recibe una matriz de soldados (\texttt{tablero}) como parámetro y configura la interfaz. Establece el título, tamaño de la ventana, operación de cierre y visibilidad. Crea un objeto \texttt{TableroPanel} (clase interna) y lo agrega a la ventana.
+
+\subsubsection{Clase Interna \texttt{TableroPanel}}
+\begin{lstlisting}[language=Java]
+private class TableroPanel extends JPanel
+\end{lstlisting}
+Esta clase interna hereda de \texttt{JPanel} y se encarga de dibujar el tablero en la interfaz.
+
+\subsubsection{Método \texttt{paintComponent}}
+\begin{lstlisting}[language=Java]
+@Override
+protected void paintComponent(Graphics g)
+\end{lstlisting}
+Este método sobrescrito se encarga de dibujar los elementos en el panel. Itera sobre la matriz de soldados y pinta las celdas del tablero. Utiliza colores diferentes para representar a los dos ejércitos.
+
+\subsubsection{Ejemplo de Uso en la Clase \texttt{Videojuego}}
+\begin{lstlisting}[language=Java]
+SwingUtilities.invokeLater(() -> {
+    new TableroGUI(tablero);
+});
+\end{lstlisting}
+Cuando se crea un objeto \texttt{TableroGUI} en la clase \texttt{Videojuego}, se pasa la matriz de soldados (\texttt{tablero}) como parámetro. Esto muestra la interfaz gráfica del tablero.
+
+\subsection{Interacción con Otras Clases}
+
+\subsubsection{Uso del Tablero en \texttt{Videojuego}}
+\begin{lstlisting}[language=Java]
+SwingUtilities.invokeLater(() -> {
+    new TableroGUI(tablero);
+});
+\end{lstlisting}
+La clase \texttt{Videojuego} utiliza \texttt{TableroGUI} para mostrar gráficamente el estado del tablero de soldados en el juego. La llamada a \texttt{SwingUtilities.invokeLater} asegura que la interfaz se actualice de manera segura.
+
+\subsubsection{Acceso a la Información de los Soldados}
+\begin{lstlisting}[language=Java]
+Soldado soldado = tablero[fila][columna];
+\end{lstlisting}
+Dentro del método \texttt{paintComponent}, se accede a la información de cada soldado en el tablero para determinar su posición y tipo. Esto permite representar visualmente la ubicación y afiliación de cada soldado en el tablero.
+
+\subsubsection{Ejemplo de Colores según Afiliación}
+\begin{lstlisting}[language=Java]
+if ((nombre.substring(nombre.length()-2, nombre.length()-1).equals("Z"))) {
+    g.setColor(Color.CYAN);
+} else {
+    g.setColor(Color.ORANGE);
 }
 \end{lstlisting}
+El código verifica el símbolo del soldado para determinar a qué ejército pertenece y utiliza colores diferentes (cian u naranja) para representarlos en la interfaz.
 
-\textbf{Ciclo Principal:} La ejecución del juego está envuelta en un bucle infinito, que representa el ciclo principal del videojuego. Esto permite que el juego continúe ejecutándose indefinidamente hasta que sea interrumpido.
+\subsection{Conclusiones}
 
-\textbf{Selección de Reinos:} Se generan dos reinos aleatorios y se asegura que no sean el mismo, garantizando que no haya "guerra civil".
-
-\textbf{Creación del Mapa:} Se instancia un objeto de la clase \texttt{Mapa} llamado \texttt{table}, que representa el mapa del juego.
-
-\textbf{Generación de Ejércitos:} Se generan ejércitos para cada reino con un número aleatorio de soldados (entre 1 y 10). Se utiliza el método \texttt{addEjercito} para agregar soldados al mapa y a las listas de ejércitos.
-
-\textbf{Inicio del Juego:} Se inicia el juego llamando al método \texttt{play} y pasando como argumentos el mapa y las listas de ejércitos.
-
-\begin{lstlisting}[language=Java]
-public static void play(Mapa table, ArrayList<Ejercito> reino1, ArrayList<Ejercito> reino2) {
-  // ... (declaración de variables y configuración inicial)
-  while (true) {
-    printTable(table);
-    mover(table, reino1, reino2, turno);
-    turno = turno == 1 ? 2 : 1;
-  } 
-}
-\end{lstlisting}
-
-\textbf{Ciclo del Juego:} Este método maneja el flujo del juego en un bucle infinito. Dentro del bucle, se imprime el estado actual del tablero, se realiza un movimiento y se alterna el turno entre los dos reinos.
-
-\textbf{Impresión del Tablero:} Se utiliza el método \texttt{printTable} para mostrar visualmente el estado actual del tablero, incluyendo la ubicación de los ejércitos y sus estadísticas.
-
-\textbf{Movimiento de Ejércitos:} Se llama al método \texttt{mover} para que los jugadores realicen sus movimientos, lo que implica seleccionar un soldado y moverlo a una nueva posición en el tablero.
-
-\begin{lstlisting}[language=Java]
-public static void addEjercito(Mapa t, ArrayList<Ejercito> r, String equipo, int i, String reino) {
-  // ... (declaración de variables y configuración inicial)
-  Ejercito ejercito = new Ejercito(equipo);
-  // ... (configuración del ejército, asignación de posición y adición al tablero y la lista del reino)
-}
-\end{lstlisting}
-
-\textbf{Generación de Ejércitos:} Este método se encarga de añadir un ejército al tablero y a la lista correspondiente a un reino específico. Se asegura de que no haya soldados en la misma posición y asigna atributos aleatorios a cada soldado.
-
-\begin{lstlisting}[language=Java]
-public static void printTable(Mapa t) {
-  // ... (impresión visual del tablero, mostrando la posición y estadísticas de los soldados)
-}
-\end{lstlisting}
-
-\textbf{Impresión del Tablero:} Este método muestra visualmente el estado actual del tablero, representando la posición de los soldados, sus equipos y estadísticas en cada celda.
-
-\begin{lstlisting}[language=Java]
-public static void mover(Mapa t, ArrayList<Ejercito> e1, ArrayList<Ejercito> e2, int turno) {
-  // ... (declaración de variables y configuración inicial)
-  while (true) {
-    // ... (solicitud de entrada del jugador y manejo de movimientos)
-  }
-}
-\end{lstlisting}
-
-\textbf{Movimiento de Soldados:} Este método permite a los jugadores mover sus soldados en el tablero. Se solicita la posición actual y la nueva posición deseada. Se valida que el movimiento sea legal antes de realizarlo.
-
-\begin{lstlisting}[language=Java]
-public static void atacarEjercito(Ejercito e1, Ejercito e2) {
-  // ... (declaración de variables y configuración inicial)
-  while (true) {
-    // ... (generación y visualización del mapa de la batalla)
-    moverSoldados(mapa, e1, e2, turno);
-    turno = turno == 1 ? 2 : 1;
-    sum1 = 0;
-    sum2 = 0;
-  }
-}
-\end{lstlisting}
-
-\textbf{Ataque a Ejército:} Este método simula un enfrentamiento entre dos ejércitos. Se generan las posiciones y se muestran visualmente los movimientos en el mapa de la batalla. Luego, los soldados atacan hasta que se decide un ganador.
-
-\begin{lstlisting}[language=Java]
-public static void atacarSoldados(Soldado[][] m, Soldado s1, Soldado s2) {
-  // ... (declaración de variables y configuración inicial)
-  while (true) {
-    // ... (simulación y visualización del combate entre dos soldados)
-  }
-}
-\end{lstlisting}
-
-\textbf{Ataque a Soldados:} Este método simula un combate entre dos soldados en el mapa de la batalla. Se evalúa la probabilidad de victoria y se realiza el combate.
-
-\textbf{Conclusiones:}
-La clase \texttt{VideoJuego} implementa de manera completa la lógica central del juego, incluyendo la generación de ejércitos, el manejo de movimientos en el tablero, la simulación de batallas y la presentación visual del estado actual del juego. La estructura modular del código permite una fácil comprensión y mantenimiento.
-
-Se ha logrado cumplir con los requisitos del enunciado, y la implementación proporciona una experiencia de juego iterativa que se ajusta a las reglas y características establecidas.
+La clase \texttt{TableroGUI} proporciona una interfaz gráfica para visualizar el estado del tablero de soldados en el juego. Su diseño modular y capacidad para interactuar con la información de otras clases facilita la representación visual de la dinámica del juego. Además, el uso de colores y la representación de símbolos permiten al jugador identificar fácilmente a qué ejército pertenece cada soldado en el tablero.
