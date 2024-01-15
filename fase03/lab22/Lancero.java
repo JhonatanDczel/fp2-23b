@@ -1,4 +1,5 @@
 
+import java.util.*;
 class Lancero extends Soldado{
   private int longitudDeLanza=0;
   public Lancero(String ejercito, int i){

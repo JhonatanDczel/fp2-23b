@@ -1,3 +1,4 @@
+import java.util.*;
 public abstract class Soldado{
   private String nombre;
   private String nombreCode;

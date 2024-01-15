@@ -1,3 +1,4 @@
+import java.util.*;
 class Arquero extends Soldado{
   private int flechas;
 

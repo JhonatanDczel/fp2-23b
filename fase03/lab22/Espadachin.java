@@ -1,3 +1,4 @@
+import java.util.*;
 class Espadachin extends Soldado{
   private int longitudEspada;
 
