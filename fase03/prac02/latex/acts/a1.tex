@@ -1,8 +1,11 @@
 \newpage % o \clearpage
-\section{Proyecto lab12}
+\section{Instalando el servidor y cliente MariaDB}
 \begin{itemize}
-  \item Creamos un directorio en fase03 que contenga los archivos del laboratorio y copiamos los archivos del anterior laboratorio.
-  \item Para el tablero se usará un array bidimensional simple y agregaremos una representacion de este en la interfaz gráfica
-  \item La estructura del laboratorio presente es:
+  \item En esta ocasion, estamos utilizando un sistema operativo Linux, entonces podemos descargar el servidor y el cliente mariadb desde los repositorios del sistema operativo.  
+  \item Despues de haber instalado el servidor, en sistemas linux conocidos como Daemon, tenemos que activarlos. En esta ocasion usamos el gestos de demonios \textbf{systemctl}
 \end{itemize}
-\includegraphics[width=0.35\textwidth]{img/tree.jpg}
+
+\begin{lstlisting}[language=bash,caption={Descargando el servidor y el cliente MariaDB}][H]
+	$ sudo pacman -S mariadb
+	$ sudo systemctl start mariadb.service
+\end{lstlisting}
