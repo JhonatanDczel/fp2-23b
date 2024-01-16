@@ -1,0 +1,213 @@
+\section{Clase Soldado}
+
+La clase \texttt{Soldado} es una clase abstracta que proporciona las propiedades y métodos básicos que se aplican a todos los soldados en el juego. Algunos de los atributos más relevantes son \texttt{nombre}, \texttt{nivelAtaque}, \texttt{nivelDefensa}, \texttt{nivelVida}, \texttt{vidaActual}, \texttt{velocidad}, \texttt{actitud}, \texttt{vive}, \texttt{fila}, y \texttt{columna}. Esta clase también incluye métodos para realizar acciones comunes, como \texttt{atacar}, \texttt{defender}, \texttt{avanzar}, \texttt{retroceder}, \texttt{serAtacado}, \texttt{huir}, y \texttt{morir}.
+
+\begin{lstlisting}[language=Java]
+public abstract class Soldado {
+  // Atributos de la clase Soldado
+  
+  // Constructor
+  public Soldado(String ejercito, int i) { ... }
+  
+  // Método genérico para atacar a otro soldado
+  public void atacar(Soldado enemigo) { ... }
+  
+  // Otros métodos como defender, avanzar, retroceder, serAtacado, huir, morir, entre otros.
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{Soldado} establece las propiedades y comportamientos básicos que todos los soldados en el juego comparten. Los atributos incluyen información sobre el estado actual del soldado, como su nombre, niveles de ataque, defensa, vida, posición en el campo, entre otros. Además, se definen métodos que permiten a los soldados interactuar entre sí y realizar acciones específicas.
+
+\section{Clase Espadachin}
+
+La clase \texttt{Espadachin} extiende la clase base \texttt{Soldado} e introduce características adicionales específicas para un tipo de soldado con espada. Se agregan atributos como \texttt{longitudEspada} y métodos como \texttt{crearMuroEscudo} que no están presentes en la clase base.
+
+\begin{lstlisting}[language=Java]
+class Espadachin extends Soldado {
+  // Atributos adicionales para Espadachin
+  
+  // Constructor específico para Espadachin
+  public Espadachin(String ejercito, int i) { ... }
+  
+  // Método específico para Espadachin
+  public void crearMuroEscudo() { ... }
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{Espadachin} hereda las propiedades y métodos de la clase \texttt{Soldado} pero agrega características específicas relacionadas con ser un espadachín. Se introduce el atributo \texttt{longitudEspada} y el método \texttt{crearMuroEscudo}, que reflejan la especialización de este tipo de soldado en el juego.
+
+\section{Clase EspadachinReal}
+
+La clase \texttt{EspadachinReal} también extiende la clase base \texttt{Soldado} y presenta atributos y métodos únicos, como \texttt{lanzarCuchillo} y \texttt{aumentarNivel}.
+
+\begin{lstlisting}[language=Java]
+class EspadachinReal extends Soldado {
+  // Atributos y métodos específicos para EspadachinReal
+  
+  // Constructor específico para EspadachinReal
+  public EspadachinReal(String ejercito, int i) { ... }
+  
+  // Método específico para EspadachinReal
+  public void lanzarCuchillo() { ... }
+  public void aumentarNivel() { ... }
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{EspadachinReal} hereda de \texttt{Soldado} y añade funcionalidades particulares, como la capacidad de lanzar cuchillos (\texttt{lanzarCuchillo}) y aumentar su nivel (\texttt{aumentarNivel}). Estas adiciones hacen que esta clase sea distintiva en comparación con otras clases de soldados.
+
+\section{Clase EspadachinTeutonico}
+
+La clase \texttt{EspadachinTeutonico} extiende la clase \texttt{Espadachin} y agrega atributos y métodos específicos como \texttt{lanzarJabalina} y \texttt{aumentarNivel}.
+
+\begin{lstlisting}[language=Java]
+class EspadachinTeutonico extends Espadachin {
+  // Atributos y métodos específicos para EspadachinTeutonico
+  
+  // Constructor específico para EspadachinTeutonico
+  public EspadachinTeutonico(String ejercito, int i) { ... }
+  
+  // Método específico para EspadachinTeutonico
+  public void lanzarJabalina() { ... }
+  public void aumentarNivel() { ... }
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{EspadachinTeutonico} hereda de \texttt{Espadachin} y añade características particulares, como la capacidad de lanzar jabalinas (\texttt{lanzarJabalina}) y la posibilidad de aumentar su nivel (\texttt{aumentarNivel}). Estas adiciones la distinguen dentro de la jerarquía de clases.
+
+\section{Clase EspadachinConquistador}
+
+La clase \texttt{EspadachinConquistador} también extiende la clase \texttt{Espadachin} y presenta atributos y métodos únicos, como \texttt{lanzarHacha} y \texttt{aumentarNivel}.
+
+\begin{lstlisting}[language=Java]
+class EspadachinConquistador extends Espadachin {
+  // Atributos y métodos específicos para EspadachinConquistador
+  
+  // Constructor específico para EspadachinConquistador
+  public EspadachinConquistador(String ejercito, int i) { ... }
+  
+  // Método específico para EspadachinConquistador
+  public void lanzarHacha() { ... }
+  public void aumentarNivel() { ... }
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{EspadachinConquistador} hereda de \texttt{Espadachin} y añade funcionalidades particulares, como la capacidad de lanzar hachas (\texttt{lanzarHacha}) y la posibilidad de aumentar su nivel (\texttt{aumentarNivel}). Estas adiciones la hacen única en el contexto del juego.
+
+\section{Clase Arquero}
+
+La clase \texttt{Arquero} extiende la clase \texttt{Soldado} e introduce atributos y métodos específicos como \texttt{flechas} y \texttt{dispararFlechas}.
+
+\begin{lstlisting}[language=Java]
+class Arquero extends Soldado {
+  // Atributos y métodos específicos para Arquero
+  
+  // Constructor específico para Arquero
+  public Arquero(String ejercito, int i) { ... }
+  public Arquero() { ... }
+  
+  // Método específico para Arquero
+  public void dispararFlechas() { ... }
+}
+\end{lstlisting}
+
+\textbf{Descripción:} La clase \texttt{Arquero} hereda de \texttt{Soldado} y añade características únicas, como el atributo \texttt{flechas} y el método \texttt{dispararFlechas}. Estos elementos reflejan las habilidades específicas de un arquero en el juego.
+
+
+\section{Clase Caballero}
+
+La clase \texttt{Caballero} extiende la clase \texttt{Soldado} e introduce atributos y métodos adicionales, como \texttt{montado}, \texttt{armaActual}, \texttt{alternarArma}, \texttt{desmontar}, y \texttt{montar}.
+
+\subsection*{Código Relevante:}
+
+\begin{lstlisting}[language=Java]
+class Caballero extends Soldado {
+  // Atributos y métodos específicos para Caballero
+  
+  // Constructor específico para Caballero
+  public Caballero(String ejercito, int i) { ... }
+  
+  // Métodos específicos para Caballero
+  public void alternarArma() { ... }
+  public void desmontar() { ... }
+  public void montar() { ... }
+  public void envestir() { ... }
+}
+\end{lstlisting}
+
+\subsection*{Descripción:}
+
+La clase \texttt{Caballero} hereda de \texttt{Soldado} y añade funcionalidades particulares, como la capacidad de estar \texttt{montado}, cambiar de \texttt{armaActual} con \texttt{alternarArma}, y realizar acciones específicas como \texttt{desmontar}, \texttt{montar}, y \texttt{envestir}.
+
+---
+
+\section{Clase CaballeroFranco}
+
+La clase \texttt{CaballeroFranco} extiende la clase \texttt{Caballero} e introduce atributos y métodos adicionales, como \texttt{lanzarLanzas} y \texttt{aumentarNivel}.
+
+\subsection*{Código Relevante:}
+
+\begin{lstlisting}[language=Java]
+class CaballeroFranco extends Caballero {
+  // Atributos y métodos específicos para CaballeroFranco
+  
+  // Constructor específico para CaballeroFranco
+  public CaballeroFranco(String ejercito, int i) { ... }
+  
+  // Métodos específicos para CaballeroFranco
+  public void lanzarLanzas() { ... }
+  public void aumentarNivel() { ... }
+}
+\end{lstlisting}
+
+\subsection*{Descripción:}
+
+La clase \texttt{CaballeroFranco} hereda de \texttt{Caballero} y añade características particulares, como la capacidad de \texttt{lanzarLanzas} y la posibilidad de \texttt{aumentarNivel}. Estas adiciones reflejan las habilidades únicas de este tipo de caballero en el juego.
+
+---
+
+\section{Clase CaballeroMoro}
+
+La clase \texttt{CaballeroMoro} extiende la clase \texttt{Caballero} e introduce atributos y métodos adicionales, como \texttt{lanzarFlechas} y \texttt{aumentarNivel}.
+
+\subsection*{Código Relevante:}
+
+\begin{lstlisting}[language=Java]
+class CaballeroMoro extends Caballero {
+  // Atributos y métodos específicos para CaballeroMoro
+  
+  // Constructor específico para CaballeroMoro
+  public CaballeroMoro(String ejercito, int i) { ... }
+  
+  // Métodos específicos para CaballeroMoro
+  public void lanzarFechas() { ... }
+  public void aumentarNivel() { ... }
+}
+\end{lstlisting}
+
+\subsection*{Descripción:}
+
+La clase \texttt{CaballeroMoro} hereda de \texttt{Caballero} y añade funcionalidades particulares, como la capacidad de \texttt{lanzarFlechas} y la posibilidad de \texttt{aumentarNivel}. Estas adiciones la hacen única en el contexto del juego.
+
+---
+
+\section{Clase Lancero}
+
+La clase \texttt{Lancero} extiende la clase \texttt{Soldado} e introduce atributos y métodos adicionales, como \texttt{longitudDeLanza} y \texttt{schiltrom}.
+
+\subsection*{Código Relevante:}
+
+\begin{lstlisting}[language=Java]
+class Lancero extends Soldado {
+  // Atributos y métodos específicos para Lancero
+  
+  // Constructor específico para Lancero
+  public Lancero(String ejercito, int i) { ... }
+  
+  // Método específico para Lancero
+  public void schiltrom() { ... }
+}
+\end{lstlisting}
+
+\subsection*{Descripción:}
+
+La clase \texttt{Lancero} hereda de \texttt{Soldado} y añade características particulares, como el atributo \texttt{longitudDeLanza} y el método \texttt{schiltrom}. Estos elementos reflejan las habilidades únicas de un lancero en el juego.

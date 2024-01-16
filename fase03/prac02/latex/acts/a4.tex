@@ -1,0 +1,132 @@
+
+\section{Clase Videojuego}
+
+La clase \texttt{Videojuego} representa la lógica principal del juego. A continuación, se realiza un análisis detallado de su estructura y funcionamiento.
+
+\subsection{Atributos Estáticos}
+
+\begin{lstlisting}[language=Java]
+private static final int MAX_SOLDADOS=10;
+private static final String SIMBOL_EJERCITO1="Z";
+private static final String SIMBOL_EJERCITO2="X";
+\end{lstlisting}
+
+\begin{itemize}
+  \item \texttt{MAX_SOLDADOS}: Define el tamaño máximo del tablero y se utiliza para la creación de matrices y listas.
+  \item \texttt{SIMBOL_EJERCITO1} y \texttt{SIMBOL_EJERCITO2}: Representan los símbolos que identifican a los ejércitos en el tablero.
+\end{itemize}
+
+\subsection{Método Principal \texttt{main}}
+
+\begin{lstlisting}[language=Java]
+public static void main(String[] args)
+\end{lstlisting}
+
+Este método inicia la ejecución del juego. A continuación, se describen los pasos principales realizados:
+
+\begin{enumerate}
+  \item \textbf{Selección de Reinos:}
+     \begin{lstlisting}[language=Java]
+String[] nombresReinos={"Inglaterra", "Francia", "Sacro Imperio", "Castilla-Aragon", "Moros"};
+System.out.println("Jugador 1 y 2, escojan un reino(diferentes):");
+int select1=sc.nextInt()-1;
+int select2=sc.nextInt()-1;
+String reinoJugador1=nombresReinos[select1];
+String reinoJugador2=nombresReinos[select2];
+Mapa mapa=new Mapa(random.nextInt(4));
+     \end{lstlisting}
+
+  \item \textbf{Creación de Ejércitos y Soldados:}
+     \begin{lstlisting}[language=Java]
+Soldado[][] tablero=new Soldado[MAX_SOLDADOS][MAX_SOLDADOS];
+ArrayList<Ejercito> reino1=crearReino(mapa, SIMBOL_EJERCITO1, reinoJugador1);
+ArrayList<Ejercito> reino2=crearReino(mapa, SIMBOL_EJERCITO2, reinoJugador2);
+Soldado s1=reino1.get(0).soldadoMasFuerte();
+Soldado s2=reino2.get(0).soldadoMasFuerte();
+     \end{lstlisting}
+
+  \item \textbf{Preparación del Tablero y Visualización:}
+     \begin{lstlisting}[language=Java]
+preTablero(reino1.get(0), tablero);
+preTablero(reino2.get(0), tablero);
+mapa.mostrarTableroSoldados(tablero);
+reino1.get(0).mostrarSoldados();
+reino2.get(0).mostrarSoldados();
+     \end{lstlisting}
+
+  \item \textbf{Visualización Gráfica con Swing:}
+     \begin{lstlisting}[language=Java]
+SwingUtilities.invokeLater(() -> {
+    new TableroGUI(tablero);
+});
+     \end{lstlisting}
+
+  \item \textbf{Información Detallada de los Ejércitos:}
+     \begin{lstlisting}[language=Java]
+System.out.println("\n-----Ejercito Nro1(Z)----");
+// ... (información detallada sobre el Ejército 1)
+
+System.out.println("\n-----Ejercito Nro2(X)----");
+// ... (información detallada sobre el Ejército 2)
+     \end{lstlisting}
+
+  \item \textbf{Resumen y Determinación del Ganador:}
+     \begin{lstlisting}[language=Java]
+reino1.get(0).resumenEjercito(reinoJugador1);
+reino2.get(0).resumenEjercito(reinoJugador2);
+determinarGanador(reino1.get(0), reino2.get(0), reinoJugador1, reinoJugador2);
+     \end{lstlisting}
+
+  \item \textbf{Pregunta para Continuar Jugando:}
+     \begin{lstlisting}[language=Java]
+System.out.println("Quieres seguir jugando?(true/false) ");
+boolean seguirJugando=sc.nextBoolean();
+if(seguirJugando==false)
+    jugar=false;
+     \end{lstlisting}
+\end{enumerate}
+
+\subsection{Métodos Adicionales}
+
+\subsubsection{\texttt{crearReino}}
+\begin{lstlisting}[language=Java]
+public static ArrayList<Ejercito> crearReino(Mapa mapa, String n, String reinoN)
+\end{lstlisting}
+
+Este método crea un ejército y lo coloca en una posición aleatoria del tablero. También agrega el ejército al mapa.
+
+\subsubsection{\texttt{preTablero}}
+\begin{lstlisting}[language=Java]
+public static void preTablero(Ejercito ejercito, Soldado[][] tablero)
+\end{lstlisting}
+
+Este método coloca soldados en posiciones aleatorias del tablero antes de iniciar el juego.
+
+\subsubsection{\texttt{eliminarSoldado}}
+\begin{lstlisting}[language=Java]
+public static void eliminarSoldado(Soldado eliminar, ArrayList<Soldado> soldados)
+\end{lstlisting}
+
+Este método elimina un soldado de la lista de soldados.
+
+\subsubsection{\texttt{promedioVida}}
+\begin{lstlisting}[language=Java]
+public static double promedioVida(Ejercito ejercito)
+\end{lstlisting}
+
+Calcula y devuelve el promedio de vida de los soldados en un ejército.
+
+\subsubsection{\texttt{determinarGanador}}
+\begin{lstlisting}[language=Java]
+private static void determinarGanador(Ejercito ejercito1, Ejercito ejercito2, String reinoJugador1, String reinoJugador2)
+\end{lstlisting}
+
+Determina el ganador basándose en probabilidades aleatorias y la vida total de los ejércitos.
+
+\subsubsection{\texttt{realizarAccion}}
+\begin{lstlisting}[language=Java]
+public static void realizarAccion(Soldado[][] tablero, Soldado soldado, ArrayList<Soldado> ejercito, ArrayList<Soldado> ejercitoE, Scanner sc)
+\end{lstlisting}
+
+Realiza una acción durante el juego, como encontrar y enfrentar a un enemigo en el tablero.
+

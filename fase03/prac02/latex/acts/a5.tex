@@ -1,0 +1,71 @@
+
+\section{Informe sobre la Clase \texttt{TableroGUI}}
+
+La clase \texttt{TableroGUI} se encarga de crear una interfaz gráfica para visualizar el tablero de soldados en el juego. A continuación, se presenta un análisis detallado de su estructura y funcionalidades, así como ejemplos de cómo interactúa con otras clases.
+
+\subsection{Características Principales}
+
+\subsubsection{Herencia de \texttt{JFrame}}
+\begin{lstlisting}[language=Java]
+public class TableroGUI extends JFrame
+\end{lstlisting}
+La clase \texttt{TableroGUI} hereda de \texttt{JFrame}, la cual es una clase que proporciona una ventana contenedora para la interfaz gráfica.
+
+\subsubsection{Atributos}
+\begin{lstlisting}[language=Java]
+private Soldado[][] tablero;
+\end{lstlisting}
+\texttt{tablero}: Almacena la información del tablero de soldados que se mostrará en la interfaz.
+
+\subsubsection{Constructor}
+\begin{lstlisting}[language=Java]
+public TableroGUI(Soldado[][] tablero)
+\end{lstlisting}
+Este constructor recibe una matriz de soldados (\texttt{tablero}) como parámetro y configura la interfaz. Establece el título, tamaño de la ventana, operación de cierre y visibilidad. Crea un objeto \texttt{TableroPanel} (clase interna) y lo agrega a la ventana.
+
+\subsubsection{Clase Interna \texttt{TableroPanel}}
+\begin{lstlisting}[language=Java]
+private class TableroPanel extends JPanel
+\end{lstlisting}
+Esta clase interna hereda de \texttt{JPanel} y se encarga de dibujar el tablero en la interfaz.
+
+\subsubsection{Método \texttt{paintComponent}}
+\begin{lstlisting}[language=Java]
+@Override
+protected void paintComponent(Graphics g)
+\end{lstlisting}
+Este método sobrescrito se encarga de dibujar los elementos en el panel. Itera sobre la matriz de soldados y pinta las celdas del tablero. Utiliza colores diferentes para representar a los dos ejércitos.
+
+\subsubsection{Ejemplo de Uso en la Clase \texttt{Videojuego}}
+\begin{lstlisting}[language=Java]
+SwingUtilities.invokeLater(() -> {
+    new TableroGUI(tablero);
+});
+\end{lstlisting}
+Cuando se crea un objeto \texttt{TableroGUI} en la clase \texttt{Videojuego}, se pasa la matriz de soldados (\texttt{tablero}) como parámetro. Esto muestra la interfaz gráfica del tablero.
+
+\subsection{Interacción con Otras Clases}
+
+\subsubsection{Uso del Tablero en \texttt{Videojuego}}
+\begin{lstlisting}[language=Java]
+SwingUtilities.invokeLater(() -> {
+    new TableroGUI(tablero);
+});
+\end{lstlisting}
+La clase \texttt{Videojuego} utiliza \texttt{TableroGUI} para mostrar gráficamente el estado del tablero de soldados en el juego. La llamada a \texttt{SwingUtilities.invokeLater} asegura que la interfaz se actualice de manera segura.
+
+\subsubsection{Acceso a la Información de los Soldados}
+\begin{lstlisting}[language=Java]
+Soldado soldado = tablero[fila][columna];
+\end{lstlisting}
+Dentro del método \texttt{paintComponent}, se accede a la información de cada soldado en el tablero para determinar su posición y tipo. Esto permite representar visualmente la ubicación y afiliación de cada soldado en el tablero.
+
+\subsubsection{Ejemplo de Colores según Afiliación}
+\begin{lstlisting}[language=Java]
+if ((nombre.substring(nombre.length()-2, nombre.length()-1).equals("Z"))) {
+    g.setColor(Color.CYAN);
+} else {
+    g.setColor(Color.ORANGE);
+}
+\end{lstlisting}
+El código verifica el símbolo del soldado para determinar a qué ejército pertenece y utiliza colores diferentes (cian u naranja) para representarlos en la interfaz.

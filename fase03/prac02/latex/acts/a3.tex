@@ -1,0 +1,95 @@
+\section{Clase Mapa}
+
+Ahora, analizaremos la clase \texttt{Mapa} que representa el tablero de juego donde se ubican los ejércitos y soldados. Esta clase es esencial para la interacción y el desarrollo del juego, ya que gestiona la disposición de los ejércitos en el terreno y realiza acciones asociadas a esta ubicación.
+
+\subsection{Atributos}
+
+\subsubsection{\texttt{terreno}}
+\begin{lstlisting}[language=Java]
+private String terreno;
+\end{lstlisting}
+El atributo \texttt{terreno} almacena el tipo de terreno del mapa, como "bosque", "campo abierto", "playa", "montaña" o "desierto". Este atributo se inicializa en el constructor de la clase.
+
+\subsubsection{\texttt{MAX\_SOLDADOS}}
+\begin{lstlisting}[language=Java]
+private static final int MAX_SOLDADOS = 10;
+\end{lstlisting}
+El atributo \texttt{MAX\_SOLDADOS} establece el tamaño máximo del tablero en ambas dimensiones, limitando el número de filas y columnas.
+
+\subsubsection{\texttt{tableroReinos}}
+\begin{lstlisting}[language=Java]
+private Ejercito[][] tableroReinos = new Ejercito[MAX_SOLDADOS][MAX_SOLDADOS];
+\end{lstlisting}
+El atributo \texttt{tableroReinos} es una matriz bidimensional de tipo \texttt{Ejercito} que representa el tablero donde se ubicarán los ejércitos. Esta matriz tiene dimensiones definidas por \texttt{MAX\_SOLDADOS} y se inicializa en el constructor.
+
+\subsection{Métodos}
+
+\subsubsection{\texttt{Constructor}}
+\begin{lstlisting}[language=Java]
+public Mapa(int i)
+\end{lstlisting}
+El constructor inicializa el atributo \texttt{terreno} con un valor correspondiente al índice proporcionado en el arreglo \texttt{terreno}. Este índice se utiliza para seleccionar el tipo de terreno del mapa.
+
+\subsubsection{\texttt{tablero}}
+\begin{lstlisting}[language=Java]
+public Ejercito[][] tablero()
+\end{lstlisting}
+El método \texttt{tablero} devuelve la matriz \texttt{tableroReinos}, permitiendo acceder a la configuración actual del tablero.
+
+\subsubsection{\texttt{agregarEjercito}}
+\begin{lstlisting}[language=Java]
+public void agregarEjercito(int fila, int columna, Ejercito ejercito, int totalSoldados)
+\end{lstlisting}
+El método \texttt{agregarEjercito} coloca un ejército en una posición específica del tablero. Además, ajusta la vida de los soldados del ejército en función de su reino y del tipo de terreno en el que se encuentran.
+
+\subsubsection{\texttt{mostrarTableroEjercitos}}
+\begin{lstlisting}[language=Java]
+public void mostrarTableroEjercitos()
+\end{lstlisting}
+El método \texttt{mostrarTableroEjercitos} imprime en la consola el estado actual del tablero, mostrando los nombres de los ejércitos y la vida total de cada ejército en el tablero.
+
+\subsubsection{\texttt{mostrarTableroSoldados}}
+\begin{lstlisting}[language=Java]
+public void mostrarTableroSoldados(Soldado[][] tablero)
+\end{lstlisting}
+El método \texttt{mostrarTableroSoldados} imprime en la consola el estado actual del tablero de soldados. Muestra información detallada sobre cada soldado, incluyendo su nombre y código.
+
+\subsection{Funcionamiento Detallado}
+
+\subsubsection{Método \texttt{agregarEjercito}}
+\begin{lstlisting}[language=Java]
+public void agregarEjercito(int fila, int columna, Ejercito ejercito, int totalSoldados)
+\end{lstlisting}
+Este método coloca un ejército en una posición específica del tablero y ajusta la vida de los soldados del ejército en función de su reino y del tipo de terreno en el que se encuentran. Se realiza una verificación de la correspondencia entre el reino del ejército y el terreno, incrementando la vida de los soldados en 1 si la condición se cumple.
+
+\begin{lstlisting}[language=Java]
+if (ejercito.getReino().equals(nombresReinos[0]) && this.terreno.equals(terreno[0]))
+    for (Soldado s : ejercito.iterar())
+        s.actualizarVida(1);
+\end{lstlisting}
+
+Este fragmento de código representa la verificación para el reino "Inglaterra" y el terreno "bosque". Si se cumple la condición, se itera sobre los soldados del ejército y se incrementa su vida en 1.
+
+\subsubsection{Método \texttt{mostrarTableroEjercitos}}
+\begin{lstlisting}[language=Java]
+public void mostrarTableroEjercitos()
+\end{lstlisting}
+Este método imprime en la consola el estado actual del tablero de ejércitos, mostrando los nombres de los ejércitos y la vida total de cada ejército en el tablero.
+
+\begin{lstlisting}[language=Java]
+System.out.print("|" + columna.getNombreEjercito() + "-" + vida);
+\end{lstlisting}
+
+Este fragmento de código imprime el nombre del ejército y la vida total en el tablero. Se utiliza formato para asegurar que la vida se muestre con dos dígitos.
+
+\subsubsection{Método \texttt{mostrarTableroSoldados}}
+\begin{lstlisting}[language=Java]
+public void mostrarTableroSoldados(Soldado[][] tablero)
+\end{lstlisting}
+Este método imprime en la consola el estado actual del tablero de soldados, mostrando información detallada sobre cada soldado, incluyendo su nombre y código.
+
+\begin{lstlisting}[language=Java]
+System.out.printf("|%s-%-4s", nombre.substring(nombre.length()-2, nombre.length()-1), columna.getNombreCode());
+\end{lstlisting}
+
+Este fragmento de código muestra información detallada sobre cada soldado, incluyendo el nombre abreviado y el código del soldado. La abreviatura del nombre se toma de los dos últimos caracteres del nombre completo del soldado.
