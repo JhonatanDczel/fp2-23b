@@ -1,7 +1,9 @@
 import java.sql.*;
 
 public class Peticion {
-  public Peticion() throws SQLException, ClassNotFoundException{
+  private static Peticion instance;
+
+  private Peticion() throws SQLException, ClassNotFoundException{
     String url = "jdbc:mariadb://localhost/fp2_23b"; 
     String user = "fp2_23b"; 
     String password = "12345678";
@@ -22,5 +24,12 @@ public class Peticion {
 
       System.out.println("ID: " + id + ", First Name: " + fn + " Last Name: " + ln);
     }
+  }
+
+  public static Peticion createInstance() throws SQLException, ClassNotFoundException{
+    if (instance == null) {
+      instance = new Peticion();
+    }
+    return instance;
   }
 }
