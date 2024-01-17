@@ -1,11 +1,18 @@
 \newpage % o \clearpage
 \section{Instalando el servidor y cliente MariaDB}
 \begin{itemize}
-  \item En esta ocasion, estamos utilizando un sistema operativo Linux, entonces podemos descargar el servidor y el cliente mariadb desde los repositorios del sistema operativo.  
-  \item Despues de haber instalado el servidor, en sistemas linux conocidos como Daemon, tenemos que activarlos. En esta ocasion usamos el gestos de demonios \textbf{systemctl}
+  \item En esta ocasion, estamos utilizando un sistema operativo Linux y se ha decidido usar el servidor y cliente MariaDB de Oracle, podemos descargarlo desde los repositorios oficiales del sistema operativo.  
+    j
+  \begin{lstlisting}[language=bash,caption={Descargando el servidor y el cliente MariaDB}][H]
+	  $ sudo pacman -S mariadb
+  \end{lstlisting}
 \end{itemize}
 
-\begin{lstlisting}[language=bash,caption={Descargando el servidor y el cliente MariaDB}][H]
-	$ sudo pacman -S mariadb
-	$ sudo systemctl start mariadb.service
-\end{lstlisting}
+\begin{itemize}
+  \item Despues de haber instalado el servidor MariaDB, debemos realizar la activacion del servidor para que se ejecute en segundo plano. Comunmente todo sistema operativo basado en Linux utiliza el gestor de servidores \textbf{systemctl}. En linux muchos lo conocemos como Daemons (demonios).
+  \begin{lstlisting}[language=bash,caption={Descargando el servidor y el cliente MariaDB}][H]
+	  $ sudo systemctl start mariadb.service
+  \end{lstlisting}
+\end{itemize}
+
+
