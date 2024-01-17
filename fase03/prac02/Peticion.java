@@ -6,7 +6,7 @@ public class Peticion {
   private Peticion() throws SQLException, ClassNotFoundException{
   }
 
-  public static void getData() throws SQLException, ClassNotFoundException{
+  private static void getData() throws SQLException, ClassNotFoundException{
     String url = "jdbc:mariadb://localhost/fp2_23b"; 
     String user = "fp2_23b"; 
     String password = "12345678";
@@ -31,10 +31,10 @@ public class Peticion {
   }
 
   public static Peticion createInstance() throws SQLException, ClassNotFoundException{
-    getData();
     if (instance == null) {
       instance = new Peticion();
     }
+    getData();
     return instance;
   }
 }

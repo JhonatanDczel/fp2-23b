@@ -3,21 +3,10 @@
 	\vspace*{10pt}
 	
 	\begin{center}	
-		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+		\fontsize{17}{17} \textbf{ Informe de práctica 02\itemPracticeNumber}
 	\end{center}
 	\centerline{\textbf{\Large Tema: \itemTheme}}
 	\vspace*{0.5cm}	
-
-	\begin{flushright}
-		\begin{tabular}{|M{2.5cm}|N|}
-			\hline 
-			\rowcolor{tablebackground}
-			\color{white} \textbf{Nota}  \\
-			\hline 
-			     \\[30pt]
-			\hline 			
-		\end{tabular}
-	\end{flushright}	
 
 	\begin{table}[H]
 		\begin{tabular}{|x{4.9cm}|x{4.3cm}|x{5.1cm}|}
@@ -30,66 +19,27 @@
 		\end{tabular}
 	\end{table}		
 	
-	\begin{table}[H]
-		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
-			\hline 
-			\rowcolor{tablebackground}
-			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
-			\hline 
-			\itemPracticeNumber & \itemTheme & 04 horas   \\
-			\hline 
-		\end{tabular}
-	\end{table}
-	
-	\begin{table}[H]
-		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
-			\hline 
-			\rowcolor{tablebackground}
-			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
-			\hline 
-			\itemAcademic & \itemInput &  \itemOutput  \\
-			\hline 
-		\end{tabular}
-	\end{table}
-
 	\section{Actividades}
 \begin{enumerate}
-    \item Crear diagrama de clases UML y programa.
-    \item Crear los miembros de cada clase de la forma más adecuada: como miembros de clase o de instancia.
-    \item Crear la clase Mapa, que esté constituida por el tablero antes visto, que posicione soldados en ciertas posiciones aleatorias (entre 1 y 10 soldados por cada ejército, sólo 1 ejército por reino). Se deben generar ejércitos de 2 reinos. No se admite guerra civil. El Mapa tiene como atributo el tipo de territorio que es (bosque, campo abierto, montaña, desierto, playa). La cantidad de soldados, así como todos sus atributos se deben generar aleatoriamente.
-    \item Dibujar el Mapa con las restricciones que solo 1 soldado como máximo en cada cuadrado.
-    \item El mapa tiene un solo tipo de territorio.
-    \item Considerar que el territorio influye en los resultados de las batallas, así cada reino tiene bonus según el territorio: Inglaterra->bosque, Francia->campo abierto, Castilla-Aragón->montaña, Moros->desierto, Sacro Imperio Romano-Germánico->bosque, playa, campo abierto. En dichos casos, se aumenta el nivel de vida en 1 a todos los soldados del reino beneficiado.
-    \item En la historia, los ejércitos estaban conformados por diferentes tipos de soldados, que tenían similitudes, pero también particularidades.
-    \item Basándose en la clase Soldado crear las clases Espadachín, Arquero, Caballero y Lancero. Las cuatro clases heredan de la superclase Soldado pero aumentan atributos y métodos, o sobrescriben métodos heredados.
-    \item Los espadachines tienen como atributo particular "longitud de espada" y como acción "crear un muro de escudos" que es un tipo de defensa en particular.
-    \item Los caballeros pueden alternar sus armas entre espada y lanza, además de desmontar (sólo se realiza cuando está montando e implica defender y cambiar de arma a espada), montar (sólo se realiza cuando está desmontado e implica montar, cambiar de arma a lanza y envestir). El caballero también puede envestir, ya sea montando o desmontando, cuando es desmontado equivale a atacar 2 veces pero cuando está montando implica a atacar 3 veces.
-    \item Los arqueros tienen un número de flechas disponibles las cuales pueden dispararse y se gastan cuando se hace eso.
-    \item Los lanceros tienen como atributo particular, "longitud de lanza" y como acción "schiltrom" (como una falange que es un tipo de defensa en particular y que aumenta su nivel de defensa en 1).
-    \item Tendrá 2 Ejércitos que pueden ser constituidos sólo por espadachines, caballeros, arqueros y lanceros. No se acepta guerra civil. Crear una estructura de datos conveniente para el tablero. Los soldados del primer ejército se almacenarán en un arreglo estándar y los soldados del segundo ejército se almacenarán en un ArrayList. Cada soldado tendrá un nombre autogenerado: Espadachin0X1, Arquero1X1, Caballero2X2, etc., un valor de nivel de vida autogenerado aleatoriamente, la fila y columna también autogenerados aleatoriamente (no puede haber 2 soldados en el mismo cuadrado) y valores autogenerados para el resto de atributos.
-    \item Todos los caballeros tendrán los siguientes valores: ataque 13, defensa 7, nivel de vida [10..12] (el nivel de vida actual empieza con el valor del nivel de vida).
-    \item Todos los arqueros tendrán los siguientes valores: ataque 7, defensa 3, nivel de vida [3..5] (el nivel de vida actual empieza con el valor del nivel de vida).
-    \item Todos los espadachines tendrán los siguientes valores: ataque 10, defensa 8, nivel de vida [8..10] (el nivel de vida actual empieza con el valor del nivel de vida).
-    \item Todos los lanceros tendrán los siguientes valores: ataque 5, defensa 10, nivel de vida [5..8] (el nivel de vida actual empieza con el valor del nivel de vida).
-    \item Mostrar el tablero, distinguiendo los ejércitos y los tipos de soldados creados. Además, se debe mostrar todos los datos de todos los soldados creados para ambos ejércitos. Además de los datos del soldado con mayor vida de cada ejército, el promedio de nivel de vida de todos los soldados creados por ejército, los datos de todos los soldados por ejército en el orden que fueron creados y un ranking de poder de todos los soldados creados por ejército (del que tiene más nivel de vida al que tiene menos) usando algún algoritmo de ordenamiento.
-    \item Finalmente, que muestre el resumen los 2 ejércitos, indicando el reino, cantidad de unidades, distribución del ejército según las unidades, nivel de vida total del ejército y qué ejército ganó la batalla (usar la métrica de suma de niveles de vida y porcentajes de probabilidad de victoria basado en ella). Este porcentaje también debe mostrarse.
-    \item Hacerlo programa iterativo.
+    \item Primero haremos conexión con MariaDB localmente.
+    \item Crearemos una base de datos fp2-23b que contendra las tablas y datos proporcionados en clase.
 \end{enumerate}
 		
 	\section{Equipos, materiales y temas utilizados}
 	\begin{itemize}
 		\item Sistema Operativo ArchCraft GNU Linux 64 bits Kernell
+		\item Sistema Operativo Arch GNU Linux 64 bits Kernell
 		\item NeoVim
 		\item OpenJDK 64-Bit 20.0.1 
-		\item Git 2.42.0
+		\item MariaDB Java Client 3.3.2
+		\item Git 2.43.0
 		\item Cuenta en GitHub con el correo institucional.
 		\item Programación Orientada a Objetos.
-    \item Java Swing with JFrame
 	\end{itemize}
 	\section{URL de Repositorio Github}
 	\begin{itemize}
             \item URL del Repositorio GitHub para clonar o recuperar.
             \item \url{https://github.com/JhonatanDczel/fp2-23b.git}
-            \item URL para el laboratorio \itemPracticeNumber{} en el Repositorio GitHub.
+            \item URL para la práctica 02 en el Repositorio GitHub.
             \item \itemUrl
 	\end{itemize}

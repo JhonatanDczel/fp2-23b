@@ -1,71 +1,57 @@
+\section{Haciendo peticiones con multiples objetos}
 
-\section{Informe sobre la Clase \texttt{TableroGUI}}
+\begin{itemize}
+  \item Ahora creamos otra clase Test desde la que instanciaremos objetos Peticion que haran las peticiones a la base de datos
+  \item Como es una implementación inicial, instanciaremos un nuevo objeto cada vez que querramos hacer una peticion
+\end{itemize}
 
-La clase \texttt{TableroGUI} se encarga de crear una interfaz gráfica para visualizar el tablero de soldados en el juego. A continuación, se presenta un análisis detallado de su estructura y funcionalidades, así como ejemplos de cómo interactúa con otras clases.
+\begin{lstlisting}
+  public class Test {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Peticion p0 = new Peticion();
+        Peticion p1 = new Peticion();
+        Peticion p2 = new Peticion();
+        Peticion p3 = new Peticion();
 
-\subsection{Características Principales}
-
-\subsubsection{Herencia de \texttt{JFrame}}
-\begin{lstlisting}[language=Java]
-public class TableroGUI extends JFrame
+      System.out.println(p0.hashCode() + "\n" + p1.hashCode() + "\n" + p2.hashCode() + "\n" + p3.hashCode());
+    }
+  }
 \end{lstlisting}
-La clase \texttt{TableroGUI} hereda de \texttt{JFrame}, la cual es una clase que proporciona una ventana contenedora para la interfaz gráfica.
 
-\subsubsection{Atributos}
-\begin{lstlisting}[language=Java]
-private Soldado[][] tablero;
+\begin{itemize}
+  \item Como se puede observar, crean 4 objetos Peticion que hacen las peticiones a la base de datos y muestran los resultados por consola
+  \item Ademas imprimimos el hashcode de cada uno de los objetos
+  \item Viendo el hashcode podemos deducir que todos estos objetos son distintos:
+\end{itemize}
+
+\begin{lstlisting}
+
+    ...
+    ...
+
+    ID: 4, First Name: Rafael Last Name: Ortega
+    ID: 5, First Name: Henry Last Name: Stevens
+    ID: 6, First Name: Sharon Last Name: Jenkins
+    ID: 7, First Name: Jorge Last Name: god
+
+    ID: 1, First Name: James Last Name: Carter
+    ID: 2, First Name: Helen Last Name: Leary
+    ID: 3, First Name: Linda Last Name: Douglas
+    ID: 4, First Name: Rafael Last Name: Ortega
+    ID: 5, First Name: Henry Last Name: Stevens
+    ID: 6, First Name: Sharon Last Name: Jenkins
+    ID: 7, First Name: Jorge Last Name: god
+
+    1684106402
+    1204759365
+    6952832174
+    2048675102
+
 \end{lstlisting}
-\texttt{tablero}: Almacena la información del tablero de soldados que se mostrará en la interfaz.
 
-\subsubsection{Constructor}
-\begin{lstlisting}[language=Java]
-public TableroGUI(Soldado[][] tablero)
-\end{lstlisting}
-Este constructor recibe una matriz de soldados (\texttt{tablero}) como parámetro y configura la interfaz. Establece el título, tamaño de la ventana, operación de cierre y visibilidad. Crea un objeto \texttt{TableroPanel} (clase interna) y lo agrega a la ventana.
+\begin{itemize}
+  \item Esto, aunque en primer momento parece lo mas facil e intuitivo de hacer, trae complicaciones cuando hacemos peticiones a grande escala
+  \item Si tuvieramos que crear un objeto por cada peticion que hagamos y tuvieramos que hacer cientos de miles de peticiones resultaría ineficiente en espacio
+  \item La solucion es usar un patrón de diseño bien conocido: el Singleton
+\end{itemize}
 
-\subsubsection{Clase Interna \texttt{TableroPanel}}
-\begin{lstlisting}[language=Java]
-private class TableroPanel extends JPanel
-\end{lstlisting}
-Esta clase interna hereda de \texttt{JPanel} y se encarga de dibujar el tablero en la interfaz.
-
-\subsubsection{Método \texttt{paintComponent}}
-\begin{lstlisting}[language=Java]
-@Override
-protected void paintComponent(Graphics g)
-\end{lstlisting}
-Este método sobrescrito se encarga de dibujar los elementos en el panel. Itera sobre la matriz de soldados y pinta las celdas del tablero. Utiliza colores diferentes para representar a los dos ejércitos.
-
-\subsubsection{Ejemplo de Uso en la Clase \texttt{Videojuego}}
-\begin{lstlisting}[language=Java]
-SwingUtilities.invokeLater(() -> {
-    new TableroGUI(tablero);
-});
-\end{lstlisting}
-Cuando se crea un objeto \texttt{TableroGUI} en la clase \texttt{Videojuego}, se pasa la matriz de soldados (\texttt{tablero}) como parámetro. Esto muestra la interfaz gráfica del tablero.
-
-\subsection{Interacción con Otras Clases}
-
-\subsubsection{Uso del Tablero en \texttt{Videojuego}}
-\begin{lstlisting}[language=Java]
-SwingUtilities.invokeLater(() -> {
-    new TableroGUI(tablero);
-});
-\end{lstlisting}
-La clase \texttt{Videojuego} utiliza \texttt{TableroGUI} para mostrar gráficamente el estado del tablero de soldados en el juego. La llamada a \texttt{SwingUtilities.invokeLater} asegura que la interfaz se actualice de manera segura.
-
-\subsubsection{Acceso a la Información de los Soldados}
-\begin{lstlisting}[language=Java]
-Soldado soldado = tablero[fila][columna];
-\end{lstlisting}
-Dentro del método \texttt{paintComponent}, se accede a la información de cada soldado en el tablero para determinar su posición y tipo. Esto permite representar visualmente la ubicación y afiliación de cada soldado en el tablero.
-
-\subsubsection{Ejemplo de Colores según Afiliación}
-\begin{lstlisting}[language=Java]
-if ((nombre.substring(nombre.length()-2, nombre.length()-1).equals("Z"))) {
-    g.setColor(Color.CYAN);
-} else {
-    g.setColor(Color.ORANGE);
-}
-\end{lstlisting}
-El código verifica el símbolo del soldado para determinar a qué ejército pertenece y utiliza colores diferentes (cian u naranja) para representarlos en la interfaz.
