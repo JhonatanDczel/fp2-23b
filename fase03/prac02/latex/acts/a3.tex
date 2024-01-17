@@ -3,7 +3,7 @@
   \item Por lo pronto solo queremos probar el funcionamiento del patron singleton, de hecho lo que presentaremos es sencillo.
 \end{itemize}}
 
-\subsubsection{La clase Peticion.java}
+\subsection{La clase Peticion.java}
 \begin{itemize}
   \item Esta clase es la que se encarga de realiza las peticiones la servidor, recibir los resultados e imprimirlos. Praticamente crear objetos de esta clase es realizar mas de una peticion al servidor.
   \item El patron de diseno \textbf{Singleton} nos permite crear solo una instancia de esta clase. Se logra esta funcionalidad haciendo privado su constructor y solo poder crear una instancia de esta clse llamando a un metodo estatico que solo permita crear una instancia.
@@ -14,16 +14,20 @@
   private Peticion() throws SQLException, ClassNotFoundException{}
 \end{lstlisting}
 \begin{itemize}
-  \item El campo instance almacena la unica instancia de la clase que puede ser creada.
-  \item El constructor es privador y solo puede ser utilizado por algun metodo de la misma clase
+  \item El constructor es privado y solo puede ser utilizado por cualquier metodo de la misma clase. En esta ocasion, siguiendo el patron Singleton, solo el metodo createInstance() puede crear una intancia del metodo. 
 \end{itemize}}
-
-\subsubsection{Variables importantes}
 \begin{lstlisting}[language=Java]
-  String url = "jdbc:mariadb://localhost/fp2_23b"; 
-  String user = "fp2_23b"; 
-  String password = "12345678";
+  public static Peticion createInstance() throws SQLException, ClassNotFoundException{
+    if (instance == null) {
+      instance = new Peticion();
+    }
+    getData();
+    return instance;
+  }
 \end{lstlisting}
 \begin{itemize}
-  \item Como se observa, estos son las variables que almacenan los parámetros necesarios para la conexión a la base de datos, como la URL de la base de datos, el nombre de usuario y la contraseña.
+
+\begin{itemize}
+  \item El campo instance almacena la unica instancia de la clase que puede ser creada, esta instancia es verificada cada vez que se use el metodo createInstance(). Una vez que se verifica la existencia del objeto, agregamos el metodo getData() que se encarga de hace la solicitud correspondiente.
 \end{itemize}}
+
