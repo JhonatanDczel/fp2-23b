@@ -7,7 +7,6 @@ import java.sql.Statement;
 public class Test {
   public static void main(String[] args) throws SQLException, ClassNotFoundException {
       Peticion p0 = Peticion.createInstance();
-
       Peticion p1 = Peticion.createInstance();
       Peticion p2 = Peticion.createInstance();
       Peticion p3 = Peticion.createInstance();
