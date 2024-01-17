@@ -1,2 +1,26 @@
 \section{Peticiones con un solo objeto: Patron Singleton}
+\begin{itemize}
+  \item Usando el patron de singleton, al ejemplo anteriormente mostrado, optimiza el espacio usado en peticiones grandes
+  \item Al usar un unico objeto en cada petición, ahorramos el espacio que generaría instanciar un nuevo objeto por cada petición
+  \item Luego de hacer la implementacion del patron singleton, podemos verificar si se está usando un solo objeto, imprimiendo el Hash como se muestra a continuacion:
+\end{itemize}
 
+\begin{lstlisting}
+    ...
+
+    ID: 3, First Name: Linda Last Name: Douglas
+    ID: 4, First Name: Rafael Last Name: Ortega
+    ID: 5, First Name: Henry Last Name: Stevens
+    ID: 6, First Name: Sharon Last Name: Jenkins
+    ID: 7, First Name: Jorge Last Name: god
+
+    1684106402
+    1684106402
+    1684106402
+    1684106402  
+\end{lstlisting}
+
+\begin{itemize}
+  \item Como vemos, el hash que se imprime en cada peticion es exactamente el mismo
+  \item Esto nos indica que hicimos correctamente la implementacion de singleton para la clase Peticion
+\end{itemize}
