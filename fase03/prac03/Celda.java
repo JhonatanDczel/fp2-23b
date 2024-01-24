@@ -1,3 +1,6 @@
+//Integrantes:
+//Jhonatan David Arias Quispe
+//Jhossep Fabritzio Velarde Saldaña
 import java.awt.Color;
 import java.awt.Graphics;
 

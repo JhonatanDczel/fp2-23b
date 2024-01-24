@@ -1,6 +1,8 @@
+//Integrantes:
+//Jhonatan David Arias Quispe
+//Jhossep Fabritzio Velarde Saldaña
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.Color;
 import java.awt.Graphics;
 
 public class TableroSingleton extends JFrame {
@@ -16,6 +18,19 @@ public class TableroSingleton extends JFrame {
         setVisible(true);
     }
 
+    private static void medirMemoria() {
+        System.gc();
+        Runtime runtime = Runtime.getRuntime();
+
+        long memoriaTotal = runtime.totalMemory();
+        long memoriaLibre = runtime.freeMemory();
+        long memoriaUsada = memoriaTotal - memoriaLibre;
+
+
+        System.out.println("Memoria Total: " + memoriaTotal + " Bytes");
+        System.out.println("Memoria Libre: " + memoriaLibre + " Bytes");
+        System.out.println("Memoria Usada: " + memoriaUsada + " Bytes");
+    }
 
     private class TableroPanel extends JPanel {
 
@@ -27,8 +42,8 @@ public class TableroSingleton extends JFrame {
             super.paintComponent(g);
             int celdaSize = getWidth() / 10;
 
-            for (int fila = 0; fila < 10; fila++) {
-                for (int columna = 0; columna < 10; columna++) {
+            for (int fila = 0; fila < 10000; fila++) {
+                for (int columna = 0; columna < 10000; columna++) {
                     CeldaUnica celda = CeldaUnica.getInstance(columna * celdaSize, fila * celdaSize, celdaSize);
                     celda.dibujar(g);
                 }
@@ -37,6 +52,8 @@ public class TableroSingleton extends JFrame {
     }
 
     public static void main(String[] args) {
-        new TableroGUI();
+        medirMemoria();
+        new TableroSingleton();
+        medirMemoria();
     }
 }
