@@ -1,5 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "fase03/prac02"
+        "fase03/prac02",
+        "fase03/prac03",
+        "fase03/prac03/TEST"
     ]
 }
