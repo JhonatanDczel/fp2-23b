@@ -16,7 +16,7 @@ public class CeldaUnica {
     g.drawRect(x, y, size, size);
   }
 
-  public static CeldaUnica createInstance(int x, int y, int size){
+  public static CeldaUnica getInstance(int x, int y, int size){
     if (instance == null) {
       instance = new CeldaUnica();
     }
