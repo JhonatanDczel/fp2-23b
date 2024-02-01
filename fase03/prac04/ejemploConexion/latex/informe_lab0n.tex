@@ -1,0 +1,238 @@
+\documentclass{article}
+  \input{tmpt/pckg}
+  \input{tmpt/cmd}
+  \input{tmpt/sty}
+  \input{tmpt/header}
+
+\begin{document}
+
+  \input{tmpt/tabla}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actividades------------------------------------
+	\section{Actividades}
+	\begin{itemize}		
+    \item Crear una base de datos con MARIADB.
+		\item Conectarse a una base de datos con java.
+    \item Usar Singleton para conectarse con un único objeto.
+  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equipo-----------------------------------------
+
+	\section{Equipos, materiales y temas empleados}
+	\begin{itemize}
+		\item Sistema Operativo POP os, 22.04 LTS.
+		\item NVIM 0.6.1.
+		\item OpenJDK 64-Bits 17.0.7.
+		\item Git 2.39.2.
+		\item Cuenta en GitHub con el correo institucional.
+		\item Programación Orientada a Objetos.
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Repositorio------------------------------------
+	\section{URL de Repositorio Github y video-grabación}
+	\begin{itemize}
+		\item URL del Repositorio GitHub para clonar o recuperar.
+		\item \url{https://github.com/ALVARO-QUISPE-UNSA/fp2-23b}
+		\item URL para la práctica 02 en el Repositorio GitHub.
+		\item \url{https://github.com/ALVARO-QUISPE-UNSA/fp2-23b/tree/main/fase03/prac02}
+		\item URL para la grabación de la compilación
+		\item \url{https://drive.google.com/file/d/1CE_5pEXvPoFedSczyST0HGrHY-bEKgYR/view?usp=sharing}
+	\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Desarrollo de actividad------------------------
+
+  \section{Desarrollo de la actividad}
+
+
+% ----------------------Subseccón----------------
+  \subsection{Conexión a la base de datos}
+  \begin{itemize}
+    \item Se ha escrito un programa en Java que utiliza el controlador JDBC de MySQL para establecer una conexión con una base de datos MariaDB local.
+    \item La clase \texttt{Class.forName("com.mysql.cj.jdbc.Driver")} se ha empleado para cargar el controlador JDBC necesario para la conexión.
+    \item La URL de conexión se ha definido como jdbc : mysql://localhost:3306/fp2-23b, especificando la dirección del servidor, el puerto y el nombre de la base de datos.
+    \item Se han proporcionado las credenciales de usuario (\texttt{user}) y contraseña (\texttt{password}) para autenticarse en la base de datos.
+    \item Se ha utilizado la clase \texttt{SingleDriver} para obtener la conexión mediante el método \texttt{getDriver}, aunque la implementación exacta de esta clase no se presenta en el código proporcionado.
+  \end{itemize}
+
+
+      % Codigo--------------
+      \begin{lstlisting}[language=Java, caption={Main.java}, numbers=left, firstnumber=1][H]
+import java.sql.*;
+public class Main {
+  public static void main(String args[]) {
+    try {
+      // Corrección del nombre del controlador 
+      Class.forName("com.mysql.cj.jdbc.Driver");
+
+      // Conexión con la base de datos
+      String url = "jdbc:mysql://localhost:3306/fp2_23b";
+      String user = "fp2_23b";
+      String password = "12345678";
+      Connection miConexion = SingleDriver.getDriver(url, user, password);
+
+      if (miConexion != null) {
+        // Operaciones con la conexión exitosa
+
+        // Declaración y ejecución de la consulta SQL
+        String consultas = "SELECT first_name, last_name FROM owners";
+        Statement statement = miConexion.createStatement();
+        ResultSet resultados = statement.executeQuery(consultas);
+        
+        // Procesamiento de los resultados
+        while (resultados.next()) {
+          String firstName = resultados.getString("first_name");
+          String lastName = resultados.getString("last_name");
+          System.out.println("First Name: " + firstName + ", Last Name: " + lastName);
+        }
+      } else {
+        // Manejo del caso de conexión fallida
+        System.out.println("La conexión no se pudo establecer");
+      }
+
+    // Manejo de las excepciones
+    } catch (SQLException e) {
+      System.err.println("\u001B[31mError: \n\u001B[0m" + e);
+    } catch (ClassNotFoundException e) {
+      System.err.println("\u001B[31mError: \n\u001B[0m" + e);
+    }
+  }
+}
+    	\end{lstlisting}
+
+\subsection{Implementación del Modelo Singleton en la Clase \texttt{SingleDriver}}
+\begin{itemize}
+  \item La clase \texttt{SingleDriver} ha sido diseñada siguiendo el patrón de diseño Singleton, que garantiza la existencia de una única instancia de la conexión a la base de datos.
+
+  \item La instancia única de la conexión (\texttt{driver}) se declara como un campo privado y estático, asegurando que sea accesible a través de la clase y no a través de instancias de la misma.
+
+  \item El constructor de la clase es privado (\texttt{private SingleDriver() {}}), lo que evita la creación de instancias adicionales desde fuera de la clase.
+
+  \item El método estático \texttt{getDriver} se encarga de proporcionar la conexión a la base de datos. Si la conexión aún no ha sido inicializada, se crea una nueva conexión utilizando \texttt{DriverManager.getConnection(url, user, pass)} y se asigna a la instancia única de la conexión. Si la conexión ya existe, se devuelve la instancia existente.
+
+  \item En caso de que ocurra una excepción \texttt{SQLException} durante la obtención de la conexión, se imprime un mensaje de error en la consola y se devuelve \texttt{null} para indicar que ha ocurrido un error en la obtención de la conexión.
+
+  \item En resumen, la implementación del modelo Singleton en la clase \texttt{SingleDriver} asegura que solo exista una instancia de la conexión a la base de datos, proporcionando un mecanismo eficiente y controlado para acceder y gestionar dicha conexión.
+\end{itemize}
+
+
+
+      % Codigo--------------
+      \begin{lstlisting}[language=Java, caption={SingleDriver.java}, numbers=left, firstnumber=1][H]
+import java.sql.*;
+public class SingleDriver {
+  // Una única instancia de la conexión
+  private static Connection driver;
+
+  // Constructor privado para evitar instancias adicionales de la clase
+  private SingleDriver() {}
+
+  // Método estático para obtener una conexión a la base de datos
+  public static Connection getDriver(String url, String user, String pass) {
+    try {
+      // Si la conexión no ha sido inicializada, crea una nueva conexión
+      if (driver == null)
+        driver = DriverManager.getConnection(url, user, pass);
+      return driver;
+    } catch (SQLException e) {
+      // Si ocurre un error al intentar obtener la conexión, maneja la excepción
+      System.err.println("\u001B[31mError: \n\u001B[0m" + e);
+      // Devuelve null para indicar que ha ocurrido un error en la obtención de la conexión
+      return null;
+    }
+  }
+}
+    	\end{lstlisting}
+      % Compilación---------
+   		\begin{lstlisting}[language=bash,caption={Compilación y ejecución}][H]
+$ javac Main.java
+$ java -cp .:/usr/share/java/mysql-connector-java-8.2.0.jar Main 
+First Name: George, Last Name: Franklin
+First Name: Betty, Last Name: Davis
+First Name: Eduardo, Last Name: Rodriquez
+First Name: Harold, Last Name: Davis
+First Name: Peter, Last Name: McTavish
+First Name: Jean, Last Name: Coleman
+First Name: Jeff, Last Name: Black
+First Name: Maria, Last Name: Escobito
+First Name: David, Last Name: Schroeder
+First Name: Carlos, Last Name: Estaban
+ 
+			\end{lstlisting}
+
+\begin{comment}
+
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{src/j1.png} 
+      \end{figure}
+
+        %--------Compilación
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{src/a1.png} 
+        \caption{figura tal}
+      \end{figure}
+\end{comment}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Estructura-------------------------------------
+    
+\clearpage
+	\section{Estructura de práctica 2}
+
+%   	\begin{lstlisting}[language=bash,caption={Compilación y ejecución del código}][H]
+
+	\begin{itemize}	
+		\item El contenido que se entrega en esta práctica es el siguiente:
+	\end{itemize}
+	
+\begin{lstlisting}[style=ascii-tree]
+.
+|-- lib
+|   |-- mysql-connector-j-8.3.0.jar
+|-- Main.java
+|-- SingleDriver.java
+\end{lstlisting}    
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+% Diagrama UML-----------------------------------
+  \section{Diagrama UML del proyecto}
+    \begin{itemize}	
+      \item La estructura del proyecto se refleja en el siguiente diagrama UML
+    \end{itemize}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{img/a.png} 
+    \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+% Referencias------------------------------------
+\section{Referencias}
+\begin{itemize}			
+    \item \url{https://docs.oracle.com/javase/8/docs/api/}
+\end{itemize}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rúbricas---------------------------------------
+  \input{tmpt/rub}
+\end{document}
