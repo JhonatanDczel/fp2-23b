@@ -19,9 +19,17 @@ public class ConnectionDB {
   // LOS METODOS WHRITE
   private static ConnectionDB instance;
   private Connection connection;
+  private Statement statement;
 
   public ConnectionDB() {
-    connection = getConnection();
+    // Estoy repitiendo usar try catch ya que aqui recien inicializamos statemente
+    // Podria inicializarlo en getConnection pero para mejor legibilidad lo hago aqui
+    try {
+      connection = getConnection();
+      statement = connection.createStatement();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   public static synchronized ConnectionDB getInstance() {
@@ -35,6 +43,7 @@ public class ConnectionDB {
     try {
       String url = createUrl();
       Connection connection = DriverManager.getConnection(url);
+      // Observamos la conexion exitosa
       System.out.println("Connection class ==> " + connection.getClass().getName());
       return connection;
     } catch(Exception e) {
@@ -51,9 +60,14 @@ public class ConnectionDB {
     String user = prop.getProperty(DB_USER_PROP);
     String password = prop.getProperty(DB_PASSWORD_PROP);
 
-    String url = "jdbc:mysql://" + host 
+    String url = "jdbc:mariadb://" + host 
       + ":" + port + "/" + db + "?user=" + user + "&password=" + password;
+    // Verificamos la url generada
     System.out.println("ConnectionString ==> " + url);
     return url;
+  }
+
+  public static void main(String... args) {
+    new ConnectionDB();
   }
 }
