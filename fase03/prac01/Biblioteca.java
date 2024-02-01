@@ -4,7 +4,7 @@ import prac01.almacen.*;
 
 import java.util.*;
 import java.io.*;
-
+import prac01.almacen.*;
 public class Biblioteca {
   private Map<String, Usuario> usuarios = new HashMap<>();
   private Map<String, Documento> almacen = new HashMap<>();
@@ -60,6 +60,7 @@ public class Biblioteca {
         usuarios.put(usuario, user);
       }
 
+      System.out.println("Datos agregados al archivo CSV correctamente.");
     } catch (IOException e) {
       e.printStackTrace();
       System.out.println("Error al leer los usuarios");
@@ -131,34 +132,28 @@ public class Biblioteca {
     Documento doc = null;
     while (doc == null) {
       tipo = sc.nextLine().toUpperCase();
-      if (tipo.equals("ARTICULO"))
-        doc = new Articulo(id, titulo, ubicacion, autor, "");
+      if (tipo.equals("ARTICULO")) 
+        doc = new Articulo ( id,  titulo,  ubicacion,  autor, ""); 
       else if (tipo.equals("LIBRO"))
-        doc = new Libro(id, titulo, ubicacion, autor, "");
-      else
-        doc = new Tesis(id, titulo, ubicacion, autor, "");
+        doc = new Libro ( id,  titulo,  ubicacion,  autor, ""); 
+      else 
+        doc = new Tesis ( id,  titulo,  ubicacion,  autor, ""); 
     }
+    return doc;
 
-    // Especifica la ruta del archivo CSV
-    String registro = "./prac01/almacen/registroDeLibros.csv";
-
+  }
+  public void verLibros() {
     try {
-      // Abre el archivo en modo de escritura (true indica que se añadirán datos al
-      // final)
-      FileWriter escritor = new FileWriter(registro, true);
-      BufferedWriter bufferedWriter = new BufferedWriter(escritor);
-
-      // Agrega una nueva línea al final del archivo CSV
-      bufferedWriter.write(doc.datosFormatoCSV());
-      bufferedWriter.newLine(); // Agrega un salto de línea
-
-      // Cierra el BufferedWriter
-      bufferedWriter.close();
-
-      System.out.println("Datos agregados al archivo CSV correctamente.");
-    } catch (IOException e) {
-      // Manejo de excepciones en caso de error de escritura
-      System.err.println("Error al escribir en el archivo: " + e.getMessage());
+      Scanner sc = new Scanner(new File(registro));
+      sc.nextLine();
+      while (sc.hasNextLine()) {
+        String [] datos = sc.nextLine().split(",");
+        System.out.printf("TITULO: %s\nID: %s\nTIPO: %s\nAUTOR: %s\nUBICACIÓN: %s\nDisponible: %b\nid - lector: %s\n",
+            datos[1], datos[0], datos[2], 
+            datos[3], datos[4], datos[5], datos[5]);
+      }
+    } catch (FileNotFoundException e) {
+      System.err.println("Archivo no encontrado: " + e.getMessage());
     }
   }
 }
