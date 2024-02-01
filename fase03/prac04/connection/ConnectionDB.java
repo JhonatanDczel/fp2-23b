@@ -21,7 +21,7 @@ public class ConnectionDB {
   private Connection connection;
   private Statement statement;
 
-  public ConnectionDB() {
+  private ConnectionDB() {
     // Estoy repitiendo usar try catch ya que aqui recien inicializamos statemente
     // Podria inicializarlo en getConnection pero para mejor legibilidad lo hago aqui
     try {
@@ -68,6 +68,6 @@ public class ConnectionDB {
   }
 
   public static void main(String... args) {
-    new ConnectionDB();
+    ConnectionDB.getInstance();
   }
 }
