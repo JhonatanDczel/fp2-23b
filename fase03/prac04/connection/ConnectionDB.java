@@ -3,7 +3,10 @@ package connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
+import java.util.*;
 
 public class ConnectionDB {
   // Campos que se usan en la conexion, ojito que de esta forma solo es necesario modificar
@@ -20,6 +23,10 @@ public class ConnectionDB {
   private static ConnectionDB instance;
   private Connection connection;
   private Statement statement;
+  private ResultSet resultQuery;
+
+  //atributo que contiene los cursos y cupos disponibles
+  private Map <Integer, Integer> placesAvailable;
 
   private ConnectionDB() {
     // Estoy repitiendo usar try catch ya que aqui recien inicializamos statemente
@@ -31,6 +38,46 @@ public class ConnectionDB {
       e.printStackTrace();
     }
   }
+
+  // Metodo para realizar la consulta
+  public ResultSet makeQuery (String query) {
+    try {
+      return statement.executeQuery(query);
+    } catch (SQLException e) {
+      System.err.println("\u001B[31mError from sql: \n\u001B[0m" + e);
+    }
+    return null;
+  }
+
+  //Metodo que guarda los cursos seleccionados
+  public void selectCourse (int id) {
+
+  }
+
+  //Método que valida entrada de id
+  public boolean isValidSelection (int id) {
+    return true;
+  }
+
+  public void refreshPlaces() {
+    if ( placesAvailable == null ) {
+      placesAvailable = new HashMap <Integer, Integer>();
+    }
+    placesAvailable.clear();
+    String query = "SELECT * FROM cursosSemestre";
+    try {
+      resultQuery = statement.executeQuery(query);
+      while (resultQuery.next()) {
+        int id = resultQuery.getInt("id_curso");
+        int places = resultQuery.getInt("cupos");
+        placesAvailable.put(id, places);
+      }
+    } catch (SQLException e) {
+      System.err.println("\u001B[31mError from sql: \n\u001B[0m" + e);
+    }
+  }
+
+  //Método que escirbe la base de datos
 
   public static synchronized ConnectionDB getInstance() {
     if (instance == null) {
@@ -68,6 +115,8 @@ public class ConnectionDB {
   }
 
   public static void main(String... args) {
-    ConnectionDB.getInstance();
+    ConnectionDB dabaBase = ConnectionDB.getInstance();
+    dabaBase.refreshPlaces();
+    System.out.println(dabaBase.placesAvailable);
   }
 }
