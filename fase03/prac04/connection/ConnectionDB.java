@@ -27,6 +27,8 @@ public class ConnectionDB {
 
   //atributo que contiene los cursos y cupos disponibles
   private Map <Integer, Integer> placesAvailable;
+  //lista de cursos seleccionados
+  private ArrayList<Integer> listSelectedCourses = new ArrayList<Integer>();
 
   private ConnectionDB() {
     // Estoy repitiendo usar try catch ya que aqui recien inicializamos statemente
@@ -51,12 +53,13 @@ public class ConnectionDB {
 
   //Metodo que guarda los cursos seleccionados
   public void selectCourse (int id) {
-
+    if ( isValidSelection(id) )
+      listSelectedCourses.add(id);
   }
 
   //Método que valida entrada de id
   public boolean isValidSelection (int id) {
-    return true;
+    return placesAvailable.get(id) > 0;
   }
 
   public void refreshPlaces() {
@@ -78,6 +81,18 @@ public class ConnectionDB {
   }
 
   //Método que escirbe la base de datos
+  public void executeRegister() {
+    String query = "UPDATE cursosSemestre SET cupos = cupos - 1 WHERE id_curso = ";
+
+    try {
+      for (int ids : listSelectedCourses) {
+        statement.executeUpdate(query + ids);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.err.println("\u001B[31mError from register in sql: \n\u001B[0m" + e);
+    }
+  }
 
   public static synchronized ConnectionDB getInstance() {
     if (instance == null) {
@@ -115,8 +130,31 @@ public class ConnectionDB {
   }
 
   public static void main(String... args) {
+    //siempre actualizar data
     ConnectionDB dabaBase = ConnectionDB.getInstance();
     dabaBase.refreshPlaces();
+    //se muestran cursos disponibles (solol disp. en esta clase)
     System.out.println(dabaBase.placesAvailable);
+    //Cursos seleccionados:
+    int misCursosID [] = { 1, 3, 4 };
+    //Se registran los cursos, se puede usar isValidSeleccion para 
+    //saber si se eligió bien
+    for (int id : misCursosID) 
+      dabaBase.selectCourse(id);
+    //Se realiza el registro
+    dabaBase.executeRegister();
+    //Ya lo actualizo para que los veas
+    dabaBase.refreshPlaces();
+    System.out.println(dabaBase.placesAvailable);
+
+    //Dinámica: 
+    //Se muestran los cupos xxxxxxx
+    //Se selecciona id del curso
+    //Se registran
+    //
+    /*
+     * warnings:
+     * ver si no se repite los cursos en Plataforma virtual
+    */
   }
 }
