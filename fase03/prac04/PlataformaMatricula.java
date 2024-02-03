@@ -1,7 +1,11 @@
+package prac04;
 
-import java.util.Scanner;
+import java.util.*;
+import java.sql.*;
+import connection.ConnectionDB;
 
 public class PlataformaMatricula {
+    private ConnectionDB db = ConnectionDB.getInstance();
 
     public static void main(String args[]) {
         System.out.println("+--------------------------------+");
@@ -58,10 +62,10 @@ public class PlataformaMatricula {
 
         switch (op) {
           case 1:
-            //Logica para mostrar cupos
+            mostrarCupos();
             break;
           case 2:
-            //Logica para registrar matricula
+            registrarMatricula();
             break;
           case 3:
             return;
@@ -86,5 +90,33 @@ public class PlataformaMatricula {
     }
   }
 
+  public static void mostrarCupos() {
+    ConnectionDB db = ConnectionDB.getInstance();
+    db.refreshPlaces();
+    HashMap<Integer, Integer> places = db.getPlacesAvailable();
+    System.out.println("+--------------------------------+");
+    System.out.println("|         Cupos disponibles       |");
+    System.out.println("+--------------------------------+");
+    for (Map.Entry<Integer, Integer> entry : places.entrySet()) {
+      System.out.println("|  Curso: " + entry.getKey() + " | Cupos: " + entry.getValue());
+    }
+    System.out.println("+--------------------------------+");
+  }
+  
+  public static void registrarMatricula() {
+    ConnectionDB db = ConnectionDB.getInstance();
+    db.refreshPlaces();
+    mostrarCupos();
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Ingrese el id del curso que desea matricularse: ");
+    int id = sc.nextInt();
+    if (db.isValidSelection(id)) {
+      db.selectCourse(id);
+      db.executeRegister();
+      System.out.println("Matricula realizada con exito");
+    } else {
+      System.out.println("No hay cupos disponibles para el curso seleccionado");
+    }
+  }
 }
 
