@@ -26,7 +26,7 @@ public class ConnectionDB {
   private ResultSet resultQuery;
 
   //atributo que contiene los cursos y cupos disponibles
-  private Map <Integer, Integer> placesAvailable;
+  private HashMap <Integer, Integer> placesAvailable;
   //lista de cursos seleccionados
   private ArrayList<Integer> listSelectedCourses = new ArrayList<Integer>();
 
@@ -39,6 +39,9 @@ public class ConnectionDB {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+  public HashMap <Integer, Integer> getPlacesAvailable() {
+    return placesAvailable;
   }
 
   // Metodo para realizar la consulta
@@ -81,7 +84,7 @@ public class ConnectionDB {
   }
 
   //Método que escirbe la base de datos
-  public void executeRegister() {
+  public synchronized void executeRegister() {
     String query = "UPDATE cursosSemestre SET cupos = cupos - 1 WHERE id_curso = ";
 
     try {
