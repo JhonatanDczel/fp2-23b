@@ -49,7 +49,7 @@ public class PlataformaMatricula {
         System.out.println("+--------------------------------+");
         System.out.println("|  1. Mostrar cupos              |");
         System.out.println("|  2. Registrar matricula        |");
-        System.out.println("|  3. Regresar al menu principal |");
+        System.out.println("|  3. Matricularse               |");
         System.out.println("+--------------------------------+");
         System.out.print("|  Elige una opcion: ");
 
@@ -67,6 +67,9 @@ public class PlataformaMatricula {
             registrarMatricula();
             break;
           case 3:
+            ConnectionDB db = ConnectionDB.getInstance();
+            db.refreshPlaces();
+            db.executeRegister();
             return;
           default:
             break;
@@ -102,7 +105,7 @@ public class PlataformaMatricula {
     System.out.println("+--------------------------------+");
   }
   
-  public static void registrarMatricula() {
+  public synchronized static void registrarMatricula() {
     ConnectionDB db = ConnectionDB.getInstance();
     db.refreshPlaces();
     mostrarCupos();
@@ -111,11 +114,12 @@ public class PlataformaMatricula {
     int id = sc.nextInt();
     if (db.isValidSelection(id)) {
       db.selectCourse(id);
-      db.executeRegister();
-      System.out.println("Matricula realizada con exito");
+      //db.executeRegister();
+      System.out.println("Curso seleccionado");
     } else {
       System.out.println("No hay cupos disponibles para el curso seleccionado");
     }
+    sleep(1500);
   }
 }
 

@@ -85,19 +85,22 @@ public class ConnectionDB {
 
   //Método que escirbe la base de datos
   public synchronized void executeRegister() {
-    String query = "UPDATE cursosSemestre SET cupos = cupos - 1 WHERE id_curso = ";
-
-    try {
-      for (int ids : listSelectedCourses) {
-        statement.executeUpdate(query + ids);
+    if (Thread.holdsLock(this)) {
+      String query = "UPDATE cursosSemestre SET cupos = cupos - 1 WHERE id_curso = ";
+      try {
+        for (int ids : listSelectedCourses) {
+          statement.executeUpdate(query + ids);
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+        System.err.println("\u001B[31mError from register in sql: \n\u001B[0m" + e);
       }
-    } catch (SQLException e) {
-      e.printStackTrace();
-      System.err.println("\u001B[31mError from register in sql: \n\u001B[0m" + e);
+    } else {
+      System.out.println("Error, otro método está registrando los cursos");
     }
   }
 
-  public static synchronized ConnectionDB getInstance() {
+  public synchronized static ConnectionDB getInstance() {
     if (instance == null) {
       instance = new ConnectionDB();
     }
@@ -145,7 +148,7 @@ public class ConnectionDB {
     for (int id : misCursosID) 
       dabaBase.selectCourse(id);
     //Se realiza el registro
-    dabaBase.executeRegister();
+    //--dabaBase.executeRegister();
     //Ya lo actualizo para que los veas
     dabaBase.refreshPlaces();
     System.out.println(dabaBase.placesAvailable);
